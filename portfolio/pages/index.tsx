@@ -1,26 +1,16 @@
 import { getSession, signOut } from 'next-auth/react';
 import { NextPageContext } from 'next';
-
+import { BrowserRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import useCurrentUser from '@/hooks/useCurrentUser';
-
-
-export async function getServerSideProps(context: NextPageContext){
-  
-  const session = await getSession(context);
-
-  if(!session) return {
-    redirect: {
-      destination: '/auth',
-      permament: false,
-    }
-  }
-
-  return {
-    props: {}
-  }
-}
-
-
+import Navbar from '@/components/Navbar';
+import Billboard from '@/components/Billboard';
+import Head from 'next/head';
+import About from '@/components/About';
+import { useState } from 'react';
+import WorkExperience from '@/components/WorkExperience';
+import TechnicalSkills from '@/components/TechnicalSkills';
+// import Head from 'next/head';
 
 
 export default function Home() {
@@ -39,19 +29,35 @@ export default function Home() {
     }
 },[]);*/
 
+const [ valueOfBillboard, setValueOfBillboard ] = useState<boolean>(false);
 
 const { data: user } = useCurrentUser();
 console.log(user?.name);
 
-
   return (
     <>
-      <h1>PORTFOLIO</h1>
-      <p className='text-black'>Logged in as: {user?.name}</p>
-      <button onClick={() => signOut()}className='
+    
+      <Head>
+        <title>Marlene Condesso | Portfolio</title>
+        <meta name='description' />
+        <link rel='icon' href='/favicon.ico'/>
+      </Head>
+        <header>
+          <Navbar setDisplayBillboard={(res)=> {setValueOfBillboard(res); console.log(res)}}/>
+        </header>
+        <main>
+          <Billboard setValueOfDisplay={valueOfBillboard}/>
+          <About/>
+          <WorkExperience />
+          <TechnicalSkills />
+        </main>  
+    
+      {/*<p className='text-black'>Logged in as: {user?.name}</p>
+       <button onClick={() => signOut()}className='
       h-10
       w-full
-      bg-white'>Logout!</button>
+      bg-white'>Logout!</button> */}
+
     </>
   )
 }

@@ -1,7 +1,6 @@
 import  { NextApiRequest, NextApiResponse } from 'next';
 
-import serverAuth from '@/libs/serverAuth';
-import prismadb from '@/libs/prismadb';
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse){
 
     if(req.method != 'GET'){
@@ -10,9 +9,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     try {
         
-        const { currentUser }  = await serverAuth(req, res);
+        const  personalInformation   = await prismadb.personalInformation.findFirst();
 
-        return res.status(200).json(currentUser);
+        if(!personalInformation) throw new Error('Do not exist personal information');
+
+
+
+        return res.status(200).json(personalInformation);
 
     } catch (error) {
         console.log(error);
