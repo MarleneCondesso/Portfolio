@@ -10,6 +10,8 @@ import About from '@/components/About';
 import { useState } from 'react';
 import WorkExperience from '@/components/WorkExperience';
 import TechnicalSkills from '@/components/TechnicalSkills';
+import PersonalSkills from '@/components/PersonalSkills';
+import Experience from '@/components/Experience';
 // import Head from 'next/head';
 
 
@@ -30,34 +32,29 @@ export default function Home() {
 },[]);*/
 
 const [ valueOfBillboard, setValueOfBillboard ] = useState<boolean>(false);
-
 const { data: user } = useCurrentUser();
 console.log(user?.name);
 
   return (
-    <>
-    
-      <Head>
-        <title>Marlene Condesso | Portfolio</title>
-        <meta name='description' />
-        <link rel='icon' href='/favicon.ico'/>
-      </Head>
-        <header>
-          <Navbar setDisplayBillboard={(res)=> {setValueOfBillboard(res); console.log(res)}}/>
-        </header>
-        <main>
-          <Billboard setValueOfDisplay={valueOfBillboard}/>
-          <About/>
-          <WorkExperience />
-          <TechnicalSkills />
-        </main>  
-    
+      <>
+          <header>
+            <Navbar setDisplayBillboard={(res)=> {setValueOfBillboard(res);}}/>
+          </header>
+          <main>
+            <Billboard setValueOfDisplay={false}/>
+            <About/>
+            <Experience />
+            {/* <WorkExperience /> */}
+            <TechnicalSkills />
+            <PersonalSkills />
+          </main> 
+          </>
+    );
       {/*<p className='text-black'>Logged in as: {user?.name}</p>
        <button onClick={() => signOut()}className='
       h-10
       w-full
       bg-white'>Logout!</button> */}
 
-    </>
-  )
+  
 }

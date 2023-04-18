@@ -28,24 +28,24 @@ const WorkExperienceCard: FC<WorkExperienceProps> = ({
         <div className="
             flex 
             flex-col 
-            bg-white h-full cursor-pointer p-6 rounded-3xl py-18" onClick={()=>setFlip(!flip)}>
+            bg-white h-full cursor-pointer p-20 rounded-3xl py-18" onClick={()=>setFlip(!flip)}>
                 <ReactCardFlip isFlipped={flip} flipDirection="horizontal">
                     
                     <div className="flex flex-col gap-4 items-center justify-center">
-                        <LabelWorkExperience description={false} label={data.company} date={false} opacity={true}/>
+                        <LabelWorkExperience description={false} label={data.company} date={false} opacity={false}/>
                         <div className=" flex flex-col justify-center items-center gap-8 mt-24">
-                            <LabelWorkExperience description={false} label={data.type} date={false} opacity={false}/>
+                            <LabelWorkExperience description={false} label={data.type} date={false} opacity={true}/>
                             <div className="flex flex-row gap-8">
-                                <LabelWorkExperience description={false} label={startDateString} date={true} opacity={true}/>
-                                <LabelWorkExperience description={false} label={endDateString} date={true} opacity={true}/>
+                                <LabelWorkExperience description={false} label={startDateString} date={true} opacity={false}/>
+                                <LabelWorkExperience description={false} label={endDateString} date={true} opacity={false}/>
                             </div>
                         </div>
                         
                     </div>
                     <div className="flex flex-col gap-4 justify-center items-center">
-                        <div className="flex items-center justify-center">
+                        {/* <div className="flex items-center justify-center">
                             <LabelWorkExperience description={false} label={'Descrição'} date={true} opacity={true}/>
-                        </div>
+                        </div> */}
                     {data.type === 'Trabalhadora Agrícola' ? 
                     <div className=" flex-col flex gap-10  items-center mt-3 justify-center text-white bg-[#DDD0C8] h-80 w-full rounded-xl">
                         <CgTrashEmpty size={60}/>

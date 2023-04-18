@@ -4,25 +4,24 @@ import { FC } from "react";
 interface NavbarItemProps{
     to: string;
     label: string;
-    showBackgroundPink?: boolean;
-    showBackgroundWhite?: boolean;
+    showBackground?: boolean;
     onClick?: () => void;
 }
 
 const NavbarItem: FC<NavbarItemProps> = ({
     to,
     label,
-    showBackgroundWhite,
-    showBackgroundPink,
+    showBackground,
     onClick
 }) => {
 
     return(
             <div>
                 <a href={to} onClick={onClick} className={`
-                ${!showBackgroundWhite && 'lg:text-white hover:text-gray-400'}
-                ${showBackgroundPink && 'lg:text-white'}    
-                text-[#DDD0C8] 
+                ${!showBackground && 'lg:text-white hover:text-gray-400'}
+                text-[#DDD0C8]
+                hover:underline
+                underline-offset-8 
                 items-center 
                 justify-center 
                 flex 

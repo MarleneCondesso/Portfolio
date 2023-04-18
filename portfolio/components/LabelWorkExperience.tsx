@@ -18,12 +18,10 @@ const LabelWorkExperience: FC<LabelWorkExperienceProps> = ({
 
     return (
         <div className={`
-            w-80 
-            h-14 
             pl-2 
             ${opacity ? 'bg-opacity-10 text-gray-400' : 'text-white'}
-            ${date ? 'w-36' : 'w-80' }
-            ${description ? 'h-20' : 'h-14'}
+            ${date ? 'w-32' : 'w-64' }
+            ${description ? 'h-18' : 'h-16'}
             bg-gray-400
             flex 
             items-center 
