@@ -12,10 +12,25 @@ const About = () => {
     return(
         <section className="py-10 px-16 bg-white mt-10" id="about">
             <Heading title="About me" />
-            <div className="grid grid-cols-1 { /**md:grid-cols-2*/ } gap-14">
-                <div>
-                    <img></img>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+                <div className="flex p-4 h-auto items-center justify-center w-full">
+                    <div className="relative max-h-72 cursor-pointer min-h-[150px]">
+                        <img src="/images/profile.jpg" alt="profile-hero" className="min-h-[150px] min-w-[200px] max-h-72 z-10 rounded-md relative"/>
+                        <div className="
+                            absolute 
+                            border-4 
+                            border-[#DDD0C8]
+                            transition duration-150 ease-out md:ease-in
+                            h-full 
+                            w-full 
+                            max-h-72 
+                            top-6 
+                            left-8
+                            rounded-md"
+                        >{" "}</div>
+                    </div>
                 </div>
+                
                 <div>
                     <div className="flex items-center justify-between w-72">
                         <div className="flex flex-col gap-6">

@@ -3,6 +3,7 @@ import { AiOutlineDownload } from 'react-icons/ai';
 import { FiMenu } from 'react-icons/fi';
 import { IoClose } from 'react-icons/Io5';
 import NavbarItem from "./NavbarItem";
+import useDownloader from "react-use-downloader";
 
 interface NavbarProps{
     setDisplayBillboard: (res: boolean)=> void;
@@ -15,7 +16,7 @@ const Navbar: FC<NavbarProps> = ({ setDisplayBillboard }) => {
     const [showBackground, setShowBackground] = useState(false);
     const [variantMobileMenuContent, setVariantMobileMenuContent] = useState(false);
     const [variantMenu, setVariantMenu] = useState(false);
-
+    const { download } = useDownloader();
 
 
     useEffect(() => {
@@ -71,6 +72,18 @@ const Navbar: FC<NavbarProps> = ({ setDisplayBillboard }) => {
 
 
     },[variantMobileMenuContent, setDisplayBillboard, setVariantMenu]);
+
+
+    const downloadCV = () => {
+        
+        const fileUrl = "/files/CVMarleneLima.pdf";
+        const filename = "CVMarleneLima.pdf";
+
+        download(fileUrl, filename)
+    
+    }
+
+
 
     return(
 <>
@@ -130,10 +143,10 @@ const Navbar: FC<NavbarProps> = ({ setDisplayBillboard }) => {
                         <NavbarItem to="#" label="Home" showBackground={showBackground}/> 
                         <NavbarItem to="#about" label="About" showBackground={showBackground}/> 
                         <NavbarItem to="#" label="Portfolio" showBackground={showBackground}/> 
-                        <NavbarItem to="#" label="Contact" showBackground={showBackground}/> 
+                        <NavbarItem to="#contact" label="Contact" showBackground={showBackground}/> 
                     </div>
                 </div> 
-                <a href="#"className="
+                <a onClick={downloadCV} href="#"className="
                     lg:flex
                     lg:h-[50%]
                     hidden
@@ -158,7 +171,7 @@ const Navbar: FC<NavbarProps> = ({ setDisplayBillboard }) => {
                      <AiOutlineDownload size={20}/>
                 </a>
             <div className={`
-                ${!variantMobileMenuContent ? 'p-6 fixed top-0 right-0 lg:hidden w-full items-center items-right z-[1]' : 'top-0 fixed right-0 w-full h-screen z-40 bg-white rounded'}
+                ${!variantMobileMenuContent ? 'p-6 fixed top-0 right-0 lg:hidden w-full items-center items-right' : 'top-0 fixed opacity-100 lg:hidden right-0 w-full h-screen z-50 bg-white rounded'}
                 ${showBackground ? 'bg-white opacity-70 text-[#DDD0C8] ' : ''}`}>
                 <p className={`${showBackground ? 'text-[#DDD0C8]' : 'text-white'}
                 ${variantMobileMenuContent && 'hidden '}
@@ -193,7 +206,7 @@ const Navbar: FC<NavbarProps> = ({ setDisplayBillboard }) => {
                         <NavbarItem to="#about" label="About" onClick={toggleMobileMenu} /> 
                         <NavbarItem to="#" label="Portfolio" onClick={toggleMobileMenu} /> 
                         <NavbarItem to="#" label="Contact" onClick={toggleMobileMenu}/> 
-                        <a href="#"className="flex
+                        <a onClick={downloadCV} href="#"className="flex
                             hover:border-[#DDD0C8]
                             hover:text-white
                             hover:bg-[#DDD0C8]

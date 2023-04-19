@@ -2,14 +2,14 @@ import { useCallback, useEffect, useState } from "react";
 import Heading from "./Heading";
 import { MdKeyboardArrowUp } from 'react-icons/md';
 import { MdArrowForwardIos } from 'react-icons/md';
-
+import { GrEmptyCircle } from 'react-icons/gr';
 const Experience = () => {
 
     const [showInfo, setShowInfo] = useState('');
 
     const [openOtherJobs, setOpenOtherJobs] = useState(false);
     const [openProgramming, setOpenProgramming] = useState(false);
-
+    const [selectExperience, setSelectExperience ] = useState(false);
 
     const handleOpenOtherJobs = useCallback(() => {
         setOpenOtherJobs((current) => !current);
@@ -100,7 +100,7 @@ const Experience = () => {
                                 rounded-t-lg"
                             >
                                 <ul className="flex flex-row  lg:flex-col lg:items-center lg:justify-center p-2 pt-4 text-white">
-                                    <li onClick={() => setShowInfo('upn')} className=" mb-2">
+                                    <li onClick={() => { setShowInfo('upn'); setSelectExperience(true);}} className=" mb-2">
                                         <button className="
                                             text-white
                                             hover:bg-gray-600
@@ -114,7 +114,7 @@ const Experience = () => {
                                             UPN
                                         </button>
                                     </li>
-                                    <li onClick={() => setShowInfo('bvf')} className=" mb-2">
+                                    <li onClick={() => { setShowInfo('bvf'); setSelectExperience(true);}} className=" mb-2">
                                         <button className="
                                             text-white
                                             hover:bg-gray-600
@@ -127,7 +127,7 @@ const Experience = () => {
                                             Bombeiros Voluntário de Fão
                                         </button>
                                     </li>
-                                    <li onClick={() => setShowInfo('e2000')} className=" mb-2">
+                                    <li onClick={() => { setShowInfo('e2000'); setSelectExperience(true);}} className=" mb-2">
                                         <button className="
                                             text-white
                                             hover:bg-gray-600
@@ -140,7 +140,7 @@ const Experience = () => {
                                             Esposende2000
                                         </button>
                                     </li>
-                                    <li onClick={() => setShowInfo('fm')} className=" mb-2">
+                                    <li onClick={() => { setShowInfo('fm'); setSelectExperience(true);}} className=" mb-2">
                                         <button className="
                                             text-white
                                             hover:bg-gray-600
@@ -155,7 +155,7 @@ const Experience = () => {
                                             FM Têxteis S.A
                                         </button>
                                     </li>
-                                    <li onClick={() => setShowInfo('dh')} className=" mb-2">
+                                    <li onClick={() => { setShowInfo('dh'); setSelectExperience(true);}} className=" mb-2">
                                         <button className="
                                             text-white
                                             hover:bg-gray-600
@@ -182,12 +182,12 @@ const Experience = () => {
                                 border-white"
                             >
                                 <ul className="flex flex-col lg:items-center lg:justify-center text-white">
-                                    <li onClick={() => setShowInfo('n4')} className="mb-2">
+                                    <li onClick={() => {setShowInfo('n4');setSelectExperience(true);}} className="mb-2">
                                         <button className="
                                          text-white
                                          hover:bg-gray-600
-                                         h-10
-                                         w-full
+                                         h-12
+                                         w-56
                                          rounded-md
                                          flex 
                                          flex-row
@@ -207,6 +207,20 @@ const Experience = () => {
                     </div>
                 </div>
                 <div className="bg-gray-400 bg-opacity-25 h-auto w-full p-6 rounded-3xl">
+
+
+                    <div className={`
+                    flex-col
+                    items-center
+                    justify-center
+                    gap-16
+                    p-10
+                    w-full
+                    h-full
+                    ${!selectExperience ? 'flex' : 'hidden'}`}>
+                        <GrEmptyCircle size={50}/>
+                        <p>No experience select</p>
+                    </div>
 
                     <div className={`
                         h-auto 
@@ -461,6 +475,7 @@ const Experience = () => {
                             </li>
                         </ul>
                     </div>
+
                     <div className={`
                         h-auto 
                         w-full 

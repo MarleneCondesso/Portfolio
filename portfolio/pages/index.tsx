@@ -12,6 +12,7 @@ import WorkExperience from '@/components/WorkExperience';
 import TechnicalSkills from '@/components/TechnicalSkills';
 import PersonalSkills from '@/components/PersonalSkills';
 import Experience from '@/components/Experience';
+import Contact from '@/components/Contact';
 // import Head from 'next/head';
 
 
@@ -47,6 +48,7 @@ console.log(user?.name);
             {/* <WorkExperience /> */}
             <TechnicalSkills />
             <PersonalSkills />
+            <Contact />
           </main> 
           </>
     );
