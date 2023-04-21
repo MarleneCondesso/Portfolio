@@ -3,31 +3,9 @@
 @tailwind utilities;
 
 
-* {
-    scrollbar-width: thin;
-    scrollbar-color: var(--secondary) var(--primary);
-  }
-  :root {
-    --primary: white;
-    --secondary: #DDD0c8;
-  }
-  
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 15px;
-  }
-  
-  *::-webkit-scrollbar-track {
-    background: var(--primary);
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    background-color: var(--secondary);
-    border-radius: 14px;
-    border: 3px solid var(--primary);
-  }
+
 body{
-    @apply bg-[#DDD0C8] h-full overflow-x-hidden;
+    @apply dark:bg-slate-700 bg-white h-full overflow-x-hidden dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-lg scrollbar-thin scrollbar-track-[#DDD0C8] scrollbar-thumb-gray-500;
 }
 
 #__next{

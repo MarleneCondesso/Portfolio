@@ -1,4 +1,3 @@
-import { HashLink as Link } from 'react-router-hash-link';
 import { FC } from "react";
 
 interface NavbarItemProps{
@@ -18,9 +17,15 @@ const NavbarItem: FC<NavbarItemProps> = ({
     return(
             <div>
                 <a href={to} onClick={onClick} className={`
-                ${!showBackground && 'lg:text-white hover:text-gray-400'}
-                text-[#DDD0C8]
+                ${!showBackground && 'lg:text-slate-500'}
+                text-slate-700
+                hover:text-black
+                dark:lg:text-teal-200
+                dark:hover:text-white
+                dark:text-teal-400
                 hover:underline
+                focus:underline
+                focus:underline-offset-8
                 underline-offset-8 
                 items-center 
                 justify-center 
@@ -28,7 +33,6 @@ const NavbarItem: FC<NavbarItemProps> = ({
                 lg:px-0 
                 px-[50%]
                 font-semibold 
-                hover:text-gray-100 
                 cursor-pointer 
                 transition-shadow
                 lg:z-[1]`}>
