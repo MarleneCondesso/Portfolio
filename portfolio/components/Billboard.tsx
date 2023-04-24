@@ -8,7 +8,7 @@ const Billboard = () => {
 
     const label = "I'm Marlene Condesso";
     return (
-        <div className={` w-full flex items-center
+        <div className={` flex items-center
         bg-center 
         p-20 
         top-10 

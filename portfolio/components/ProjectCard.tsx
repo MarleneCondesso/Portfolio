@@ -21,7 +21,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
 
     return(
         <div className="h-72 w-72 dark:bg-slate-500 bg-slate-700 bg-opacity-25 shadow-xl p-6" onClick={()=>{}}>
-            <div className="gap-8 flex flex-col">
+            <div className="gap-8 flex flex-col h-full justify-between">
                 <h2 className="dark:text-teal-400 text-slate-500 font-semibold text-xl">{title}</h2>
                 <p className="dark:text-white text-slate-700">
                     {text}

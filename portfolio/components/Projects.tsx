@@ -21,8 +21,8 @@ const Projects = () => {
                         title="Netflix Website - Clone"
                         text="A simple Netflix Website clone built with Next.js, Tailwind Css and MongoDB"
                         tools={["Next.js", "Tailwind CSS", "MongoDB"]} 
-                        webSiteUrl=""
-                        gitHubUrl=""
+                        webSiteUrl="https://netflix-clone-alpha-bice.vercel.app/auth"
+                        gitHubUrl="https://github.com/MarleneCondesso/netflix-clone"
                     />
                     {/* <ProjectCard 
                         title="Web Music App"
@@ -33,14 +33,14 @@ const Projects = () => {
                     /> */}
                     <ProjectCard 
                         title="Todo List"
-                        text=""
+                        text="Todo list app built with Next.js, Tailwind Css and MongoDB"
                         tools={["Next.js", "Tailwind CSS", "MongoDB"]} 
                         webSiteUrl="https://todolist-web-brown.vercel.app/"
                         gitHubUrl="https://github.com/MarleneCondesso/todolist-web"
                     />
                 </div>
                 <div className="flex items-center justify-center">
-                    <button className="flex flex-col items-center dark:text-teal-400 text-slate-700 text-xl cursor-pointer font-semibold"  onClick={toogleChanllenges}>
+                    <button className="flex flex-col items-center dark:text-teal-400 dark:hover:text-white hover:text-slate-400 text-slate-700 text-xl cursor-pointer font-semibold"  onClick={toogleChanllenges}>
                         Challenges
                         <IoIosArrowDown size={40}className={`${showChallenges && 'rotate-180'}`}/>
                     </button>
