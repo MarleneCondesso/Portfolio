@@ -31,13 +31,13 @@ const Projects = () => {
                         webSiteUrl=""
                         gitHubUrl=""
                     /> */}
-                    {/* <ProjectCard 
+                    <ProjectCard 
                         title="Todo List"
                         text=""
                         tools={["Next.js", "Tailwind CSS", "MongoDB"]} 
-                        webSiteUrl=""
-                        gitHubUrl=""
-                    /> */}
+                        webSiteUrl="https://todolist-web-brown.vercel.app/"
+                        gitHubUrl="https://github.com/MarleneCondesso/todolist-web"
+                    />
                 </div>
                 <div className="flex items-center justify-center">
                     <button className="flex flex-col items-center dark:text-teal-400 text-slate-700 text-xl cursor-pointer font-semibold"  onClick={toogleChanllenges}>
