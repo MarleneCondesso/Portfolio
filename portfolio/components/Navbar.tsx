@@ -15,7 +15,7 @@ const Navbar: FC<NavbarProps> = ({
     onTheme
 }) => {
 
-    const TOP_OFFSET= 20;
+    const TOP_OFFSET= 60;
 
     const [showBackground, setShowBackground] = useState(false);
     const [variantMenu, setVariantMenu] = useState(false);
