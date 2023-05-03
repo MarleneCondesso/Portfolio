@@ -14,7 +14,7 @@ export default function Home() {
   const [ theme, setTheme ] = useState('');
 
   return (
-      <div className='w-screen sm:w-[230vw]'>
+      <div className=''>
         <header>
           <Navbar onTheme={(res) => {setTheme(res)}}/>
         </header>

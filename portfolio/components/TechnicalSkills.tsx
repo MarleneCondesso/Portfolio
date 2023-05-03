@@ -42,7 +42,8 @@ const TechnicalSkills = () => {
                     md:grid-cols-3 
                     lg:grid-cols-6 
                     rounded-2xl 
-                    p-2"
+                    p-2
+                    items-center"
                 >
                     
                     <a href="https://html.com/" target="_blank" rel="noreferrer" className="flex justify-center items-center pt-5 rounded-lg">
@@ -51,7 +52,7 @@ const TechnicalSkills = () => {
                         </svg>
                     </a>
                     <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer" className="flex justify-center items-center">
-                        <svg className="dark:fill-teal-200 dark:hover:fill-[url(#tailwindcss-original-wordmark-a)]" viewBox="0 0 128 128" fill={colorTailwind} onMouseOver={() => { setColorTailwind("url(#tailwindcss-original-wordmark-a)") }} onMouseOut={() => setColorTailwind('#4b5563')} >
+                        <svg className="dark:fill-teal-200 dark:hover:fill-[url(#tailwindcss-original-wordmark-a)] w-60 h-40" viewBox="0 0 128 128" fill={colorTailwind} onMouseOver={() => { setColorTailwind("url(#tailwindcss-original-wordmark-a)") }} onMouseOut={() => setColorTailwind('#4b5563')} >
                             <defs>
                                 <linearGradient id="tailwindcss-original-wordmark-a" gradientUnits="userSpaceOnUse" x1="2.21" y1="511.596" x2="3.211" y2="511.596" gradientTransform="matrix(27.16757 5.6391 -9.3985 16.30055 4747.487 -8290.643)">
                                     <stop offset="0" stop-color="#2298bd" />
@@ -100,8 +101,8 @@ const TechnicalSkills = () => {
                             <path d="M117.5 33.5l.3-.2c-.6-1.1-1.5-2.1-2.4-2.6L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.3.9 3.4l-.2.1c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7 1.2 0 2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4V36.1c.1-.8 0-1.7-.4-2.6zm-53.5 70c-21.8 0-39.5-17.7-39.5-39.5S42.2 24.5 64 24.5c14.7 0 27.5 8.1 34.3 20l-13 7.5C81.1 44.5 73.1 39.5 64 39.5c-13.5 0-24.5 11-24.5 24.5s11 24.5 24.5 24.5c9.1 0 17.1-5 21.3-12.4l12.9 7.6c-6.8 11.8-19.6 19.8-34.2 19.8zM115 62h-3.2l-.9 4h4.1v5h-5l-1.2 6h-4.9l1.2-6h-3.8l-1.2 6h-4.8l1.2-6H94v-5h3.5l.9-4H94v-5h5.3l1.2-6h4.9l-1.2 6h3.8l1.2-6h4.8l-1.2 6h2.2v5zm-12.7 4h3.8l.9-4h-3.8z"/>
                         </svg>
                     </a>
-                    <a href="https://learn.microsoft.com/en-us/sharepoint/introduction" target="_blank" rel="noreferrer" className="flex justify-center items-center px-6 w-40">
-                        <svg className="h-16 dark:fill-teal-200 dark:hover:fill-[#0072C6]" fill={colorMicrosoftShare} onMouseOver={() => setColorMicrosoftShare('#0072C6')} onMouseOut={() => setColorMicrosoftShare('#4b5563')} version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2500 498.9">
+                    <a href="https://learn.microsoft.com/en-us/sharepoint/introduction" target="_blank" rel="noreferrer" className="flex justify-center items-center px-6">
+                        <svg className="h-16 w-40 dark:fill-teal-200 dark:hover:fill-[#0072C6] " fill={colorMicrosoftShare} onMouseOver={() => setColorMicrosoftShare('#0072C6')} onMouseOut={() => setColorMicrosoftShare('#4b5563')} version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2500 498.9">
                             <path d="M0,52.1L291.2,0c0.1,166.3,0,332.6,0,498.9c-97-17.2-194-34.7-291.2-51.9V52.1z M97,164.7 
                             c-11.9,14.1-15.6,33.6-13.4,51.5c1.8,15.6,10.5,29.9,22.3,39.8c10.8,9.2,24.6,14.8,34.3,25.6c7.3,8.1,9.1,21.6,1.8,30.3 
                             c-5.8,7-15.8,7.5-24,6.1c-13.8-2-25.5-10.5-34.6-20.8l0.1,43.1c13.4,10.2,30.7,13.8,47.2,13.7c11.7-0.3,23.6-3,33.1-10.1 

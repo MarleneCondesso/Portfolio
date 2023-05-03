@@ -69,7 +69,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                 ${!variantMobileMenuContent ? 
                     'p-6 top-0 fixed right-0 block lg:hidden w-full items-center items-right bg-opacity-50' 
                 : 
-                    'top-0 fixed lg:hidden right-0 block w-full h-screen z-50 bg-opacity-100 bg-white dark:bg-slate-700'
+                    'top-0 fixed lg:hidden right-0 block w-full h-full z-50 bg-opacity-100 bg-white dark:bg-slate-700'
                 }
                 ${showBackground && !variantMobileMenuContent ? 'bg-slate-500 text-[#DDD0C8] z-50 opacity-80' : ''}
             `}

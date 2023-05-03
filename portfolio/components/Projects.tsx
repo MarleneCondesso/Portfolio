@@ -21,8 +21,15 @@ const Projects = () => {
                         title="Netflix Website - Clone"
                         text="A simple Netflix Website clone built with Next.js, Tailwind Css and MongoDB"
                         tools={["Next.js", "Tailwind CSS", "MongoDB"]} 
-                        webSiteUrl="https://netflix-clone-alpha-bice.vercel.app/auth"
+                        webSiteUrl="https://netflix-clone-alpha-bice.vercel.app"
                         gitHubUrl="https://github.com/MarleneCondesso/netflix-clone"
+                    />
+                    <ProjectCard 
+                        title="Sudoku Website"
+                        text="A simple sudoku game when i can play when boring. "
+                        tools={["Typescript", "Tailwind CSS", "React"]} 
+                        webSiteUrl="https://sudoku-lena.vercel.app/"
+                        gitHubUrl="https://github.com/MarleneCondesso/sudoku.lena"
                     />
                     {/* <ProjectCard 
                         title="Web Music App"

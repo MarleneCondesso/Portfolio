@@ -12,7 +12,7 @@ const About = () => {
     return(
         <div id="about" className="
             py-10 
-            px-10 
+            px-16 
            "
         >
             <Heading title="About me" />
