@@ -1,7 +1,5 @@
 import { FC, useState } from "react";
 import { FaGithub } from "react-icons/fa";
-import { SiCodepen } from "react-icons/si";
-import { SocialIcon } from 'react-social-icons';
 
 interface NavbarSocialProps{
     getTheme:string;

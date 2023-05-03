@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Heading from "./Heading";
-import { MdKeyboardArrowUp, MdWorkOutline } from 'react-icons/md';
+import { MdKeyboardArrowUp } from 'react-icons/md';
 import { MdArrowForwardIos } from 'react-icons/md';
-import { GrEmptyCircle } from 'react-icons/gr';
 const Experience = () => {
 
     const [showInfo, setShowInfo] = useState('n4');

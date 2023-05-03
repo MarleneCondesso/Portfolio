@@ -1,9 +1,9 @@
 import { AiOutlineGift } from "react-icons/ai";
 import Heading from "./Heading";
 import { FiBookOpen } from "react-icons/fi";
-import { TbPacman } from "react-icons/Tb";
-import { BsGlobe2 } from "react-icons/Bs";
-import { IoLocateOutline } from "react-icons/Io5";
+import { TbPacman } from "react-icons/tb";
+import { BsGlobe2 } from "react-icons/bs";
+import { IoLocateOutline } from "react-icons/io5";
 const About = () => {
 
     const subTitleAboutMe: string = "I'm Marlene and Frontend Developer";

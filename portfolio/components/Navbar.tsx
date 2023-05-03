@@ -3,7 +3,7 @@ import { AiOutlineDownload } from 'react-icons/ai';
 import NavbarItem from "./NavbarItem";
 import useDownloader from "react-use-downloader";
 import NavbarMobile from "./NavbarMobile";
-import { BsFillMoonFill, BsFillSunFill } from "react-icons/Bs";
+import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { MdDesktopWindows } from "react-icons/md";
 
 interface NavbarProps{

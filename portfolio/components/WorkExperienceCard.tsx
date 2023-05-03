@@ -1,6 +1,5 @@
 import moment from "moment";
 import { FC, useEffect, useState } from "react";
-import prismadb from '@/libs/prismadb';
 import useDescriptionWork from "@/hooks/useDescriptionWork";
 import ReactCardFlip from "react-card-flip";
 import LabelWorkExperience from "./LabelWorkExperience";

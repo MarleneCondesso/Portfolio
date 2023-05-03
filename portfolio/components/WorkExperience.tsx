@@ -1,9 +1,6 @@
 import useWorkExperience from "@/hooks/useWorkExperience";
-import axios from "axios";
-import { useCallback, useState } from "react";
 import Heading from "./Heading";
 import WorkExperienceCard from "./WorkExperienceCard";
-import useDescriptionWork from "@/hooks/useDescriptionWork";
 
 const WorkExperience = () => {
 

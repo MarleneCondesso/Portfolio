@@ -1,10 +1,10 @@
-import { IoClose } from "react-icons/Io5";
+import { IoClose } from "react-icons/io5";
 import NavbarItem from "./NavbarItem";
 import { FC, useCallback, useEffect, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineDownload } from "react-icons/ai";
 import { MdDesktopWindows } from "react-icons/md";
-import { BsFillSunFill, BsFillMoonFill } from "react-icons/Bs";
+import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 
 interface NavbarMobileProps{
     showBackground: boolean;
