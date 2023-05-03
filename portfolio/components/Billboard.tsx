@@ -1,10 +1,6 @@
 import Typewriter from 'typewriter-effect';
 
-
-
 const Billboard = () => {
-
-
 
     const label = "I'm Marlene Condesso";
     return (

@@ -1,4 +1,3 @@
-import useCurrentUser from '@/hooks/useCurrentUser';
 import Navbar from '@/components/Navbar';
 import Billboard from '@/components/Billboard';
 import About from '@/components/About';
