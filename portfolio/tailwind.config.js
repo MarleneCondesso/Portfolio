@@ -6,7 +6,12 @@ module.exports = {
       "./components/**/*.{js,ts,jsx,tsx,mdx}",
    ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'pulse-slow': 'pulse 8s linear infinite',
+        'bounce-slow': 'bounce 6s linear infinite',
+      }
+    },
   },
   plugins: [
     require('tailwind-scrollbar')({ nocompatible: true }),

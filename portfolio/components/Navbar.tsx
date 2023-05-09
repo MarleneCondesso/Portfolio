@@ -1,121 +1,60 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { AiOutlineDownload } from 'react-icons/ai';
 import NavbarItem from "./NavbarItem";
-import useDownloader from "react-use-downloader";
-import NavbarMobile from "./NavbarMobile";
-import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
-import { MdDesktopWindows } from "react-icons/md";
+import NavbarTheme from "./NavbarTheme";
+import Popup from "./Popup";
+import { Popover, Transition } from '@headlessui/react'
+import { Fragment, useState } from 'react'
 
-interface NavbarProps{
-    onTheme:(theme:string) => void;
+import { Document, Page, pdfjs } from 'react-pdf'
+import pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
+
+pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+
+
+interface NavbarProps {
+
+    showBackgroundNav: boolean;
+    hiddenNav: boolean;
+    theme: string;
+    onDownloadCV: () => void;
+    onTheme: (theme: string) => void;
 }
 
 
 const Navbar: FC<NavbarProps> = ({
+    showBackgroundNav,
+    hiddenNav,
+    theme,
+    onDownloadCV,
     onTheme
 }) => {
 
-    const TOP_OFFSET= 60;
+    const [pages, setPages] = useState(null);
 
-    const [showBackground, setShowBackground] = useState(false);
-    const [variantMenu, setVariantMenu] = useState(false);
-    const { download } = useDownloader();
-
-    const [ theme, setTheme ] = useState(typeof window !== 'undefined' && localStorage.getItem('theme') ? localStorage.getItem('theme') : 'system');
-    
-
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if(window.scrollY >= TOP_OFFSET){
-                setShowBackground(true);
-            } else {
-                setShowBackground(false);
-            }
-        }
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
-    },[]);
-
-    useEffect(() => {
-        let lasSrollY = window.scrollY;
-        const handleScrollY = () => {
-            if(window.scrollY >= lasSrollY){
-                setVariantMenu(true);
-            } else {
-                setVariantMenu(false);
-            }
-
-            lasSrollY = window.scrollY;
-        }
-
-        window.addEventListener('scroll', handleScrollY);
-
-        return () => {
-            window.removeEventListener('scroll', handleScrollY);
-        }
-    },[]);
-
-
-    const downloadCV = () => {
-        
-        const fileUrl = "/files/CVMarleneLima.pdf";
-        const filename = "CVMarleneLima.pdf";
-
-        download(fileUrl, filename)
-    
-    }
-    const onWindowMatch = () => {
-        if(typeof window !== 'undefined'){
-            let darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-            if(localStorage.theme === 'dark' || (!('theme' in localStorage) && darkQuery.matches)){
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        }
-        
+    const onDocumentLoadSuccess = ({ numPages }) => {
+        setPages(numPages);
     }
 
-    useEffect(() => {
-        switch (theme) {
-            case 'dark':
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-                break;
-            case 'light':
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-                break;
-            default:
-                localStorage.removeItem('theme');
-                onWindowMatch();
-                break;
-        }
 
-    },[theme]);
-
-
-    return(
+    return (
         <>
             <div className={`h-full w-full
                 backdrop-brightness-75
                 bg-slate-500/20
                 z-10
-                lg:hidden
                 top-0
                 left-0`}>
             </div>
 
             <nav className={` 
-                ${showBackground && 'bg-slate-500 bg-opacity-50 z-[40] transition '}
-                ${variantMenu && 'hidden'}
+                ${showBackgroundNav && 'bg-slate-500 bg-opacity-50 z-[1] transition '}
+                ${hiddenNav && 'hidden'}
                 lg:fixed
-                lg:h-16
+                top-0
+                right-0
+                left-0
+                lg:h-20
                 w-full
                 flex
                 flex-column
@@ -135,10 +74,10 @@ const Navbar: FC<NavbarProps> = ({
                     font-semibold`}
                 >
 
-                    {showBackground ?
-                       <img src={`${theme === 'dark' ? '/images/logoDarkTab.png' : '/images/logoLight.png'}`} className="h-16 left-8 fixed top-1"/>
-                    :
-                        <p className="text-slate-500 fixed left-8 top-4 dark:text-teal-200"> Marlene Condesso</p>
+                    {showBackgroundNav ?
+                        <img src={`${theme === 'dark' ? '/images/logoDarkTab.png' : '/images/logoWhite.png'} `} className="h-16 left-8 fixed top-1" />
+                        :
+                        <p className="text-white fixed left-8 top-7 dark:text-teal-200 2xl:text-2xl xl:text-xl lg:text-lg"> Marlene Condesso</p>
                     }
                 </div>
                 <div className="
@@ -158,44 +97,82 @@ const Navbar: FC<NavbarProps> = ({
                         flex
                         gap-10`}
                     >
-                        <NavbarItem to="#" label="Home" showBackground={showBackground}/> 
-                        <NavbarItem to="#about" label="About" showBackground={showBackground}/> 
-                        <NavbarItem to="#projects" label="Projects" showBackground={showBackground}/> 
-                        <NavbarItem to="#contact" label="Contact" showBackground={showBackground}/> 
+                        <NavbarItem trigger="home" to="#home" label="Home" showBackground={showBackgroundNav} />
+                        <NavbarItem trigger="about" to="#about" label="About" showBackground={showBackgroundNav} />
+                        <NavbarItem trigger="projects" to="#projects" label="Projects" showBackground={showBackgroundNav} />
+                        <NavbarItem trigger="contact" to="#contact" label="Contact" showBackground={showBackgroundNav} />
                     </div>
-                </div> 
-                <a onClick={downloadCV} href="#"className={`
-                    ${!showBackground ? 
-                        'hover:text-gray-600 text-slate-500 dark:text-teal-200 hover:underline underline-offset-8 dark:hover:bg-opacity-75 dark:hover:text-white' 
-                    : 
-                        ' text-gray-600 hover:text-white dark:text-white dark:hover:text-black hover:underline underline-offset-8'
-                    }
-                    fixed
-                    right-40
-                    lg:flex
-                    hidden
-                    px-4
-                    lg:h-[5%]
-                    rounded-md
-                    items-center
-                    justify-center
-                    gap-2
-                    transition
-                    duration-75
-                    cursor-pointer
-                    lg:flex-row
-                    font-semibold`}
-                >
-                    Download CV
-                    <AiOutlineDownload size={20}/>
-                </a>
-                <NavbarMobile showBackground={showBackground} onClick={downloadCV} theme={theme || ''} setTheme={(res)=> setTheme(res)}/>
-                <div className={`
+                </div>
+               
+                <Popover>
+                    {({ open }) => (
+                        <>
+                            <Popover.Button
+                                className={`
+                                    ${open ? '' : 'text-opacity-90'}
+                                    text-slate-800 
+                                    hover:text-white 
+                                    dark:text-white 
+                                    dark:hover:text-teal-200 
+                                    hover:underline 
+                                    underline-offset-8
+                                    fixed
+                                    top-4
+                                    right-40
+                                    lg:flex
+                                    hidden
+                                    px-2
+                                    2xl:px-20
+                                    xl:px-10
+                                    lg:h-[5%]
+                                    rounded-md
+                                    items-center
+                                    justify-center
+                                    gap-2
+                                    transition
+                                    duration-75
+                                    cursor-pointer
+                                    lg:flex-row
+                                    font-semibold
+                                    2xl:text-2xl
+                                    xl:text-xl
+                                    lg:text-lg`}
+                            >
+                                <span>Preview CV</span>
+
+                            </Popover.Button>
+                            <Transition
+                                as={Fragment}
+                                enter="transition ease-out duration-200"
+                                enterFrom="opacity-0 translate-y-1"
+                                enterTo="opacity-100 translate-y-0"
+                                leave="transition ease-in duration-150"
+                                leaveFrom="opacity-100 translate-y-0"
+                                leaveTo="opacity-0 translate-y-1"
+                            >
+                                <Popover.Panel className="absolute left-1/2 top-24 z-10 mt-3 w-auto h-[40rem] -translate-x-1/2 transform px-4 sm:px-0 flex items-center justify-center">
+                                    <div className='fixed top-0 mb-10'>
+                                        <button className='bg-white bg-opacity-25 w-44 h-16 text-slate-800 font-semibold text-xl rounded-xl flex flex-row items-center justify-center gap-2' onClick={onDownloadCV}>Download <AiOutlineDownload size={20} /></button>
+                                    </div>
+                                    <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-auto scroll-smooth max-h-[800px] dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-lg scrollbar-thin scrollbar-track-[#DDD0C8] scrollbar-thumb-gray-500 w-full h-full mt-40">
+                                        <Document file="/files/CVMarleneLima.pdf" onLoadSuccess={onDocumentLoadSuccess} onLoadError={console.error}>
+                                            {Array.from(new Array(pages), (el, index) => (
+                                                <Page key={`page_${index + 1}`} pageNumber={index + 1} width={typeof window !== 'undefined' &&  window.innerWidth > 1000 ? 900 : 700 }/>
+                                            ))}
+                                        </Document>
+                                    </div>
+                                </Popover.Panel>
+                            </Transition>
+                        </>
+                    )}
+                </Popover>
+            
+            <div className="
                     hidden
                     lg:flex
                     fixed
                     right-8
-                    bg-gray-400
+                    bg-white
                     opacity-60
                     max-lg:top-5
                     max-lg:right-20
@@ -204,40 +181,13 @@ const Navbar: FC<NavbarProps> = ({
                     dark:bg-opacity-60
                     rounded-xl
                     duration-300
-                    gap-4`}
-                >
-                    <button onClick={() => {setTheme('light'); onTheme('light');} }
-                    className={`
-                        ${theme === 'light' ? 'text-[#DDD0C8]' : 'text-white'}
-                        dark:hover:text-teal-400 
-                        cursor-pointer
-                    `}    
-                    >
-                        <BsFillSunFill size={20}/>
-                    </button>
-                    <button onClick={() => {setTheme('dark'); onTheme('dark');}} 
-                    className={`
-                        ${theme === 'dark' ? 'text-teal-500' : 'text-white'}
-                        dark:hover:text-teal-500 
-                        hover:text-teal-900    
-                        cursor-pointer
-                    `}
-                    >
-                        <BsFillMoonFill size={18}/>
-                    </button>
-                    <button onClick={() => {setTheme('system'); onTheme('system');}}
-                        className={`
-                            ${theme === 'dark' ? 'text-teal-500' : 'text-white'}
-                             hover:text-teal-900  
-                             dark:hover:text-teal-500
-                             cursor-pointer  
-                        `}
-                    >
-                        <MdDesktopWindows size={20}/>
-                    </button>
-                </div>                   
-            </nav>
-      </>
+                    gap-4"
+            >
+                <NavbarTheme onTheme={(res) => onTheme(res)} theme={theme} />
+            </div>
+
+        </nav >
+        </>
     );
 }
 

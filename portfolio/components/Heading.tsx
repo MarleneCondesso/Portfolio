@@ -7,9 +7,9 @@ interface HeadingProps{
 const Heading: FC<HeadingProps> = ({title}) => {
 
     return(
-        <div className="text-slate-500 dark:text-white text-3xl font-medium items-center gap-6 py-16">
+        <div className="text-white xl:text-6xl text-4xl font-medium items-center gap-6 py-16">
             {title}
-            <div className="bg-slate-500 dark:bg-white h-1 w-14 translate-y-5"></div>
+            <div className="bg-white h-1 xl:w-32 w-16 translate-y-5"></div>
         </div>
     )
 }

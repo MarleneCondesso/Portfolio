@@ -13,7 +13,6 @@ export default function App({ Component, pageProps }: AppProps) {
             <link rel="apple-touch-icon" href='/images/logoDarkTab.png' className='h-[400px]'/>
           </Head>
           <ThemeProvider>
-            {/**<NextNProgress options={{ easing: 'ease', speed: 500 }}/>**/}
             <Component {...pageProps} />
           </ThemeProvider>   
     </>

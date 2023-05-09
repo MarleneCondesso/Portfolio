@@ -20,13 +20,13 @@ const ProjectCard: FC<ProjectCardProps> = ({
 }) => {
 
     return(
-        <div className="h-72 w-72 dark:bg-slate-500 bg-slate-700 bg-opacity-25 shadow-xl p-6" onClick={()=>{}}>
+        <div className="h-72 w-72 2xl:w-96 2xl:h-96 dark:bg-slate-500 dark:bg-opacity-25 bg-white bg-opacity-25 shadow-2xl p-6 rounded-xl" onClick={()=>{}}>
             <div className="gap-8 flex flex-col h-full justify-between">
-                <h2 className="dark:text-teal-400 text-slate-500 font-semibold text-xl">{title}</h2>
-                <p className="dark:text-white text-slate-700">
+                <h2 className="dark:text-teal-400 text-white font-semibold text-xl 2xl:text-3xl">{title}</h2>
+                <p className="dark:text-white text-slate-700 2xl:text-xl">
                     {text}
                 </p>
-                <div className="flex flex-row gap-4 text-[11px] dark:text-slate-400 text-slate-700">
+                <div className="flex flex-row gap-4 text-[11px] 2xl:text-lg dark:text-slate-400 text-white font-semibold">
                     {tools.map((t:string, i:number) => (
                      <div key={t} className='flex flex-row gap-4'>
                         <p key={t}>{t}</p>

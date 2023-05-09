@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 
-
 body{
-    @apply dark:bg-slate-700 bg-white h-full overflow-x-hidden dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-lg scrollbar-thin scrollbar-track-[#DDD0C8] scrollbar-thumb-gray-500;
+    @apply dark:from-teal-950 dark:via-slate-800 dark:to-slate-700 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-500 via-purple-500 to-blue-500 bg-no-repeat bg-fixed min-h-[100vh] overflow-x-hidden scroll-smooth dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-lg scrollbar-thin scrollbar-track-[#DDD0C8] scrollbar-thumb-gray-500;
 }
 
 #__next{
-    @apply h-full w-full;
+    @apply min-h-[100vh] w-full;
 }
 
 html{
-    @apply h-full w-full;
+    @apply w-full h-full box-border;
 }
 
-/* *{
-    border: 1px solid red
-} */
+*{
+    box-sizing: inherit;
+    /* border: 1px solid red;  */
+}

@@ -13,10 +13,10 @@ const Projects = () => {
     },[]); 
 
     return (
-        <div id="projects" className="px-20">
+        <section id="projects" className="flex flex-col gap-20 lg:mb-72">
             <Heading title="Projects"/>
-            <div className="flex items-center justify-center flex-col gap-20">
-                <div className="grid lg:grid-cols-[250px_minmax(250px,_2fr)] grid-cols-1 items-center justify-center gap-20">
+            <div className="flex items-center justify-center flex-col w-full self-center gap-32">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 self-center items-center justify-center gap-20">
                     <ProjectCard 
                         title="Netflix Website - Clone"
                         text="A simple Netflix Website clone built with Next.js, Tailwind Css and MongoDB"
@@ -47,14 +47,14 @@ const Projects = () => {
                     />
                 </div>
                 <div className="flex items-center justify-center">
-                    <button className="flex flex-col items-center dark:text-teal-400 dark:hover:text-white hover:text-slate-400 text-slate-700 text-xl cursor-pointer font-semibold"  onClick={toogleChanllenges}>
+                    <button className="flex flex-col items-center dark:text-teal-400 dark:hover:text-white hover:text-slate-400 text-white text-xl cursor-pointer font-semibold"  onClick={toogleChanllenges}>
                         Challenges
                         <IoIosArrowDown size={40}className={`${showChallenges && 'rotate-180'}`}/>
                     </button>
                 </div>
                 {showChallenges &&
                 
-                <div className="grid lg:grid-cols-[250px_minmax(250px,_2fr)] grid-cols-1 items-center justify-center gap-20">
+                <div className="grid 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 items-center justify-center gap-20">
                     <ProjectCard 
                         title="News Home page  - Frontend Challenges"
                         text=""
@@ -80,7 +80,7 @@ const Projects = () => {
                 }
             </div>
             
-        </div>
+        </section>
     );
 }
 
