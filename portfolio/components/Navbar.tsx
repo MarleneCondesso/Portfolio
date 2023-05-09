@@ -2,7 +2,6 @@ import { FC } from "react";
 import { AiOutlineDownload } from 'react-icons/ai';
 import NavbarItem from "./NavbarItem";
 import NavbarTheme from "./NavbarTheme";
-import Popup from "./Popup";
 import { Popover, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 
