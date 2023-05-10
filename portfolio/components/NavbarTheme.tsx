@@ -16,7 +16,7 @@ const NavbarTheme: FC<NavbarThemeProps> = ( { onTheme, theme} ) => {
         <div className="right-4
                         bg-white
                         opacity-60
-                        p-2
+                        p-1
                         dark:bg-teal-800
                         dark:bg-opacity-60
                         rounded-xl

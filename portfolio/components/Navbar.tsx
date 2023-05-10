@@ -132,8 +132,7 @@ const Navbar: FC<NavbarProps> =  ({
                                     cursor-pointer
                                     lg:flex-row
                                     font-semibold
-                                    2xl:text-2xl
-                                    xl:text-xl
+                                    xl:text-lg
                                     lg:text-lg`}
                             >
                                 <span>Preview CV</span>
