@@ -90,10 +90,9 @@ const Experience = () => {
                                 
                                 hover:text-black
                                 dark:hover:text-teal-200
-                                2xl:text-2xl
-                                text-white
                                 xl:text-xl
-                                lg:text-lg
+                                text-white
+                                md:text-lg
                                 h-12 
                                 xl:w-80
                                 w-64
@@ -129,7 +128,6 @@ const Experience = () => {
                                         underline-offset-[12px]
                                         focus:underline
                                         focus:text-slate-900
-                                        2xl:text-xl
                                         xl:text-lg
                                         lg:text-base
                                         font-semibold
@@ -150,9 +148,8 @@ const Experience = () => {
                             hover:text-slate-800
                             dark:hover:text-teal-200
                             text-white
-                            2xl:text-2xl
                             xl:text-xl
-                            lg:text-lg
+                            md:text-lg
                             pb-8
                             pl-8
                             h-12 
@@ -181,9 +178,8 @@ const Experience = () => {
                                 scrollbar-thin
                                 scrollbar-track-[#DDD0C8] 
                                 scrollbar-thumb-gray-500
-                                2xl:text-xl
-                                xl:text-lg
-                                lg:text-base
+                                xl:text-xl
+                                md:text-lg
                                 text-md
                                 py-6
                                 font-semibold"
@@ -291,11 +287,12 @@ const Experience = () => {
                             justify-between 
                             dark:text-white 
                             text-slate-700
+                            text-base
                             p-4
                             ${showInfo === 'upn' ? 'flex' : 'hidden'}`}
                         >
-                            <div className="grid grid-cols-1 gap-4 2xl:text-2xl xl:text-xl lg:text-lg md:text-base">
-                                <h2 className="font-semibold xl:text-2xl lg:text-xl md:text-lg h-auto">UPN - União de Produtores Hortículas do Norte, LDA</h2>
+                            <div className="grid grid-cols-1 gap-4 lg:text-lg md:text-base">
+                                <h2 className="font-semibold lg:text-xl md:text-lg h-auto">UPN - União de Produtores Hortículas do Norte, LDA</h2>
                                 <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-white dark:text-teal-400">
                                     <div className="flex flex-row gap-1">
                                         <p>Agricultural producer</p>
@@ -309,7 +306,7 @@ const Experience = () => {
                                 </div>
                             </div>
 
-                            <ul className="flex flex-col gap-2 items-start justify-center xl:text-xl lg:text-lg md:text-base">
+                            <ul className="flex flex-col gap-2 items-start justify-center lg:text-lg md:text-base">
                                 <li>
                                     <p className="flex flex-row items-center justify-center gap-2">
                                         <MdArrowForwardIos />
@@ -343,10 +340,10 @@ const Experience = () => {
 
                         </div>
 
-                        <div className={`flex h-full justify-between flex-col gap-8 p-4 dark:text-white text-slate-700 self-start xl:text-xl lg:text-lg md:text-base
+                        <div className={`flex h-full justify-between flex-col gap-8 p-4 dark:text-white text-slate-700 self-start text-base
                         ${showInfo === 'bvf' ? 'flex' : 'hidden'}`}>
                                 <div className="grid grid-cols-1 gap-4">
-                                    <h2 className="font-semibold xl:text-2xl lg:text-xl md:text-lg">Bombeiros Voluntários de Fão</h2>
+                                    <h2 className="font-semibold lg:text-xl md:text-lg">Bombeiros Voluntários de Fão</h2>
                                     <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-white dark:text-teal-400 ">
                                         <div className="flex flex-row gap-2">
                                             <p>Forest security assistent</p>
@@ -398,7 +395,7 @@ const Experience = () => {
                             ${showInfo === 'e2000' ? 'flex' : 'hidden'}`}
                         >
                             <div className="grid grid-cols-1 gap-4">
-                                <h2 className="font-semibold xl:text-2xl lg:text-xl md:text-lg">Esposende 2000</h2>
+                                <h2 className="font-semibold lg:text-xl md:text-lg">Esposende 2000</h2>
                                 <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-white dark:text-teal-400">
                                     <div className="flex flex-row gap-2">
                                         <p>Assistant in the organization of <br></br>sports and recreational activities</p>
@@ -449,12 +446,12 @@ const Experience = () => {
                             gap-8 
                             p-4 
                             dark:text-white 
-                            xl:text-xl lg:text-lg md:text-base
+                            text-base
                             text-slate-700
                             ${showInfo === 'fm' ? 'flex' : 'hidden'}`}
                         >
                             <div className="grid grid-cols-1 gap-4">
-                                <h2 className="font-semibold xl:text-2xl lg:text-xl md:text-lg">FM Têxteis S.A.</h2>
+                                <h2 className="font-semibold lg:text-xl md:text-lg">FM Têxteis S.A.</h2>
                                 <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-white dark:text-teal-400">
                                     <div className="flex flex-row gap-2">
                                         <p>Textile machine operator</p>
@@ -501,11 +498,11 @@ const Experience = () => {
                             text-slate-700
                             dark:text-white 
                             text-slate
-                            xl:text-xl lg:text-lg md:text-base
+                            text-base
                             ${showInfo === 'dh' ? 'flex' : 'hidden'}`}
                         >
                             <div className="grid grid-cols-1 gap-8">
-                                <h2 className="font-semibold xl:text-2xl lg:text-xl md:text-lg">Dolores Hipólito, Unipessoal, LDA</h2>
+                                <h2 className="font-semibold lg:text-xl md:text-lg">Dolores Hipólito, Unipessoal, LDA</h2>
                                 <div className="flex xl:flex-row lg:flex-col md:flex-row flex-col gap-2 font-semibold text-white dark:text-teal-400">
                                     <div className="flex flex-row gap-2">
                                         <p>Textile machine operator</p>
@@ -546,11 +543,11 @@ const Experience = () => {
                             p-4 
                             dark:text-white 
                             text-slate-700
-                            xl:text-xl lg:text-lg md:text-base
+                            text-base
                             ${showInfo === 'n4' ? 'flex' : 'hidden'}`}
                         >
                             <div className="grid grid-cols-1 gap-4">
-                                <h2 className="font-semibold xl:text-2xl lg:text-xl md:text-lg">N4IT Software</h2>
+                                <h2 className="font-semibold lg:text-xl md:text-lg">N4IT Software</h2>
                                 <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 text-white font-semibold dark:text-teal-400">
                                     <div className="flex flex-row gap-2">
                                         <p>Web developer</p>

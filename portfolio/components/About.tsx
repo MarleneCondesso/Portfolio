@@ -47,9 +47,7 @@ const About = () => {
                         <img src="/images/profile.jpg" alt="profile-hero"
                             className="
                             2xl:max-h-80 
-                            lg:max-h-72
-                            md:max-h-64 
-                            sm:max-h-64
+                            sm:max-h-72
                             max-h-36
                             z-10  
                             rounded-md 
@@ -64,7 +62,10 @@ const About = () => {
                             dark:border-slate-800
                             h-full 
                             w-full 
-                            xl:max-h-[30rem] 
+                            2xl:max-h-80
+                            lg:max-h-72
+                            md:max-h-64 
+                            sm:max-h-64
                             max-h-36
                             top-4
                             left-4
@@ -118,7 +119,7 @@ const About = () => {
                     </div>
                     <span className="text-slate-700 dark:text-teal-400 text-[10px] md:text-base">* ISEP - Instituto Superior de Engenharia do Porto</span>
                     <div className="mt-8 gap-3 flex flex-col items-center">
-                        <h2 className="font-semibold text-slate-900 md:text-xl text-base text-center">{subTitleAboutMe}</h2>
+                        <h2 className="font-semibold text-slate-900 md:text-2xl text-base text-center">{subTitleAboutMe}</h2>
                         <p className="text-white items-center flex max-w-xl text-justify text-xs md:text-base 2xl:leading-loose xl:leading-loose lg:leading-loose md:leading-loose sm:leading-loose leading-loose mb-4">
                             Hi! My name is Marlene Condesso and i am a Web Developer. My first time coding was in 2020, when I took my Course based on 'Agile Software Development'.<br></br>
                             After that, my passion on coding, my focus on creating new things, facing new challenges and my will to keep learning increased.<br></br>
