@@ -35,7 +35,7 @@ const NavbarSocial: FC<NavbarSocialProps> = ({ getTheme }
     return (
         <div className={`bottom-10 top-20 2xl:w-60 w-20 left-0 max-xl:hidden fixed ${!showNavbarSocial && 'hidden' }`}>
             <div className="flex flex-col h-full items-center justify-center">
-                <div className=" text-white dark:text-teal-400 xl:text-2xl font-semibold z-40 h-full flex items-center">
+                <div className=" text-white dark:text-teal-400 xl:text-xl font-semibold z-40 h-full flex items-center">
                     <div className="-rotate-90 flex z-40 hover:opacity-50 ">
                         <a href="mailto:marleneflima.official@gmail.com?">marleneflima.official@gmail.com</a>
                     </div>
