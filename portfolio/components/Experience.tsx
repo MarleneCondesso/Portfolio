@@ -129,7 +129,7 @@ const Experience = () => {
                                         focus:underline
                                         focus:text-slate-900
                                         xl:text-lg
-                                        lg:text-base
+                                        md:text-base
                                         font-semibold
                                         h-12
                                         w-48
@@ -178,8 +178,8 @@ const Experience = () => {
                                 scrollbar-thin
                                 scrollbar-track-[#DDD0C8] 
                                 scrollbar-thumb-gray-500
-                                xl:text-xl
-                                md:text-lg
+                                xl:text-lg
+                                md:text-base
                                 text-md
                                 py-6
                                 font-semibold"
@@ -190,7 +190,7 @@ const Experience = () => {
                                             hover:underline
                                             underline-offset-[12px]
                                             focus:underline
-                                            text-slate-500
+                                            text-slate-800
                                             dark:text-teal-200
                                             hover:text-slate-700
                                             focus:text-slate-700
@@ -206,7 +206,7 @@ const Experience = () => {
                                             hover:underline
                                             underline-offset-[12px]
                                             focus:underline
-                                            text-slate-500
+                                            text-slate-800
                                             dark:text-teal-200
                                             hover:text-slate-700
                                             focus:text-slate-700
@@ -222,7 +222,7 @@ const Experience = () => {
                                             hover:underline
                                             underline-offset-[12px]
                                             focus:underline
-                                            text-slate-500
+                                            text-slate-800
                                             dark:text-teal-200
                                             hover:text-slate-700
                                             focus:text-slate-700
@@ -238,7 +238,7 @@ const Experience = () => {
                                             hover:underline
                                             underline-offset-[12px]
                                             focus:underline
-                                            text-slate-500
+                                            text-slate-800
                                             dark:text-teal-200
                                             hover:text-slate-700
                                             focus:text-slate-700
@@ -254,7 +254,7 @@ const Experience = () => {
                                             hover:underline
                                             underline-offset-[12px]
                                             focus:underline
-                                            text-slate-500
+                                            text-slate-800
                                             dark:text-teal-200
                                             hover:text-slate-700
                                             focus:text-slate-700
@@ -306,7 +306,7 @@ const Experience = () => {
                                 </div>
                             </div>
 
-                            <ul className="flex flex-col gap-2 items-start justify-center lg:text-lg md:text-base">
+                            <ul className="flex flex-col gap-2 items-start justify-center">
                                 <li>
                                     <p className="flex flex-row items-center justify-center gap-2">
                                         <MdArrowForwardIos />
@@ -390,7 +390,7 @@ const Experience = () => {
                             gap-8 
                             p-4 
                             dark:text-white
-                            lg:text-xl md:text-lg
+                            text-base
                             text-slate-700 
                             ${showInfo === 'e2000' ? 'flex' : 'hidden'}`}
                         >
