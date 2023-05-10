@@ -71,7 +71,7 @@ const Navbar: FC<NavbarProps> =  ({
                     {showBackgroundNav ?
                         <img src={`${theme === 'dark' ? '/images/logoDarkTab.png' : '/images/logoWhite.png'} `} className="h-16 left-8 fixed top-1" />
                         :
-                        <p className="text-white fixed left-8 top-7 dark:text-teal-200 2xl:text-2xl xl:text-xl lg:text-lg"> Marlene Condesso</p>
+                        <p className="text-white fixed left-8 top-7 dark:text-teal-200 xl:text-lg lg:text-base"> Marlene Condesso</p>
                     }
                 </div>
                 <div className="

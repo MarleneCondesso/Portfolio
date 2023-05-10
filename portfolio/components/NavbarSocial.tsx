@@ -42,36 +42,36 @@ const NavbarSocial: FC<NavbarSocialProps> = ({ getTheme }
                 </div>
                 <div className="flex flex-col gap-10 2xl:gap-20 h-full items-center">
                     <div className="bg-white dark:bg-teal-400 h-full w-1 z-0 "></div>
-                    <div className="flex flex-col text-[#DDD0C8] gap-8 bg-slate-700 p-1 rounded-lg  z-40 dark:bg-slate-600">
+                    <div className="flex flex-col text-[#DDD0C8] gap-8 bg-slate-700 p-3 rounded-lg z-40 dark:bg-slate-600">
                         <div onClick={() => window.open('https://github.com/MarleneCondesso', '_blank')}
                             className="
-                    w-10
-                    h-10
-                    rounded-full
-                    flex
-                    items-center
-                    justify-center
-                    cursor-pointer
-                    hover:opacity-50
-                    transition
-                    dark:text-teal-400
-                    text-white"
+                            w-5
+                            h-5
+                            rounded-full
+                            flex
+                            items-center
+                            justify-center
+                            cursor-pointer
+                            hover:opacity-50
+                            transition
+                            dark:text-teal-400
+                            text-white"
                         >
                             <FaGithub size={30} />
                         </div>
                         <div onClick={() => window.open('https://www.linkedin.com/in/marlene-lima-418b0b22b/', '_blank')}
                             className="
-                    h-10
-                    w-10
-                    rounded-full
-                    flex
-                    items-center
-                    justify-center
-                    cursor-pointer
-                    hover:opacity-50
-                    transition
-                    dark:text-teal-400
-                    text-white"
+                            h-5
+                            w-5
+                            rounded-full
+                            flex
+                            items-center
+                            justify-center
+                            cursor-pointer
+                            hover:opacity-50
+                            transition
+                            dark:text-teal-400
+                            text-white"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
