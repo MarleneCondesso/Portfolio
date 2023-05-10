@@ -19,7 +19,7 @@ const TechnicalSkills = () => {
     const [colorGit, setColorGit] = useState('#f8fafc');
 
     return (
-        <section className="flex gap-32 flex-col lg:mb-44" id="about">
+        <section className="flex gap-32 flex-col mb-44" id="about">
             <Heading title="Technical Skills"/>
             <div className="
                 grid 

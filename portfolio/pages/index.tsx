@@ -16,7 +16,6 @@ export default function Home() {
 
   const [goToInitial, setGoToInitial] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
-
   const [previewCV, setPreviewCV ] = useState(false);
 
   const [variantMenu, setVariantMenu] = useState(false);
@@ -64,7 +63,27 @@ export default function Home() {
     }
   }, []);
 
+  useEffect(() => {
 
+
+    const handleScreenSize = () => {
+
+        let lastScreenYSize = window.innerHeight;
+        let lastScreenXSize = window.innerWidth;
+        if (lastScreenYSize <= 900 || lastScreenXSize <= 1550) {
+            //setShowNavbarSocial(false);
+        } else {
+            //setShowNavbarSocial(true);
+        }
+    }
+
+    window.addEventListener('resize', handleScreenSize);
+
+    return () => {
+        window.removeEventListener('resize', handleScreenSize);
+    }
+
+}, []);
 
   const downloadCV = () => {
     const fileUrl = "/files/CVMarleneLima.pdf";
@@ -117,7 +136,7 @@ export default function Home() {
         <Navbar onTheme={(res) => { setTheme(res); }} showBackgroundNav={showBackground} hiddenNav={variantMenu} theme={theme!} onDownloadCV={downloadCV} />
         <NavbarMobile showBackgroundNav={showBackground} onDownloadCV={downloadCV} theme={theme!} onTheme={(res) => setTheme(res)} hiddenNav={variantMenu} />
       </header>
-      <div className='gap-10 flex flex-col'>
+      <div className='gap-20 grid flex-col'>
         <Billboard />
         <About />
         <Experience />

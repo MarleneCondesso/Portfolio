@@ -31,7 +31,7 @@ const Experience = () => {
 
 
     return (
-        <section className="xl:h-screen md:gap-32 flex flex-col " id="about">
+        <section className="gap-32 mb-44 flex flex-col " id="about">
             <Heading title="Experience" />
                 <div className="
                     2xl:w-[100%]

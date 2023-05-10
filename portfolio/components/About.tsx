@@ -19,7 +19,7 @@ const About = () => {
     }
     
     return (
-        <section id="about" className="2xl:h-screen 2xl:mb-80 mb-0 flex flex-col md:gap-20">
+        <section id="about" className="mb-44 flex flex-col gap-32">
             <Heading title="About me" />
             <div className="grid grid-cols-1 
                             xl:grid-cols-2 
