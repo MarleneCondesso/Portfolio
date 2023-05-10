@@ -77,7 +77,7 @@ const About = () => {
                 </div>
 
                 <div className="flex flex-col items-center justify-center">
-                    <div className="flex flex-row items-center text-white justify-between mb-3 gap-10 2xl:text-2xl xl:text-lg lg:text-lg md:text-base sm:text-base text-xs">
+                    <div className="flex flex-row items-center text-white justify-between mb-3 gap-10 lg:text-lg md:text-base sm:text-base text-xs">
                         <div className="flex flex-row gap-3 text-white font-medium">
                             <div className="flex flex-col gap-6">
                                 <div className="flex gap-4 items-center">
@@ -117,10 +117,10 @@ const About = () => {
                             <p>Porto, Portugal</p>
                         </div>
                     </div>
-                    <span className="text-slate-700 dark:text-teal-400 text-[10px] 2xl:text-lg lg:text-lg md:text-base">* ISEP - Instituto Superior de Engenharia do Porto</span>
+                    <span className="text-slate-700 dark:text-teal-400 text-[10px] md:text-base">* ISEP - Instituto Superior de Engenharia do Porto</span>
                     <div className="mt-8 gap-3 flex flex-col items-center">
-                        <h2 className="font-semibold text-slate-900  2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-xl text-base text-center">{subTitleAboutMe}</h2>
-                        <p className="text-white items-center flex max-w-xl text-justify text-xs md:text-lg lg:text-lg xl:text-lg 2xl:leading-loose xl:leading-loose lg:leading-loose md:leading-loose sm:leading-loose leading-loose mb-4">
+                        <h2 className="font-semibold text-slate-900 md:text-xl text-base text-center">{subTitleAboutMe}</h2>
+                        <p className="text-white items-center flex max-w-xl text-justify text-xs md:text-base 2xl:leading-loose xl:leading-loose lg:leading-loose md:leading-loose sm:leading-loose leading-loose mb-4">
                             Hi! My name is Marlene Condesso and i am a Web Developer. My first time coding was in 2020, when I took my Course based on 'Agile Software Development'.<br></br>
                             After that, my passion on coding, my focus on creating new things, facing new challenges and my will to keep learning increased.<br></br>
                             I can title myself as a baby on tech area, after all i only had one experience as a web developer.
@@ -136,10 +136,10 @@ const About = () => {
                             dark:hover:bg-teal-500
                             dark:hover:text-slate-100
                             font-bold
-                            lg:w-40 
-                            lg:h-16 
+                            lg:w-28 
+                            lg:h-12 
                             lg:rounded-xl
-                            2xl:text-xl
+                            2xl:text-lg
                             md:w-32 
                             md:h-12 
                             sm:w-24 
