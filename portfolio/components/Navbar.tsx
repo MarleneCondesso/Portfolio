@@ -1,15 +1,9 @@
-import { FC } from "react";
 import { AiOutlineDownload } from 'react-icons/ai';
 import NavbarItem from "./NavbarItem";
 import NavbarTheme from "./NavbarTheme";
-import { Popover, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react'
-
-import { Document, Page, pdfjs } from 'react-pdf'
-import pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
-
-pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
-
+import { Popover, Transition } from '@headlessui/react';
+import { Fragment, useState, FC } from 'react';
+import { Document, Page, pdfjs } from "react-pdf";
 
 interface NavbarProps {
 
@@ -21,7 +15,7 @@ interface NavbarProps {
 }
 
 
-const Navbar: FC<NavbarProps> = ({
+const Navbar: FC<NavbarProps> =  ({
     showBackgroundNav,
     hiddenNav,
     theme,
@@ -31,10 +25,11 @@ const Navbar: FC<NavbarProps> = ({
 
     const [pages, setPages] = useState(null);
 
-    const onDocumentLoadSuccess = ({ numPages }) => {
-        setPages(numPages);
+    const onDocumentLoadSuccess = (e: any) => {
+        setPages(e);
     }
-
+    
+    pdfjs.GlobalWorkerOptions.workerSrc =`//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
     return (
         <>
@@ -110,6 +105,10 @@ const Navbar: FC<NavbarProps> = ({
                                 className={`
                                     ${open ? '' : 'text-opacity-90'}
                                     text-slate-800 
+                                    focus-visible:outline-none
+                                    dark:focus:underline-offset-8
+                                    dark:focus:underline
+                                    dark:focus:text-teal-200
                                     hover:text-white 
                                     dark:text-white 
                                     dark:hover:text-teal-200 
@@ -126,8 +125,8 @@ const Navbar: FC<NavbarProps> = ({
                                     lg:h-[5%]
                                     rounded-md
                                     items-center
-                                    justify-center
-                                    gap-2
+                                    justify-center                     
+                                    gap-2 
                                     transition
                                     duration-75
                                     cursor-pointer
@@ -154,7 +153,7 @@ const Navbar: FC<NavbarProps> = ({
                                         <button className='bg-white bg-opacity-25 w-44 h-16 text-slate-800 font-semibold text-xl rounded-xl flex flex-row items-center justify-center gap-2' onClick={onDownloadCV}>Download <AiOutlineDownload size={20} /></button>
                                     </div>
                                     <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-auto scroll-smooth max-h-[800px] dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-lg scrollbar-thin scrollbar-track-[#DDD0C8] scrollbar-thumb-gray-500 w-full h-full mt-40">
-                                        <Document file="/files/CVMarleneLima.pdf" onLoadSuccess={onDocumentLoadSuccess} onLoadError={console.error}>
+                                        <Document file="/files/CVMarleneLima.pdf" onLoadSuccess={(e) => onDocumentLoadSuccess(e)} onLoadError={console.error}>
                                             {Array.from(new Array(pages), (el, index) => (
                                                 <Page key={`page_${index + 1}`} pageNumber={index + 1} width={typeof window !== 'undefined' &&  window.innerWidth > 1000 ? 900 : 700 }/>
                                             ))}

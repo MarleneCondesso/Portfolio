@@ -46,6 +46,7 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/jquery": "^3.5.16",
+    "@types/pdfjs-dist": "^2.10.378",
     "@types/react-pdf": "^6.2.0",
     "@types/react-router-hash-link": "^2.4.6",
     "autoprefixer": "^10.4.14",

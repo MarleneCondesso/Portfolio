@@ -9,9 +9,7 @@ import NavbarTheme from "./NavbarTheme";
 import pages from "@/pages";
 import { Popover, Transition } from "@headlessui/react";
 import { Document, Page, pdfjs } from 'react-pdf'
-import pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
 
-pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 interface NavbarMobileProps {
     showBackgroundNav: boolean;
@@ -30,6 +28,8 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
     onDownloadCV,
     onTheme
 }) => {
+
+    pdfjs.GlobalWorkerOptions.workerSrc =`//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
     const [variantMobileMenuContent, setVariantMobileMenuContent] = useState(false);
 
@@ -65,18 +65,18 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
     useEffect(() => {
 
         if (variantMobileMenuContent) {
-            document.body.classList.add('overflow-hidden');
+            document.body.classList.add('overflow-y-hidden');
 
         } else {
-            document.body.classList.remove('overflow-hidden');
+            document.body.classList.remove('overflow-y-hidden');
         }
 
 
     }, [variantMobileMenuContent]);
 
 
-    const onDocumentLoadSuccess = ({ numPages }) => {
-        setPages(numPages);
+    const onDocumentLoadSuccess = (e: any) => {
+        setPages(e.numPages);
     }
 
     return (
@@ -120,7 +120,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                     <FiMenu size={30} />
                 </div>
                 :
-                <div className={`${!variantMobileMenuContent ? 'translate-x-80' : 'translate-x-0 overflow-hidden'}
+                <div className={`${!variantMobileMenuContent ? 'translate-x-80' : 'translate-x-0'}
                         w-full
                         h-full
                         lg:hidden
@@ -180,7 +180,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                                                 <button className='bg-white bg-opacity-25 w-44 h-16 text-slate-800 font-semibold text-xl rounded-xl flex flex-row items-center justify-center gap-2' onClick={onDownloadCV}>Download <AiOutlineDownload size={20} /></button>
                                             </div>
                                             <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-scroll scroll-smooth max-h-[800px] dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-lg scrollbar-thin scrollbar-track-[#DDD0C8] scrollbar-thumb-gray-500 w-full h-full mt-40">
-                                                <Document file="/files/CVMarleneLima.pdf" onLoadSuccess={onDocumentLoadSuccess} onLoadError={console.error}>
+                                                <Document file="/files/CVMarleneLima.pdf" onLoadSuccess={(e: any) => onDocumentLoadSuccess(e)}>
                                                     {Array.from(new Array(pages), (el, index) => (
                                                         <Page key={`page_${index + 1}`} pageNumber={index + 1} width={typeof window !== 'undefined' && window.innerWidth > 700 ? 900 : 400} />
                                                     ))}
