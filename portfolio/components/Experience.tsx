@@ -244,7 +244,7 @@ const Experience = () => {
                                             focus:text-slate-700
                                             dark:hover:text-white
                                             dark:focus:text-white
-                                            w-64"
+                                            w-80"
                                         >
                                             Bombeiros Voluntário de Fão
                                         </button>
@@ -390,7 +390,7 @@ const Experience = () => {
                             gap-8 
                             p-4 
                             dark:text-white
-                            xl:text-xl lg:text-lg md:text-base
+                            lg:text-xl md:text-lg
                             text-slate-700 
                             ${showInfo === 'e2000' ? 'flex' : 'hidden'}`}
                         >
