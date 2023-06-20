@@ -23,7 +23,7 @@ const About = () => {
             <Heading title="About me" />
             <div className="grid grid-cols-1 
                             xl:grid-cols-2 
-                            gap-20 
+                            gap-28 
                             items-center 
                             justify-center 
                             self-center 
