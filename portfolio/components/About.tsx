@@ -36,9 +36,9 @@ const About = () => {
                             2xl:rounded-tr-[10rem] 
                             2xl:rounded-tl-[15rem] 
                             2xl:rounded-bl-[10rem] 
-                            2xl:rounded-br-[20rem] 
+                            2xl:rounded-br-[15rem] 
                             lg:rounded-tr-[10rem] 
-                            lg:rounded-bl-[20rem]
+                            lg:rounded-bl-[15rem]
                             rounded-t-[5rem]
                             rounded-b-[5rem] ">
                 <div className="flex h-auto justify-center items-center w-full pt-10">
