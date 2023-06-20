@@ -23,18 +23,18 @@ const About = () => {
             <Heading title="About me" />
             <div className="grid grid-cols-1 
                             xl:grid-cols-2 
-                            gap-28 
+                            gap-32 
                             items-center 
                             justify-center 
                             self-center 
                             bg-white 
                             dark:bg-slate-500 
                             dark:bg-opacity-25 
-                            lg:p-14
+                            lg:p-20
                             p-6 
                             bg-opacity-25 
                             2xl:rounded-tr-[10rem] 
-                            2xl:rounded-tl-[20rem] 
+                            2xl:rounded-tl-[15rem] 
                             2xl:rounded-bl-[10rem] 
                             2xl:rounded-br-[20rem] 
                             lg:rounded-tr-[10rem] 
