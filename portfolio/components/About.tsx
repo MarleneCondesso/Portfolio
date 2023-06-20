@@ -77,7 +77,7 @@ const About = () => {
                 </div>
 
                 <div className="flex flex-col items-center justify-center">
-                    <div className="flex flex-row items-center text-white justify-between mb-3 gap-10 lg:text-base md:text-base sm:text-base text-xs">
+                    <div className="flex flex-row items-center text-white justify-between mb-3 gap-10 text-xs">
                         <div className="flex flex-row gap-3 text-white font-medium">
                             <div className="flex flex-col gap-6">
                                 <div className="flex gap-4 items-center">
