@@ -30,7 +30,7 @@ const About = () => {
                             bg-white 
                             dark:bg-slate-500 
                             dark:bg-opacity-25 
-                            lg:p-28
+                            lg:p-14
                             p-6 
                             bg-opacity-25 
                             2xl:rounded-tr-[10rem] 
