@@ -9,8 +9,8 @@ const Billboard = () => {
         <section className='flex flex-col justify-center h-96 items-start mb-60 xl:h-screen' ref={registerSection('home')} id='home'>
             <div className="flex flex-row justify-between items-center">
                 <div className='flex flex-col gap-2'>
-                    <h1 className='2xl:text-6xl xl:text-5xl text-3xl text-white font-semibold'>{label}</h1>
-                    <h2 className="text-xl xl:text-4xl 2xl:text-4xl gap-5 text-slate-700 font-semibold dark:text-teal-200">
+                    <h1 className='2xl:text-4xl xl:text-2xl text-xl text-white font-semibold'>{label}</h1>
+                    <h2 className="text-lg xl:text-xl 2xl:text-2xl gap-5 text-slate-700 font-semibold dark:text-teal-200">
                         <Typewriter
                             options={{
                                 strings: [

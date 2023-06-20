@@ -23,17 +23,17 @@ const Contact: FC<ContactProps> = ({
             <div className='flex flex-col items-center h-full justify-center'>
                 <h1 className="
                 font-extrabold 
-                text-5xl 
-                max-sm:text-3xl 
-                max-md:text-4xl 
-                xl:text-9xl
-                lg:text-6xl
+                text-3xl 
+                max-sm:text-2xl 
+                max-md:text-3xl 
+                xl:text-5xl
+                lg:text-4xl
                 text-white 
                 dark:text-teal-400"
                 >
                     SAY HI!
                 </h1>
-                <div className="py-16 dark:text-white text-slate-700 xl:text-2xl lg:text-lg text-base lg:w-[50%] md:w-[70%] text-justify">
+                <div className="py-16 dark:text-white text-slate-700 xl:text-lg lg:text-base text-xs lg:w-[50%] md:w-[70%] text-justify">
                     <p>
                         I'm currently looking for any new opportunities and new challenges to improve my skills, my inbox is always open. I’ll try my best to get back to you!
                     </p>
@@ -84,7 +84,7 @@ const Contact: FC<ContactProps> = ({
                     font-semibold
                     gap-3"
                     >
-                        <FcGoogle size={25} />
+                        <FcGoogle size={20} />
                     </button>
                 </div>
                 <div className="p-20 flex flex-row gap-5 text-white dark:text-teal-400">
@@ -100,7 +100,7 @@ const Contact: FC<ContactProps> = ({
                     hover:opacity-50
                     transition"
                     >
-                        <SiCodepen size={40} />
+                        <SiCodepen size={35} />
                     </div>
                     <div onClick={() => window.open('https://github.com/MarleneCondesso', '_blank')}
                         className="
@@ -114,7 +114,7 @@ const Contact: FC<ContactProps> = ({
                     hover:opacity-50
                     transition"
                     >
-                        <FaGithub size={40} />
+                        <FaGithub size={35} />
                     </div>
                     <div onClick={() => window.open('https://www.linkedin.com/in/marlene-lima-418b0b22b/', '_blank')}
                         className="

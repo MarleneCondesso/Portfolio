@@ -47,7 +47,7 @@ const Projects = () => {
                     />
                 </div>
                 <div className="flex items-center justify-center">
-                    <button className="flex flex-col items-center dark:text-teal-400 dark:hover:text-white hover:text-slate-400 text-white text-xl cursor-pointer font-semibold"  onClick={toogleChanllenges}>
+                    <button className="flex flex-col items-center dark:text-teal-400 dark:hover:text-white hover:text-slate-400 text-white text-lg cursor-pointer font-semibold"  onClick={toogleChanllenges}>
                         Challenges
                         <IoIosArrowDown size={40}className={`${showChallenges && 'rotate-180'}`}/>
                     </button>

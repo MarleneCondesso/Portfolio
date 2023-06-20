@@ -60,7 +60,7 @@ const Navbar: FC<NavbarProps> =  ({
             >
                 <div className={`
                     hidden
-                    text-xl  
+                    text-lg  
                     lg:px-8
                     lg:flex
                     px-6
@@ -132,8 +132,8 @@ const Navbar: FC<NavbarProps> =  ({
                                     cursor-pointer
                                     lg:flex-row
                                     font-semibold
-                                    xl:text-lg
-                                    lg:text-lg`}
+                                    xl:text-base
+                                    lg:text-base`}
                             >
                                 <span>Preview CV</span>
 
@@ -149,7 +149,7 @@ const Navbar: FC<NavbarProps> =  ({
                             >
                                 <Popover.Panel className="absolute left-1/2 top-24 z-10 mt-3 w-auto h-[40rem] -translate-x-1/2 transform px-4 sm:px-0 flex items-center justify-center">
                                     <div className='fixed top-0 mb-10'>
-                                        <button className='bg-white bg-opacity-25 w-44 h-16 text-slate-800 font-semibold text-xl rounded-xl flex flex-row items-center justify-center gap-2' onClick={onDownloadCV}>Download <AiOutlineDownload size={20} /></button>
+                                        <button className='bg-white bg-opacity-25 w-44 h-16 text-slate-800 font-semibold text-base rounded-xl flex flex-row items-center justify-center gap-2' onClick={onDownloadCV}>Download <AiOutlineDownload size={20} /></button>
                                     </div>
                                     <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-auto scroll-smooth max-h-[800px] dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-lg scrollbar-thin scrollbar-track-[#DDD0C8] scrollbar-thumb-gray-500 w-full h-full mt-40">
                                         <Document file="/files/CVMarleneLima.pdf" onLoadSuccess={(e) => onDocumentLoadSuccess(e)} onLoadError={console.error}>

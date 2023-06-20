@@ -65,8 +65,8 @@ const NavbarItem: FC<NavbarItemProps> = ({
                 dark:lg:text-teal-200
                 dark:hover:text-white
                 dark:text-teal-400
-                xl:text-lg
-                lg:text-lg
+                xl:text-base
+                lg:text-xs
                 active:text-slate-800
                 hover:underline
                 focus:underline

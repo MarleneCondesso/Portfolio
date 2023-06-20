@@ -93,7 +93,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
             <div className={`
                     fixed
                     top-1
-                    text-xl  
+                    text-lg  
                     lg:py-6
                     lg:px-8
                     px-6
@@ -133,7 +133,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                 >
 
                     <IoClose size={36} className="cursor-pointer text-white dark:text-teal-400" onClick={toggleMobileMenu} />
-                    <div className="flex flex-col items-center justify-center h-full w-full gap-10 text-lg">
+                    <div className="flex flex-col items-center justify-center h-full w-full gap-10 text-base">
                         <NavbarItem trigger="home" to="#home" label="Home" onClick={toggleMobileMenu} />
                         <NavbarItem trigger="about" to="#about" label="About" onClick={toggleMobileMenu} />
                         <NavbarItem trigger="projects" to="#projects" label="Projects" onClick={toggleMobileMenu} />
@@ -177,7 +177,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                                     >
                                         <Popover.Panel className="absolute left-1/2 top-24 z-10 mt-3 w-auto h-[40rem] -translate-x-1/2 transform px-4 sm:px-0 flex items-center justify-center">
                                             <div className='fixed top-0 mb-10'>
-                                                <button className='bg-white bg-opacity-25 w-44 h-16 text-slate-800 font-semibold text-xl rounded-xl flex flex-row items-center justify-center gap-2' onClick={onDownloadCV}>Download <AiOutlineDownload size={20} /></button>
+                                                <button className='bg-white bg-opacity-25 w-44 h-16 text-slate-800 font-semibold text-lg rounded-xl flex flex-row items-center justify-center gap-2' onClick={onDownloadCV}>Download <AiOutlineDownload size={20} /></button>
                                             </div>
                                             <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-scroll scroll-smooth max-h-[800px] dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-lg scrollbar-thin scrollbar-track-[#DDD0C8] scrollbar-thumb-gray-500 w-full h-full mt-40">
                                                 <Document file="/files/CVMarleneLima.pdf" onLoadSuccess={(e: any) => onDocumentLoadSuccess(e)}>
