@@ -62,11 +62,11 @@ const About = () => {
                             dark:border-slate-800
                             h-full 
                             w-full 
-                            2xl:max-h-80
-                            lg:max-h-72
-                            md:max-h-64 
-                            sm:max-h-64
-                            max-h-36
+                            2xl:max-h-60
+                            lg:max-h-50
+                            md:max-h-50 
+                            sm:max-h-50
+                            max-h-26
                             top-4
                             left-4
                             rounded-md
