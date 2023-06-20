@@ -46,9 +46,9 @@ const About = () => {
                             animate-pulse-slow">
                         <img src="/images/profile.jpg" alt="profile-hero"
                             className="
-                            2xl:max-h-80 
-                            sm:max-h-72
-                            max-h-36
+                            2xl:max-h-60 
+                            sm:max-h-50
+                            max-h-26
                             z-10  
                             rounded-md 
                             relative 
