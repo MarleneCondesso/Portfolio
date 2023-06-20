@@ -13,7 +13,7 @@ const About = () => {
 
     const scrollTo = () => {
         window.scrollTo({
-            top: 6000,
+            top: 6500,
             behavior: 'smooth'
           })
     }
