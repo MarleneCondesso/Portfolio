@@ -55,8 +55,8 @@ const TechnicalSkills = () => {
                     <svg className="dark:fill-teal-200 dark:hover:fill-[url(#tailwindcss-original-wordmark-a)] w-60 h-40" viewBox="0 0 128 128" fill={colorTailwind} onMouseOver={() => { setColorTailwind("url(#tailwindcss-original-wordmark-a)") }} onMouseOut={() => setColorTailwind('#f8fafc')} >
                         <defs>
                             <linearGradient id="tailwindcss-original-wordmark-a" gradientUnits="userSpaceOnUse" x1="2.21" y1="511.596" x2="3.211" y2="511.596" gradientTransform="matrix(27.16757 5.6391 -9.3985 16.30055 4747.487 -8290.643)">
-                                <stop offset="0" stop-color="#2298bd" />
-                                <stop offset="1" stop-color="#0ed7b5" />
+                                <stop offset="0" stopColor="#2298bd" />
+                                <stop offset="1" stopColor="#0ed7b5" />
                             </linearGradient>
                         </defs>
                         <path d="M13.227 56.074c-3.528 0-5.727 1.778-6.602 5.301 1.324-1.773 2.875-2.426 4.625-1.977 1 .25 1.727.977 2.523 1.801 1.301 1.324 2.801 2.852 6.079 2.852 3.523 0 5.722-1.778 6.597-5.301-1.324 1.773-2.875 2.426-4.625 1.977-1-.25-1.722-.977-2.523-1.801-1.301-1.324-2.801-2.852-6.074-2.852zM6.602 64C3.074 64 .875 65.773 0 69.3c1.324-1.777 2.875-2.425 4.625-1.976 1 .25 1.727.977 2.523 1.801 1.301 1.324 2.801 2.852 6.079 2.852 3.523 0 5.722-1.778 6.597-5.301-1.324 1.773-2.875 2.426-4.625 1.972-1-.25-1.722-.972-2.523-1.796C11.398 65.523 9.898 64 6.602 64zm0 0" />
