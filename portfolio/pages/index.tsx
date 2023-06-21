@@ -44,14 +44,17 @@ export default function Home() {
 
   useEffect(() => {
     let lastSrollY = window.scrollY;
-    const handleScrollY = () => {
+    
+  
+     const handleScrollY = () => {
+   
       if (window.scrollY >= lastSrollY) {
-
         setVariantMenu(true);
 
       } else {
         setVariantMenu(false);
       }
+
 
       lastSrollY = window.scrollY;
     }
@@ -62,28 +65,6 @@ export default function Home() {
       window.removeEventListener('scroll', handleScrollY);
     }
   }, []);
-
-  useEffect(() => {
-
-
-    const handleScreenSize = () => {
-
-        let lastScreenYSize = window.innerHeight;
-        let lastScreenXSize = window.innerWidth;
-        if (lastScreenYSize <= 900 || lastScreenXSize <= 1550) {
-            //setShowNavbarSocial(false);
-        } else {
-            //setShowNavbarSocial(true);
-        }
-    }
-
-    window.addEventListener('resize', handleScreenSize);
-
-    return () => {
-        window.removeEventListener('resize', handleScreenSize);
-    }
-
-}, []);
 
   const downloadCV = () => {
     const fileUrl = "/files/CVMarleneLima.pdf";

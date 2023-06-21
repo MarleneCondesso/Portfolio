@@ -14,7 +14,7 @@ const Contact: FC<ContactProps> = ({
 
 
     return (
-        <section id="contact" className="mt-44
+        <section id="contact" className="lg:mt-44
             flex 
             flex-col 
             items-center 

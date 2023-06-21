@@ -12,7 +12,7 @@ body{
 }
 
 html{
-    @apply w-full h-full box-border;
+    @apply w-full h-full box-border scroll-smooth;
 }
 
 *{

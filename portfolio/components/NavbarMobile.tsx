@@ -134,10 +134,10 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
 
                     <IoClose size={36} className="cursor-pointer text-white dark:text-teal-400" onClick={toggleMobileMenu} />
                     <div className="flex flex-col items-center justify-center h-full w-full gap-10 text-base">
-                        <NavbarItem trigger="home" to="#home" label="Home" onClick={toggleMobileMenu} />
-                        <NavbarItem trigger="about" to="#about" label="About" onClick={toggleMobileMenu} />
-                        <NavbarItem trigger="projects" to="#projects" label="Projects" onClick={toggleMobileMenu} />
-                        <NavbarItem trigger="contact" to="#contact" label="Contact" onClick={toggleMobileMenu} />
+                        <NavbarItem trigger="home" to="home" label="Home" closeMenu={toggleMobileMenu} />
+                        <NavbarItem trigger="about" to="about" label="About" closeMenu={toggleMobileMenu} />
+                        <NavbarItem trigger="projects" to="projects" label="Projects" closeMenu={toggleMobileMenu} />
+                        <NavbarItem trigger="contact" to="contact" label="Contact" closeMenu={toggleMobileMenu} />
 
                         <Popover>
                             {({ open }) => (

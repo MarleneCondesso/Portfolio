@@ -1,64 +1,22 @@
-import { FC, useState } from "react";
-import { useActiveMenu } from "react-active-menu";
-import classNames from "classnames";
-import { useRef } from "react";
+import { FC } from "react";
 
-
-interface NavbarItemProps{
+interface NavbarItemProps {
     to: string;
     label: string;
     showBackground?: boolean;
-    onClick?: () => void;
+    closeMenu: () => void;
     trigger: string;
 }
 
 const NavbarItem: FC<NavbarItemProps> = ({
     to,
     label,
-    showBackground,
-    onClick,
+    closeMenu
 }) => {
 
-    const height = useState(typeof window !== 'undefined' && window.innerHeight);
-
-    const scrollToUp = () => {
-        if(to === '#home'){
-            scrollTo(0);
-        } else
-        if(to === '#about'){
-            if(parseInt(height.toString()) >= 1000) {
-                scrollTo(1590);
-            }else{ 
-                scrollTo(700);
-            }
-        } else
-        if(to === '#projects'){
-            if(parseInt(height.toString()) >= 1000) {
-                scrollTo(4900);
-            }else{ 
-                scrollTo(4000);
-            }
-            
-        } else
-        if(to === '#contact'){
-            if(parseInt(height.toString()) >= 1000) {
-                scrollTo(6000);
-            }else{ 
-                scrollTo(5500);
-            }
-            
-        }
-        
-      }
-    const scrollTo = (top: number) => {
-        window.scrollTo({
-            top: top,
-            behavior: 'smooth'
-          })
-    }
-    return(
-            <div>
-                <button type="button" onClick={() => {onClick!(); scrollToUp();}} 
+    return (
+        <div>
+            <a href={`#${to}`} type="button" onClick={() =>  closeMenu()}
                 className={`
                 text-white
                 hover:text-slate-800
@@ -81,10 +39,10 @@ const NavbarItem: FC<NavbarItemProps> = ({
                 cursor-pointer 
                 transition-shadow
                 lg:z-[1]`}
-                >
-                    {label}
-                </button> 
-            </div>
+            >
+                {label}
+            </a>
+        </div>
     );
 }
 
