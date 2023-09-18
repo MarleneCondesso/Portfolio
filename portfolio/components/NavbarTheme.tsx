@@ -14,7 +14,7 @@ const NavbarTheme: FC<NavbarThemeProps> = ({ onTheme, theme }) => {
     return (
 
         <div className="right-4 bg-white opacity-60 p-1 dark:bg-teal-800 dark:bg-opacity-60 rounded-xl flex duration-300 gap-4">
-            <button onClick={() => onTheme('light')} className={`${theme === 'light' ? 'text-yellow-500' : 'text-purple-500'}dark:hover:text-yellow-500 cursor-pointer`}>
+            <button onClick={() => onTheme('light')} className={`${theme === 'light' ? 'text-yellow-700' : 'text-white'} dark:hover:text-yellow-300 hover:text-yellow-500 cursor-pointer`}>
                 <BsFillSunFill size={20} />
             </button>
             <button onClick={() => onTheme('dark')} className={`${theme === 'dark' ? 'text-teal-500' : 'text-purple-500'} dark:hover:text-teal-500 hover:text-teal-900 cursor-pointer`}>
