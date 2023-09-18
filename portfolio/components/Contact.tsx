@@ -35,7 +35,7 @@ const Contact: FC<ContactProps> = ({
                 </h1>
                 <div className="py-16 dark:text-white text-slate-700 xl:text-lg lg:text-base text-xs lg:w-[50%] md:w-[70%] text-justify">
                     <p>
-                        I'm currently looking for any new opportunities and new challenges to improve my skills, my inbox is always open. I’ll try my best to get back to you!
+                        I'm currently looking for any opportunities and challenges to merge into this area and improve my skills. My inbox is always open. I’ll try my best to get back to you!
                     </p>
                 </div>
                 <div className='flex lg:flex-row gap-10 flex-col'>

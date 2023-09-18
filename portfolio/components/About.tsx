@@ -117,7 +117,7 @@ const About = () => {
                             <p>Porto, Portugal</p>
                         </div>
                     </div>
-                    <span className="text-slate-700 dark:text-teal-400 text-[10px] md:text-base">* ISEP - Instituto Superior de Engenharia do Porto</span>
+                    <span className="text-slate-700 dark:text-teal-400 text-[10px] md:text-sm">* ISEP - Instituto Superior de Engenharia do Porto</span>
                     <div className="mt-8 gap-3 flex flex-col items-center">
                         <h2 className="font-semibold text-slate-900 md:text-lg text-base text-center">{subTitleAboutMe}</h2>
                         <p className="text-white items-center flex max-w-xl text-justify text-xs 2xl:leading-loose xl:leading-loose lg:leading-loose md:leading-loose sm:leading-loose leading-loose mb-4">

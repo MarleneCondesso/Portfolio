@@ -154,7 +154,6 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                                     items-center
                                     h-10
                                     w-full
-                                    ml-5
                                     rounded-md
                                     transition
                                     duration-75

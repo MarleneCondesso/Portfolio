@@ -32,6 +32,13 @@ const Projects = () => {
                         gitHubUrl="https://github.com/MarleneCondesso/sudoku.lena"
                     />
                     {/* <ProjectCard 
+                        title="E-commerce"
+                        text=". "
+                        tools={["Typescript", "Tailwind CSS", "React"]} 
+                        webSiteUrl=""
+                        gitHubUrl=""
+                    /> */}
+                    {/* <ProjectCard 
                         title="Web Music App"
                         text="Bulding a Music App with references of Spotify Music App"
                         tools={["Tailwind CSS", "Redux", "Rapid API"]} 
@@ -47,8 +54,8 @@ const Projects = () => {
                     />
                 </div>
                 <div className="flex items-center justify-center">
-                    <button className="flex flex-col items-center dark:text-teal-400 dark:hover:text-white hover:text-slate-400 text-white text-lg cursor-pointer font-semibold"  onClick={toogleChanllenges}>
-                        Challenges
+                    <button className="flex flex-col items-center dark:text-teal-400 dark:hover:text-white hover:text-slate-700 text-white text-lg cursor-pointer font-semibold"  onClick={toogleChanllenges}>
+                        Challenges  from  "codementor.io"
                         <IoIosArrowDown size={40}className={`${showChallenges && 'rotate-180'}`}/>
                     </button>
                 </div>
