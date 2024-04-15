@@ -21,7 +21,6 @@ export default function Home() {
   const [variantMenu, setVariantMenu] = useState(false);
   const { download } = useDownloader();
 
-
   const TOP_OFFSET = 660;
   useEffect(() => {
 
@@ -45,17 +44,12 @@ export default function Home() {
   useEffect(() => {
     let lastSrollY = window.scrollY;
     
-  
      const handleScrollY = () => {
-   
       if (window.scrollY >= lastSrollY) {
         setVariantMenu(true);
-
       } else {
         setVariantMenu(false);
       }
-
-
       lastSrollY = window.scrollY;
     }
 
