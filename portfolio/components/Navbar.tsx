@@ -42,7 +42,7 @@ const Navbar: FC<NavbarProps> =  ({
             </div>
 
             <nav className={` 
-                ${showBackgroundNav && 'dark:bg-slate-500 bg-slate-200 shadow-lg bg-opacity-50 z-[1] transition '}
+                ${showBackgroundNav && 'dark:bg-slate-500 bg-white shadow-lg dark:bg-opacity-50 bg-opacity-25 z-[1] transition '}
                 ${hiddenNav && 'hidden'}
                 lg:fixed
                 top-0
