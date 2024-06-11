@@ -32,7 +32,7 @@ const Experience = () => {
 
 
     return (
-        <section className="mb-44 flex flex-col lg:gap-20" id="about">
+        <section id="experience" className="mb-44 flex flex-col lg:gap-20" >
             <Heading title="Experience" />
                 <div className="
                     2xl:w-[100%]
@@ -41,6 +41,7 @@ const Experience = () => {
                     grid 
                     grid-cols-1 
                     2xl:gap-8 
+                    md:gap-6
                     justify-center 
                     items-center 
                     self-center
@@ -118,7 +119,7 @@ const Experience = () => {
                                     <li onClick={() => {setShowInfo('n4');setSelectExperience(true);}} className="mb-2">
                                         <button className={`
                                         dark:text-teal-200
-                                        ${showInfo === 'n4' ? "text-slate-700 dark:text-white underline underline-offset-[12px] cursor-default" : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}
+                                        ${showInfo === 'n4' ? "text-slate-700 dark:text-white cursor-default" : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}
                                         text-sm
                                         font-semibold
                                         h-12
@@ -159,39 +160,47 @@ const Experience = () => {
                                 overflow-x-auto
                                 overflow-scroll
                                 text-sm
-                                p-6
+                                p-4
+                                pl-8
                                 font-semibold
                                 flex "
                             >
-                                <ul className="flex flex-row lg:flex-col lg:items-center lg:justify-center gap-6 pr-4">
+                                <ul className="flex flex-row lg:flex-col items-center justify-center gap-4">
+                                    <li onClick={() => { setShowInfo('ruga'); setSelectExperience(true);}}>
+                                        <button className={`
+                                        ${showInfo === 'ruga' ? "text-slate-700 dark:text-white cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
+                                           w-52`}
+                                        >
+                                            RUGA - Embalamento e Acabamento Têxtil, Unipessoal, LDA
+                                        </button>
+                                    </li>
                                     <li onClick={() => { setShowInfo('dh'); setSelectExperience(true);}}>
                                         <button className={`
-                                        ${showInfo === 'dh' ? "text-slate-700 dark:text-white underline underline-offset-[12px] cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
-                                            w-80`}
+                                        ${showInfo === 'dh' ? "text-slate-700 dark:text-white cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
+                                            w-52`}
                                         >
                                             Dolores Hipólito, Unipessoal, LDA
                                         </button>
                                     </li>
                                     <li onClick={() => { setShowInfo('fm'); setSelectExperience(true);}}>
                                         <button className={`
-                                        ${showInfo === 'fm' ? "text-slate-700 dark:text-white underline underline-offset-[12px] cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
-                                            w-72`}
+                                        ${showInfo === 'fm' ? "text-slate-700 dark:text-white cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
+                                            w-28`}
                                         >
                                             FM Têxteis S.A
                                         </button>
                                     </li>
                                     <li onClick={() => { setShowInfo('e2000'); setSelectExperience(true);}}>
                                         <button className={`
-                                        ${showInfo === 'e2000' ? "text-slate-700 dark:text-white underline underline-offset-[12px] cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
-                                            w-64`}
+                                        ${showInfo === 'e2000' ? "text-slate-700 dark:text-white cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}`}
                                         >
                                             Esposende2000
                                         </button>
                                     </li>
                                     <li onClick={() => { setShowInfo('bvf'); setSelectExperience(true);}}>
                                         <button className={`
-                                        ${showInfo === 'bvf' ? "text-slate-700 dark:text-white underline underline-offset-[12px] cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
-                                            w-80`}
+                                        ${showInfo === 'bvf' ? "text-slate-700 dark:text-white cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
+                                            w-52`}
                                         >
                                             Bombeiros Voluntário de Fão
                                         </button>
@@ -278,16 +287,16 @@ const Experience = () => {
 
                         </div> */}
 
-                        <div className={`flex h-full justify-between flex-col gap-8 p-4 text-white self-start  text-sm 
+                        <div className={`flex h-full justify-between flex-col gap-8 p-4  text-white  dark:text-teal-400 self-start  text-sm 
                         ${showInfo === 'bvf' ? 'flex' : 'hidden'}`}>
-                                <div className="grid grid-cols-1 gap-4">
-                                    <h2 className="font-semibold text-slate-700">Bombeiros Voluntários de Fão</h2>
-                                    <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-[var(--icon-color-light)] dark:text-teal-400 ">
+                                <div className="grid grid-cols-1 gap-4  ">
+                                    <h2 className="font-semibold text-slate-700 dark:text-slate-800">Bombeiros Voluntários de Fão</h2>
+                                    <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-bold ">
                                         <div className="flex flex-row gap-2">
                                             <p>Forest security assistent</p>
                                             <p className="lg:flex hidden">|</p>
                                         </div>
-                                        <div className="flex flex-row gap-2 items-center ">
+                                        <div className="flex flex-row gap-2 items-center">
                                             <p>May 2015</p>
                                             <p>-</p>
                                             <p>Jul 2015</p>
@@ -295,23 +304,27 @@ const Experience = () => {
                                     </div>
                                 </div>
 
-                                <ul className="flex flex-col gap-10 items-center justify-center mb-5">
+                                <ul className="flex flex-col gap-10 items-center justify-center mb-5 dark:text-white text-slate-700" >
                                     <li>
                                         <p className="flex items-start pb-8">
                                             Professional Intership carried out by the scope of Technical Course of the Environmental Management.
                                         </p>
                                     </li>
                                     <li>
-                                        <p className="flex flex-row items-center  justify-start gap-2">
-                                            <MdArrowForwardIos />
+                                        <p className="flex flex-row items-center justify-start gap-2">
+                                            <MdArrowForwardIos size={18}/>
                                             Identification of fire hydrants and water points.
                                         </p>
                                         <p className="flex flex-row items-center gap-2 justify-start">
-                                            <MdArrowForwardIos />
-                                            Marking georeferenced information relating to identified fire hydrants and water points.
+                                            <MdArrowForwardIos size={18} />
+                                            Marking georeferenced information relating.
                                         </p>
                                         <p className="flex flex-row items-center gap-2 justify-start">
-                                            <MdArrowForwardIos />
+                                            <MdArrowForwardIos size={18}/>
+                                            Identified fire hydrants and water points.
+                                        </p>
+                                        <p className="flex flex-row items-center gap-2 justify-start">
+                                            <MdArrowForwardIos size={16} />
                                             Patrolling forest areas at risk.
                                         </p>
                                     </li>
@@ -331,9 +344,9 @@ const Experience = () => {
                             text-white
                             ${showInfo === 'e2000' ? 'flex' : 'hidden'}`}
                         >
-                            <div className="grid grid-cols-1 gap-4">
-                                <h2 className="font-semibold text-slate-700">Esposende 2000</h2>
-                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-[var(--icon-color-light)] dark:text-teal-400">
+                            <div className="grid grid-cols-1 gap-4 text-white dark:text-teal-400">
+                                <h2 className="font-semibold text-slate-700 dark:text-slate-800">Esposende 2000</h2>
+                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-bold ">
                                     <div className="flex flex-row gap-2">
                                         <p>Assistant in the organization of <br></br>sports and recreational activities</p>
                                         <p className="lg:flex hidden">|</p>
@@ -346,7 +359,7 @@ const Experience = () => {
                                 </div>
                             </div>
 
-                            <ul className="flex flex-col gap-2 justify-center mb-5">
+                            <ul className="flex flex-col gap-2 justify-center mb-5 dark:text-white text-slate-700">
                                 <li>
                                     <p className="flex items-start pb-8">
                                         Professional Intership carried out by the scope of Technical Course of the Environmental Management.
@@ -386,9 +399,9 @@ const Experience = () => {
                             text-white
                             ${showInfo === 'fm' ? 'flex' : 'hidden'}`}
                         >
-                            <div className="grid grid-cols-1 gap-4">
-                                <h2 className="font-semibold text-slate-700">FM Têxteis S.A.</h2>
-                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-[var(--icon-color-light)] dark:text-teal-400">
+                            <div className="grid grid-cols-1 gap-4 text-white dark:text-teal-400">
+                                <h2 className="font-semibold text-slate-700 dark:text-slate-800">FM Têxteis S.A.</h2>
+                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-bold">
                                     <div className="flex flex-row gap-2">
                                         <p>Textile machine operator</p>
                                         <p className="lg:flex hidden">|</p>
@@ -401,7 +414,7 @@ const Experience = () => {
                                 </div>
                             </div>
 
-                            <ul className="flex flex-col gap-2 mb-14">
+                            <ul className="flex flex-col gap-2 mb-14 dark:text-white text-slate-700">
                                 <li className="">
                                     <p className="flex flex-row items-center justify-start gap-2 mb-10 font-semibold">
                                         Textile operator in:
@@ -436,9 +449,9 @@ const Experience = () => {
                             text-sm 
                             ${showInfo === 'dh' ? 'flex' : 'hidden'}`}
                         >
-                            <div className="grid grid-cols-1 gap-4">
-                                <h2 className="font-semibold  text-slate-700">Dolores Hipólito, Unipessoal, LDA</h2>
-                                <div className="flex xl:flex-row lg:flex-col md:flex-row flex-col gap-2 font-semibold text-[var(--icon-color-light)] dark:text-teal-400">
+                            <div className="grid grid-cols-1 gap-4 text-white dark:text-teal-400">
+                                <h2 className="font-semibold text-slate-700 dark:text-slate-800">Dolores Hipólito, Unipessoal, LDA</h2>
+                                <div className="flex xl:flex-row lg:flex-col md:flex-row flex-col gap-2 font-bold">
                                     <div className="flex flex-row gap-2">
                                         <p>Textile machine operator</p>
                                         <p className="lg:flex hidden">|</p>
@@ -451,7 +464,7 @@ const Experience = () => {
                                 </div>
                             </div>
 
-                            <ul className="flex flex-col gap-2 items-center justify-center">
+                            <ul className="flex flex-col gap-2 items-center justify-center dark:text-white text-slate-700">
                                 <li className="mb-20">
                                     <p className="flex flex-row items-center justify-start mb-10 font-semibold">
                                         Textile operator in:
@@ -463,6 +476,59 @@ const Experience = () => {
                                     <p className="flex flex-row items-center gap-2 justify-start">
                                         <MdArrowForwardIos />
                                         Confection sector.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={`
+                            h-full 
+                            w-full 
+                            xl:justify-between
+                            items-start 
+                            flex 
+                            flex-col 
+                            gap-8 
+                            p-4 
+                            text-white
+                            text-slate
+                            text-sm 
+                            ${showInfo === 'ruga' ? 'flex' : 'hidden'}`}
+                        >
+                            <div className="grid grid-cols-1 gap-4 text-white dark:text-teal-400">
+                                <h2 className="font-semibold  text-slate-700  dark:text-slate-800">RUGA - Embalament e Acabamento Têxtil, Unipessoal, LDA</h2>
+                                <div className="flex xl:flex-row lg:flex-col md:flex-row flex-col gap-2 font-bold">
+                                    <div className="flex flex-row gap-2">
+                                        <p>Textile machine operator</p>
+                                        <p className="lg:flex hidden">|</p>
+                                    </div>
+                                    <div className="flex flex-row gap-2 items-center">
+                                        <p>Jan 2024</p>
+                                        <p>-</p>
+                                        <p>Present</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul className="flex flex-col gap-2 items-center justify-center dark:text-white text-slate-700">
+                                <li className="mb-20">
+                                    <p className="flex flex-row items-center justify-start mb-10 font-semibold">
+                                        Textile operator in:
+                                    </p>
+                                    <p className="flex flex-row items-center gap-2 justify-start">
+                                        <MdArrowForwardIos />
+                                        Placing pins and hangtags on parts.
+                                    </p>
+                                    <p className="flex flex-row items-center gap-2 justify-start">
+                                        <MdArrowForwardIos />
+                                        Coating textile pieces.
+                                    </p>
+                                    <p className="flex flex-row items-center gap-2 justify-start">
+                                        <MdArrowForwardIos />
+                                        Cleaning textile parts.
+                                    </p>
+                                    <p className="flex flex-row items-center gap-2 justify-start">
+                                        <MdArrowForwardIos />
+                                        Folding of textile pieces.
                                     </p>
                                 </li>
                             </ul>
@@ -481,9 +547,9 @@ const Experience = () => {
                             text-sm 
                             ${showInfo === 'n4' ? 'flex' : 'hidden'}`}
                         >
-                            <div className="grid grid-cols-1 gap-4">
-                                <h2 className="font-semibold text-slate-700">N4IT Software</h2>
-                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 text-[var(--icon-color-light)] font-semibold dark:text-teal-400">
+                            <div className="grid grid-cols-1 gap-4 dark:text-teal-400 text-white">
+                                <h2 className="font-semibold dark:text-slate-800 text-slate-700">N4IT Software</h2>
+                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-bold ">
                                     <div className="flex flex-row gap-2">
                                         <p>Web developer</p>
                                         <p className="lg:flex hidden">|</p>
@@ -496,7 +562,7 @@ const Experience = () => {
                                 </div>
                             </div>
 
-                            <ul className="flex flex-col gap-8 items-center justify-center">
+                            <ul className="flex flex-col gap-8 items-center justify-center dark:text-white text-slate-700">
                                 <li className="">
                                     <p className="flex flex-row items-center justify-start gap-2 pb-20">
                                         Internship carried out within the Technical Course of Professional Higher Education - Agile Software Development.

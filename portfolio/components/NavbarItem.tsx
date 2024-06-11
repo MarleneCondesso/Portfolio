@@ -4,7 +4,7 @@ interface NavbarItemProps {
     to: string;
     label: string;
     showBackground?: boolean;
-    closeMenu: () => void;
+    closeMenu?: () => void;
     trigger: string;
 }
 
@@ -16,7 +16,7 @@ const NavbarItem: FC<NavbarItemProps> = ({
 
     return (
         <div>
-            <a href={`#${to}`} type="button" onClick={() =>  closeMenu()}
+            <a href={`#${to}`} type="button" onClick={closeMenu}
                 className={`
                 text-white
                 hover:text-slate-800

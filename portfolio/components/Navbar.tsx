@@ -91,10 +91,11 @@ const Navbar: FC<NavbarProps> =  ({
                         flex
                         gap-10`}
                     >
-                        <NavbarItem trigger="home" to="home" label="Home" showBackground={showBackgroundNav} closeMenu={()=> {}}/>
-                        <NavbarItem trigger="about" to="about" label="About" showBackground={showBackgroundNav} closeMenu={()=> {}}/>
-                        <NavbarItem trigger="projects" to="projects" label="Projects" showBackground={showBackgroundNav} closeMenu={()=> {}}/>
-                        <NavbarItem trigger="contact" to="contact" label="Contact" showBackground={showBackgroundNav} closeMenu={()=> {}}/>
+                        <NavbarItem trigger="home" to="home" label="Home" showBackground={showBackgroundNav} />
+                        <NavbarItem trigger="about" to="about" label="About" showBackground={showBackgroundNav} c/>
+                        <NavbarItem trigger="experience" to="experience" label="Experience" showBackground={showBackgroundNav} />
+                        <NavbarItem trigger="projects" to="projects" label="Projects" showBackground={showBackgroundNav}/>
+                        <NavbarItem trigger="contact" to="contact" label="Contact" showBackground={showBackgroundNav} />
                     </div>
                 </div>
                

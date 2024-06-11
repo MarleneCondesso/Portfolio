@@ -87,7 +87,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                 'top-0 fixed lg:hidden right-0 block w-full h-full z-50 bg-opacity-100 dark:bg-slate-700 bg-[var(--secondary-color-light)]'
                 }
                 ${hiddenNav && 'hidden'}
-                ${showBackgroundNav && !variantMobileMenuContent ? 'bg-[var(--primary-color-light)] dark:bg-slate-700 text-[#DDD0C8] z-50 opacity-80' : ''}
+                ${showBackgroundNav && !variantMobileMenuContent ? 'bg-slate-700 dark:bg-slate-700 text-[#DDD0C8] z-50 opacity-80' : ''}
             `}
         >
             <div className={`
@@ -136,6 +136,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                     <div className="flex flex-col items-center justify-center h-full w-full gap-10 text-base">
                         <NavbarItem trigger="home" to="home" label="Home" closeMenu={toggleMobileMenu} />
                         <NavbarItem trigger="about" to="about" label="About" closeMenu={toggleMobileMenu} />
+                        <NavbarItem trigger="experience" to="experience" label="Experience" closeMenu={toggleMobileMenu} />
                         <NavbarItem trigger="projects" to="projects" label="Projects" closeMenu={toggleMobileMenu} />
                         <NavbarItem trigger="contact" to="contact" label="Contact" closeMenu={toggleMobileMenu} />
 
@@ -148,6 +149,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                                     text-[var(--icon-color-light)] 
                                     hover:text-white 
                                     dark:text-white 
+                                    text-slate-800
                                     dark:hover:text-teal-200 
                                     border-white
                                     justify-center

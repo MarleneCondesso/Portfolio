@@ -89,10 +89,6 @@ const About = () => {
                                     <FiBookOpen className="text-[var(--icon-color-light)] dark:text-teal-400" />
                                     Study
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                    <BsGlobe2 className="text-[var(--icon-color-light)]  dark:text-teal-400" />
-                                    Website
-                                </div>
                                 <div className="flex gap-4 items-center ">
                                     <TbPacman className="text-[var(--icon-color-light)] dark:text-teal-400" />
                                     Interest
@@ -102,8 +98,7 @@ const About = () => {
                                     Location
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-6e">
-                                <p>:</p>
+                            <div className="flex flex-col gap-6">
                                 <p>:</p>
                                 <p>:</p>
                                 <p>:</p>
@@ -113,7 +108,6 @@ const About = () => {
                         <div className="flex flex-col gap-6 lg:gap-6 ">
                             <p>07-12-1997</p>
                             <p>ISEP *</p>
-                            <p>www.isep.pt</p>
                             <p>Reading & Games</p>
                             <p>Porto, Portugal</p>
                         </div>

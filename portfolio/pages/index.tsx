@@ -19,8 +19,8 @@ export default function Home() {
   const [variantMenu, setVariantMenu] = useState(false);
   const { download } = useDownloader();
 
-  const TOP_OFFSET = 660;
-  useEffect(() => {
+  const TOP_OFFSET = 860;
+   useEffect(() => {
 
     const handleScrollY = () => {
       if (window.scrollY >= TOP_OFFSET) {
@@ -38,8 +38,8 @@ export default function Home() {
       window.removeEventListener('scroll', handleScrollY);
     }
   }, []);
-
-  useEffect(() => {
+ 
+/*   useEffect(() => {
     let lastSrollY = window.scrollY;
     
      const handleScrollY = () => {
@@ -56,7 +56,7 @@ export default function Home() {
     return () => {
       window.removeEventListener('scroll', handleScrollY);
     }
-  }, []);
+  }, []); */
 
   const downloadCV = () => {
     const fileUrl = "/files/CVMarleneLima.pdf";
