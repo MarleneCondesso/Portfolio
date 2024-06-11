@@ -62,7 +62,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
         }
     }, []);
 
-    useEffect(() => {
+/*     useEffect(() => {
 
         if (variantMobileMenuContent) {
             document.body.classList.add('overflow-y-hidden');
@@ -72,7 +72,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
         }
 
 
-    }, [variantMobileMenuContent]);
+    }, [variantMobileMenuContent]); */
 
 
     const onDocumentLoadSuccess = (e: any) => {
@@ -84,10 +84,10 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                 ${!variantMobileMenuContent ?
                 'p-6 top-0 fixed right-0 block lg:hidden w-full items-center items-right bg-opacity-50'
                 :
-                'top-0 fixed lg:hidden right-0 block w-full h-full z-50 bg-opacity-100 dark:from-teal-950 dark:via-slate-800 dark:to-slate-700 bg-[var(--secondary-color-light)]'
+                'top-0 fixed lg:hidden right-0 block w-full h-full z-50 bg-opacity-100 dark:bg-slate-700 bg-[var(--secondary-color-light)]'
                 }
                 ${hiddenNav && 'hidden'}
-                ${showBackgroundNav && !variantMobileMenuContent ? 'bg-[var(--primary-color-light)] text-[#DDD0C8] z-50 opacity-80' : ''}
+                ${showBackgroundNav && !variantMobileMenuContent ? 'bg-[var(--primary-color-light)] dark:bg-slate-700 text-[#DDD0C8] z-50 opacity-80' : ''}
             `}
         >
             <div className={`

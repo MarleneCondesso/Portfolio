@@ -156,17 +156,12 @@ const Experience = () => {
                         {openOtherJobs ? (
                             <div className="
                                 w-full
-                                overflow-x-visible
-                                scroll-smooth
-                                dark:scrollbar-track-teal-500 
-                                dark:scrollbar-thumb-slate-600 
-                                scrollbar-thumb-rounded-lg 
-                                scrollbar-thin
-                                scrollbar-track-[var(--secondary-color-light)] 
-                                scrollbar-[var(--icon-color-light)]
+                                overflow-x-auto
+                                overflow-scroll
                                 text-sm
                                 p-6
-                                font-semibold"
+                                font-semibold
+                                flex "
                             >
                                 <ul className="flex flex-row lg:flex-col lg:items-center lg:justify-center gap-6 pr-4">
                                     <li onClick={() => { setShowInfo('dh'); setSelectExperience(true);}}>
