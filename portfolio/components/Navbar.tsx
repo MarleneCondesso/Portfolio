@@ -92,7 +92,7 @@ const Navbar: FC<NavbarProps> =  ({
                         gap-10`}
                     >
                         <NavbarItem trigger="home" to="home" label="Home" showBackground={showBackgroundNav} />
-                        <NavbarItem trigger="about" to="about" label="About" showBackground={showBackgroundNav} c/>
+                        <NavbarItem trigger="about" to="about" label="About" showBackground={showBackgroundNav} />
                         <NavbarItem trigger="experience" to="experience" label="Experience" showBackground={showBackgroundNav} />
                         <NavbarItem trigger="projects" to="projects" label="Projects" showBackground={showBackgroundNav}/>
                         <NavbarItem trigger="contact" to="contact" label="Contact" showBackground={showBackgroundNav} />
