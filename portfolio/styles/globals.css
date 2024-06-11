@@ -2,9 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary-color-light: #FAE3D9;
+    --selection-color-light: #BBDED6;
+    --secondary-color-light: #FFB6B9;
+    --icon-color-light: #8AC6D1;
+    --text-color-light: #334155;
+    
+    --primary-color-dark: #FAE3D9;
+    --selection-color-dark: #BBDED6;
+    --secondary-color-dark: #FFB6B9;
+    --icon-color-dark: #8AC6D1;
+  }
 
 body{
-    @apply dark:from-teal-950 dark:via-slate-800 dark:to-slate-700 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-500 via-purple-500 to-blue-500 bg-no-repeat bg-fixed min-h-[100vh] overflow-x-hidden scroll-smooth dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-lg scrollbar-thin scrollbar-track-[#DDD0C8] scrollbar-thumb-gray-500;
+    @apply dark:from-teal-950 dark:via-slate-800 dark:to-slate-700 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] /* from-yellow-500 via-purple-500 to-blue-500 */ bg-[#FFB6B9] bg-no-repeat bg-fixed min-h-[100vh] overflow-x-hidden scroll-smooth dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-3xl scrollbar-thin scrollbar-track-[#FFB6B9] scrollbar-thumb-[#8AC6D1];
 }
 
 #__next{

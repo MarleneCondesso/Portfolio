@@ -27,7 +27,7 @@ const About = () => {
                             items-center 
                             justify-center 
                             self-center 
-                            bg-white 
+                            bg-white
                             dark:bg-slate-500 
                             dark:bg-opacity-25 
                             lg:p-20
@@ -60,6 +60,7 @@ const About = () => {
                             absolute 
                             border-4 
                             dark:border-slate-800
+                            border-[var(--secondary-color-light)]
                             h-full 
                             w-full 
                             2xl:max-h-80
@@ -70,38 +71,38 @@ const About = () => {
                             top-4
                             left-4
                             rounded-md
-                            peer-hover:border-purple-500
+                            peer-hover:border-[var(--icon-color-light)]
                             dark:peer-hover:border-teal-400"
                         >{" "}</div>
                     </div>
                 </div>
 
                 <div className="flex flex-col items-center justify-center">
-                    <div className="flex flex-row items-center text-white justify-between mb-3 gap-10 text-xs">
-                        <div className="flex flex-row gap-3 text-white font-medium">
-                            <div className="flex flex-col gap-6">
+                    <div className="flex flex-row items-center justify-between mb-3 gap-10 text-sm text-slate-700 dark:text-white">
+                        <div className="flex flex-row gap-3 font-medium">
+                            <div className="flex flex-col gap-6 ">
                                 <div className="flex gap-4 items-center">
-                                    <AiOutlineGift className="md:text-purple-500 text-slate-700 dark:text-teal-400" />
+                                    <AiOutlineGift className="text-[var(--icon-color-light)]  dark:text-teal-400" />
                                     Birthday
                                 </div>
                                 <div className="flex gap-4 items-center">
-                                    <FiBookOpen className="md:text-purple-500 text-slate-700 dark:text-teal-400" />
+                                    <FiBookOpen className="text-[var(--icon-color-light)] dark:text-teal-400" />
                                     Study
                                 </div>
                                 <div className="flex gap-4 items-center">
-                                    <BsGlobe2 className="md:text-purple-500 text-slate-700 dark:text-teal-400" />
+                                    <BsGlobe2 className="text-[var(--icon-color-light)]  dark:text-teal-400" />
                                     Website
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                    <TbPacman className="md:text-purple-500 text-slate-700 dark:text-teal-400" />
+                                <div className="flex gap-4 items-center ">
+                                    <TbPacman className="text-[var(--icon-color-light)] dark:text-teal-400" />
                                     Interest
                                 </div>
                                 <div className="flex gap-4 items-center">
-                                    <IoLocateOutline className="md:text-purple-500 text-slate-700 dark:text-teal-400" />
+                                    <IoLocateOutline className="text-[var(--icon-color-light)]  dark:text-teal-400" />
                                     Location
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-6">
+                            <div className="flex flex-col gap-6e">
                                 <p>:</p>
                                 <p>:</p>
                                 <p>:</p>
@@ -109,7 +110,7 @@ const About = () => {
                                 <p>:</p>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-6 lg:gap-6">
+                        <div className="flex flex-col gap-6 lg:gap-6 ">
                             <p>07-12-1997</p>
                             <p>ISEP *</p>
                             <p>www.isep.pt</p>
@@ -117,10 +118,10 @@ const About = () => {
                             <p>Porto, Portugal</p>
                         </div>
                     </div>
-                    <span className="text-slate-700 dark:text-teal-400 text-[10px] md:text-sm">* ISEP - Instituto Superior de Engenharia do Porto</span>
+                    <span className="text-white dark:text-teal-400 text-[10px] md:text-xs">* ISEP - Instituto Superior de Engenharia do Porto</span>
                     <div className="mt-8 gap-3 flex flex-col items-center">
-                        <h2 className="font-semibold text-slate-900 md:text-lg text-base text-center">{subTitleAboutMe}</h2>
-                        <p className="text-white items-center flex max-w-xl text-justify text-xs 2xl:leading-loose xl:leading-loose lg:leading-loose md:leading-loose sm:leading-loose leading-loose mb-4">
+                        <h2 className="font-semibold text-[var(--icon-color-light)] dark:text-white md:text-lg text-base text-center">{subTitleAboutMe}</h2>
+                        <p className="text-slate-700 dark:text-white items-center flex max-w-xl text-justify text-xs 2xl:leading-loose xl:leading-loose lg:leading-loose md:leading-loose sm:leading-loose leading-loose mb-4 p-5">
                             Hi! My name is Marlene Condesso and i am a Web Developer. My first time coding was in 2020, when I took my Course based on 'Agile Software Development'.<br></br>
                             After that, my passion on coding, my focus on creating new things, facing new challenges and my will to keep learning increased.<br></br>
                             I can title myself as a baby on tech area, after all i only had one experience as a web developer.
@@ -128,11 +129,11 @@ const About = () => {
                             let me do it with you.
                         </p>
                         <a onClick={scrollTo} id="hireMe" className="
-                            bg-white
+                            bg-[var(--icon-color-light)]
                             dark:bg-slate-600
-                            text-slate-800 
+                            text-slate-700
                             dark:text-teal-500
-                            hover:bg-opacity-60
+                            hover:text-white
                             dark:hover:bg-teal-500
                             dark:hover:text-slate-100
                             font-bold

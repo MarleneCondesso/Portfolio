@@ -35,13 +35,13 @@ const NavbarSocial: FC<NavbarSocialProps> = ({ getTheme }
     return (
         <div className={`bottom-10 top-20 2xl:w-60 w-20 left-0 max-xl:hidden fixed ${!showNavbarSocial && 'hidden' }`}>
             <div className="flex flex-col h-full items-center justify-center">
-                <div className=" text-white dark:text-teal-400 xl:text-lg font-semibold z-40 h-full flex items-center">
+                <div className=" text-slate-700 dark:text-teal-400 xl:text-lg font-semibold z-40 h-full flex items-center">
                     <div className="-rotate-90 flex z-40 hover:opacity-50 ">
                         <a href="mailto:marleneflima.official@gmail.com?">marleneflima.official@gmail.com</a>
                     </div>
                 </div>
                 <div className="flex flex-col gap-10 2xl:gap-20 h-full items-center">
-                    <div className="bg-white dark:bg-teal-400 h-full w-1 z-0 "></div>
+                    <div className="bg-[var(--icon-color-light)] dark:bg-teal-400 h-full w-1 z-0 "></div>
                     <div className="flex flex-col text-[#DDD0C8] gap-8 bg-slate-700 p-3 rounded-lg z-40 dark:bg-slate-600">
                         <div onClick={() => window.open('https://github.com/MarleneCondesso', '_blank')}
                             className="

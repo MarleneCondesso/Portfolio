@@ -24,9 +24,10 @@ const ProjectCard: FC<ProjectCardProps> = ({
             <div className="gap-8 flex flex-col h-full justify-between">
                 <h2 className="dark:text-teal-400 text-white font-semibold text-base 2xl:text-lg">{title}</h2>
                 <p className="dark:text-white text-slate-700 2xl:text-base">
-                    {text}
+                    {text}clear
+
                 </p>
-                <div className="flex flex-row gap-4 text-[11px] dark:text-slate-400 text-white font-semibold">
+                <div className="flex flex-row gap-4 text-[13px] dark:text-slate-400 text-[var(--icon-color-light)] font-bold">
                     {tools.map((t:string, i:number) => (
                      <div key={t} className='flex flex-row gap-4'>
                         <p key={t}>{t}</p>

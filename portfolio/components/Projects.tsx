@@ -66,7 +66,7 @@ const Projects = () => {
                         title="News Home page  - Frontend Challenges"
                         text=""
                         tools={["JavaScript", "HTML","CSS"]} 
-                        webSiteUrl="https://vercel.com/marlenecondesso/news-homepage/HaK1ncyvM1QwSaKqt9fMU3ot7Tte"
+                        webSiteUrl="https://news-homepage-two-chi.vercel.app/"
                         gitHubUrl="https://github.com/MarleneCondesso/news-homepage/tree/main/news-homepage-main"
                     /> 
                     <ProjectCard 

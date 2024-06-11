@@ -25,6 +25,7 @@ const Experience = () => {
             setOpenOtherJobs(false);
         } 
     }, [setOpenOtherJobs, openProgramming])
+  
     const handleOpenProgrammingJobs = useCallback(() => {
         setOpenProgramming((current) => !current);
     }, []);
@@ -43,8 +44,6 @@ const Experience = () => {
                     justify-center 
                     items-center 
                     self-center
-                    2xl:grid-cols-[450px_minmax(200px,_2fr)]
-                    xl:grid-cols-[400px_minmax(200px,_2fr)]
                     lg:grid-cols-[300px_minmax(200px,_2fr)]
                     bg-white
                     bg-opacity-25
@@ -72,28 +71,25 @@ const Experience = () => {
                     rounded-bl-[4rem]
                     h-auto
                     p-4
-                    2xl:p-10"
+                    2xl:p-10
+                    "
                 > 
                         
                     <div className="
                         flex 
-                        max-sm:flex-col 
                         flex-col 
-                        lg:pl-0 
-                        lg:flex-col 
+                        pt-5 
+                        pl-5
                         gap-4 
                         justify-start
+                        self-start
                         "
                     >
-                        <div className="flex max-sm:flex-col flex-col lg:pl-0 lg:flex-col gap-4">
-                            <button onClick={handleOpenProgrammingJobs} className="
-                                
-                                hover:text-black
-                                dark:hover:text-teal-200
-                                xl:text-lg
-                                text-white
-                                md:text-base
-                                h-12 
+                        <div className="flex flex-col gap-4">
+                            <button id={"btn_programming_job"} onClick={handleOpenProgrammingJobs} className={`
+                            ${openProgramming ? "text-white dark:text-teal-200 bg-[var(--secondary-color-light)] bg-opacity-0 dark:bg-slate-700" : "text-[var(--icon-color-light)] dark:hover:text-teal-200 dark:text-white bg-white dark:bg-slate-500 dark:bg-opacity-25 bg-opacity-40"}
+                                text-base
+                                h-4 
                                 xl:w-80
                                 w-64
                                 flex 
@@ -101,8 +97,8 @@ const Experience = () => {
                                 gap-4
                                 rounded-md
                                 font-semibold
-                                p-8
-                                items-center"
+                                p-6
+                                items-center`}
                             >
                                 Programming jobs
                                 <div className={`${openProgramming ? 'rotate-0' : 'rotate-180'}`}>
@@ -118,18 +114,12 @@ const Experience = () => {
                                 overflow-x-auto 
                                 border-white"
                             >
-                                <ul className="flex flex-col lg:items-center lg:justify-center text-gray-700 dark:text-slate-900">
+                                <ul className="flex flex-col lg:items-center lg:justify-center text-[var(--selection-color-light)] dark:text-slate-900">
                                     <li onClick={() => {setShowInfo('n4');setSelectExperience(true);}} className="mb-2">
-                                        <button className="
-                                        text-slate-800
+                                        <button className={`
                                         dark:text-teal-200
-                                        hover:text-white
-                                        hover:underline
-                                        underline-offset-[12px]
-                                        focus:underline
-                                        focus:text-slate-900
-                                        xl:text-base
-                                        md:text-xs
+                                        ${showInfo === 'n4' ? "text-slate-700 dark:text-white underline underline-offset-[12px] cursor-default" : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}
+                                        text-sm
                                         font-semibold
                                         h-12
                                         w-48
@@ -137,29 +127,26 @@ const Experience = () => {
                                         flex 
                                         flex-row
                                         items-center
-                                        justify-center">
+                                        justify-center`}>
                                             N4IT Software
                                         </button>
                                     </li>
                                 </ul>
                             </div>
                         ) : null}
-                        <button onClick={handleOpenOtherJobs} className="
-                            hover:text-slate-800
-                            dark:hover:text-teal-200
-                            text-white
-                            xl:text-lg
-                            md:text-base
-                            pb-8
-                            pl-8
-                            h-12 
-                            w-64
-                            xl:w-80
-                            flex 
-                            flex-row
-                            gap-4
-                            font-semibold
-                            items-center"
+                        <button onClick={handleOpenOtherJobs} className={`
+                            ${openOtherJobs ? "text-white dark:text-teal-200 bg-[var(--secondary-color-light)] bg-opacity-0 dark:bg-slate-700" : "text-[var(--icon-color-light)] dark:hover:text-teal-200 dark:text-white bg-white bg-opacity-40 dark:bg-opacity-25"}
+                                text-base 
+                                h-12 
+                                xl:w-80
+                                w-64
+                                flex 
+                                flex-row
+                                gap-4
+                                rounded-md
+                                font-semibold
+                                p-6
+                                items-center`}
                         >
                             Other jobs
                             <div className={`${openOtherJobs ? 'rotate-0' : 'rotate-180'}`}>
@@ -168,102 +155,59 @@ const Experience = () => {
                         </button>
                         {openOtherJobs ? (
                             <div className="
-                                lg:overflow-hidden 
                                 w-full
-                                overflow-x-auto
+                                overflow-x-visible
                                 scroll-smooth
                                 dark:scrollbar-track-teal-500 
                                 dark:scrollbar-thumb-slate-600 
                                 scrollbar-thumb-rounded-lg 
                                 scrollbar-thin
-                                scrollbar-track-[#DDD0C8] 
-                                scrollbar-thumb-gray-500
-                                xl:text-base
-                                md:text-xs
-                                text-md
-                                py-6
+                                scrollbar-track-[var(--secondary-color-light)] 
+                                scrollbar-[var(--icon-color-light)]
+                                text-sm
+                                p-6
                                 font-semibold"
                             >
                                 <ul className="flex flex-row lg:flex-col lg:items-center lg:justify-center gap-6 pr-4">
                                     <li onClick={() => { setShowInfo('dh'); setSelectExperience(true);}}>
-                                        <button className="
-                                            hover:underline
-                                            underline-offset-[12px]
-                                            focus:underline
-                                            text-slate-800
-                                            dark:text-teal-200
-                                            hover:text-slate-700
-                                            focus:text-slate-700
-                                            dark:hover:text-white
-                                            dark:focus:text-white
-                                            w-80"
+                                        <button className={`
+                                        ${showInfo === 'dh' ? "text-slate-700 dark:text-white underline underline-offset-[12px] cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
+                                            w-80`}
                                         >
                                             Dolores Hipólito, Unipessoal, LDA
                                         </button>
                                     </li>
                                     <li onClick={() => { setShowInfo('fm'); setSelectExperience(true);}}>
-                                        <button className="
-                                            hover:underline
-                                            underline-offset-[12px]
-                                            focus:underline
-                                            text-slate-800
-                                            dark:text-teal-200
-                                            hover:text-slate-700
-                                            focus:text-slate-700
-                                            dark:hover:text-white
-                                            dark:focus:text-white
-                                            w-72"
+                                        <button className={`
+                                        ${showInfo === 'fm' ? "text-slate-700 dark:text-white underline underline-offset-[12px] cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
+                                            w-72`}
                                         >
                                             FM Têxteis S.A
                                         </button>
                                     </li>
                                     <li onClick={() => { setShowInfo('e2000'); setSelectExperience(true);}}>
-                                        <button className="
-                                            hover:underline
-                                            underline-offset-[12px]
-                                            focus:underline
-                                            text-slate-800
-                                            dark:text-teal-200
-                                            hover:text-slate-700
-                                            focus:text-slate-700
-                                            dark:hover:text-white
-                                            dark:focus:text-white
-                                            w-64"
+                                        <button className={`
+                                        ${showInfo === 'e2000' ? "text-slate-700 dark:text-white underline underline-offset-[12px] cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
+                                            w-64`}
                                         >
                                             Esposende2000
                                         </button>
                                     </li>
                                     <li onClick={() => { setShowInfo('bvf'); setSelectExperience(true);}}>
-                                        <button className="
-                                            hover:underline
-                                            underline-offset-[12px]
-                                            focus:underline
-                                            text-slate-800
-                                            dark:text-teal-200
-                                            hover:text-slate-700
-                                            focus:text-slate-700
-                                            dark:hover:text-white
-                                            dark:focus:text-white
-                                            w-80"
+                                        <button className={`
+                                        ${showInfo === 'bvf' ? "text-slate-700 dark:text-white underline underline-offset-[12px] cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
+                                            w-80`}
                                         >
                                             Bombeiros Voluntário de Fão
                                         </button>
                                     </li>
-                                    <li onClick={() => { setShowInfo('upn'); setSelectExperience(true);}}>
-                                        <button className="
-                                            hover:underline
-                                            underline-offset-[12px]
-                                            focus:underline
-                                            text-slate-800
-                                            dark:text-teal-200
-                                            hover:text-slate-700
-                                            focus:text-slate-700
-                                            dark:hover:text-white
-                                            dark:focus:text-white
-                                            w-64">
+                                    {/* <li onClick={() => { setShowInfo('upn'); setSelectExperience(true);}}>
+                                        <button className={`
+                                        ${showInfo === 'upn' ? "text-slate-700 dark:text-white underline underline-offset-[12px] cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
+                                            w-64`}>
                                             UPN
                                         </button>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                         ) : null}
@@ -277,7 +221,7 @@ const Experience = () => {
                         justify-center"
                     >
 
-                        <div className={`
+                    {/*     <div className={`
                             h-full 
                             w-full 
                             flex 
@@ -285,15 +229,14 @@ const Experience = () => {
                             gap-8 
                             items-start 
                             justify-between 
-                            dark:text-white 
-                            text-slate-700
+                            text-white
                             text-base
                             p-4
                             ${showInfo === 'upn' ? 'flex' : 'hidden'}`}
                         >
                             <div className="grid grid-cols-1 gap-4 lg:text-lg md:text-base">
-                                <h2 className="font-semibold lg:text-lg md:text-base h-auto">UPN - União de Produtores Hortículas do Norte, LDA</h2>
-                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-white dark:text-teal-400">
+                                <h2 className="font-semibold lg:text-lg md:text-base h-auto text-slate-700">UPN - União de Produtores Hortículas do Norte, LDA</h2>
+                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-[var(--icon-color-light)] dark:text-teal-400">
                                     <div className="flex flex-row gap-1">
                                         <p>Agricultural producer</p>
                                         <p>|</p>
@@ -338,13 +281,13 @@ const Experience = () => {
                                 </li>
                             </ul>
 
-                        </div>
+                        </div> */}
 
-                        <div className={`flex h-full justify-between flex-col gap-8 p-4 dark:text-white text-slate-700 self-start text-base
+                        <div className={`flex h-full justify-between flex-col gap-8 p-4 text-white self-start  text-sm 
                         ${showInfo === 'bvf' ? 'flex' : 'hidden'}`}>
                                 <div className="grid grid-cols-1 gap-4">
-                                    <h2 className="font-semibold lg:text-lg md:text-base">Bombeiros Voluntários de Fão</h2>
-                                    <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-white dark:text-teal-400 ">
+                                    <h2 className="font-semibold text-slate-700">Bombeiros Voluntários de Fão</h2>
+                                    <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-[var(--icon-color-light)] dark:text-teal-400 ">
                                         <div className="flex flex-row gap-2">
                                             <p>Forest security assistent</p>
                                             <p className="lg:flex hidden">|</p>
@@ -389,14 +332,13 @@ const Experience = () => {
                             flex-col 
                             gap-8 
                             p-4 
-                            dark:text-white
-                            text-base
-                            text-slate-700 
+                            text-sm
+                            text-white
                             ${showInfo === 'e2000' ? 'flex' : 'hidden'}`}
                         >
                             <div className="grid grid-cols-1 gap-4">
-                                <h2 className="font-semibold lg:text-lg md:text-base">Esposende 2000</h2>
-                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-white dark:text-teal-400">
+                                <h2 className="font-semibold text-slate-700">Esposende 2000</h2>
+                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-[var(--icon-color-light)] dark:text-teal-400">
                                     <div className="flex flex-row gap-2">
                                         <p>Assistant in the organization of <br></br>sports and recreational activities</p>
                                         <p className="lg:flex hidden">|</p>
@@ -444,15 +386,14 @@ const Experience = () => {
                             flex 
                             flex-col 
                             gap-8 
-                            p-4 
-                            dark:text-white 
-                            text-base
-                            text-slate-700
+                            p-4  
+                            text-sm 
+                            text-white
                             ${showInfo === 'fm' ? 'flex' : 'hidden'}`}
                         >
                             <div className="grid grid-cols-1 gap-4">
-                                <h2 className="font-semibold lg:text-lg md:text-base">FM Têxteis S.A.</h2>
-                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-white dark:text-teal-400">
+                                <h2 className="font-semibold text-slate-700">FM Têxteis S.A.</h2>
+                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-[var(--icon-color-light)] dark:text-teal-400">
                                     <div className="flex flex-row gap-2">
                                         <p>Textile machine operator</p>
                                         <p className="lg:flex hidden">|</p>
@@ -495,15 +436,14 @@ const Experience = () => {
                             flex-col 
                             gap-8 
                             p-4 
-                            text-slate-700
-                            dark:text-white 
+                            text-white
                             text-slate
-                            text-base
+                            text-sm 
                             ${showInfo === 'dh' ? 'flex' : 'hidden'}`}
                         >
-                            <div className="grid grid-cols-1 gap-8">
-                                <h2 className="font-semibold lg:text-lg md:text-base">Dolores Hipólito, Unipessoal, LDA</h2>
-                                <div className="flex xl:flex-row lg:flex-col md:flex-row flex-col gap-2 font-semibold text-white dark:text-teal-400">
+                            <div className="grid grid-cols-1 gap-4">
+                                <h2 className="font-semibold  text-slate-700">Dolores Hipólito, Unipessoal, LDA</h2>
+                                <div className="flex xl:flex-row lg:flex-col md:flex-row flex-col gap-2 font-semibold text-[var(--icon-color-light)] dark:text-teal-400">
                                     <div className="flex flex-row gap-2">
                                         <p>Textile machine operator</p>
                                         <p className="lg:flex hidden">|</p>
@@ -540,15 +480,15 @@ const Experience = () => {
                             justify-between
                             flex 
                             flex-col  
-                            p-4 
-                            dark:text-white 
-                            text-slate-700
-                            text-base
+                            p-4
+                            gap-6 
+                            text-white 
+                            text-sm 
                             ${showInfo === 'n4' ? 'flex' : 'hidden'}`}
                         >
                             <div className="grid grid-cols-1 gap-4">
-                                <h2 className="font-semibold lg:text-lg md:text-base">N4IT Software</h2>
-                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 text-white font-semibold dark:text-teal-400">
+                                <h2 className="font-semibold text-slate-700">N4IT Software</h2>
+                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 text-[var(--icon-color-light)] font-semibold dark:text-teal-400">
                                     <div className="flex flex-row gap-2">
                                         <p>Web developer</p>
                                         <p className="lg:flex hidden">|</p>

@@ -14,7 +14,6 @@ interface NavbarProps {
     onTheme: (theme: string) => void;
 }
 
-
 const Navbar: FC<NavbarProps> =  ({
     showBackgroundNav,
     hiddenNav,
@@ -35,14 +34,15 @@ const Navbar: FC<NavbarProps> =  ({
         <>
             <div className={`h-full w-full
                 backdrop-brightness-75
-                bg-slate-500/20
+                dark:bg-slate-500/20
+                bg-white/20
                 z-10
                 top-0
                 left-0`}>
             </div>
 
             <nav className={` 
-                ${showBackgroundNav && 'bg-slate-500 bg-opacity-50 z-[1] transition '}
+                ${showBackgroundNav && 'dark:bg-slate-500 bg-slate-200 shadow-lg bg-opacity-50 z-[1] transition '}
                 ${hiddenNav && 'hidden'}
                 lg:fixed
                 top-0
@@ -115,7 +115,7 @@ const Navbar: FC<NavbarProps> =  ({
                                     hover:underline 
                                     underline-offset-8
                                     fixed
-                                    top-4
+                                    top-5
                                     right-40
                                     lg:flex
                                     hidden
@@ -132,8 +132,7 @@ const Navbar: FC<NavbarProps> =  ({
                                     cursor-pointer
                                     lg:flex-row
                                     font-semibold
-                                    xl:text-base
-                                    lg:text-base`}
+                                    text-sm`}
                             >
                                 <span>Preview CV</span>
 
@@ -149,7 +148,7 @@ const Navbar: FC<NavbarProps> =  ({
                             >
                                 <Popover.Panel className="absolute left-1/2 top-24 z-10 mt-3 w-auto h-[40rem] -translate-x-1/2 transform px-4 sm:px-0 flex items-center justify-center">
                                     <div className='fixed top-0 mb-10'>
-                                        <button className='bg-white bg-opacity-25 w-44 h-16 text-slate-800 font-semibold text-base rounded-xl flex flex-row items-center justify-center gap-2' onClick={onDownloadCV}>Download <AiOutlineDownload size={20} /></button>
+                                        <button className='bg-white bg-opacity-25 w-44 h-16 text-white font-semibold text-base rounded-xl flex flex-row items-center justify-center gap-2 hover:bg-slate-400 hover:bg-opacity-100' onClick={onDownloadCV}>Download <AiOutlineDownload size={20} /></button>
                                     </div>
                                     <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-auto scroll-smooth max-h-[800px] dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-lg scrollbar-thin scrollbar-track-[#DDD0C8] scrollbar-thumb-gray-500 w-full h-full mt-40">
                                         <Document file="/files/CVMarleneLima.pdf" onLoadSuccess={(e) => onDocumentLoadSuccess(e)} onLoadError={console.error}>

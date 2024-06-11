@@ -84,10 +84,10 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                 ${!variantMobileMenuContent ?
                 'p-6 top-0 fixed right-0 block lg:hidden w-full items-center items-right bg-opacity-50'
                 :
-                'top-0 fixed lg:hidden right-0 block w-full h-full z-50 bg-opacity-100 dark:from-teal-950 dark:via-slate-800 dark:to-slate-700 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-500 via-purple-500 to-blue-500'
+                'top-0 fixed lg:hidden right-0 block w-full h-full z-50 bg-opacity-100 dark:from-teal-950 dark:via-slate-800 dark:to-slate-700 bg-[var(--secondary-color-light)]'
                 }
                 ${hiddenNav && 'hidden'}
-                ${showBackgroundNav && !variantMobileMenuContent ? 'bg-slate-500 text-[#DDD0C8] z-50 opacity-80' : ''}
+                ${showBackgroundNav && !variantMobileMenuContent ? 'bg-[var(--primary-color-light)] text-[#DDD0C8] z-50 opacity-80' : ''}
             `}
         >
             <div className={`
@@ -105,7 +105,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                     <img className={`h-16 top-1 fixed left-8 `} src={`${theme === 'dark' ? '/images/logoDarkTab.png' : '/images/logoWhite.png'}`} alt="logo-portfolio" />
                     :
 
-                    <p className={`flex flex-row gap-4 text-white dark:text-teal-200`}>
+                    <p className={`flex flex-row gap-4 text-[var(--icon-color-light)] dark:text-teal-200`}>
                         Marlene Condesso
                     </p>
                 }
@@ -113,7 +113,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
             {!variantMobileMenuContent ?
                 <div onClick={toggleMobileMenu} className={`
                         cursor-pointer 
-                        text-white dark:text-teal-200 dark:text-opacity-100 
+                        text-[var(--icon-color-light)] dark:text-teal-200 dark:text-opacity-100 
                         float-right 
                         mr-4`}
                 >
@@ -132,7 +132,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                         p-3`}
                 >
 
-                    <IoClose size={36} className="cursor-pointer text-white dark:text-teal-400" onClick={toggleMobileMenu} />
+                    <IoClose size={44} className="cursor-pointer text-[var(--icon-color-light)] dark:text-teal-400" onClick={toggleMobileMenu} />
                     <div className="flex flex-col items-center justify-center h-full w-full gap-10 text-base">
                         <NavbarItem trigger="home" to="home" label="Home" closeMenu={toggleMobileMenu} />
                         <NavbarItem trigger="about" to="about" label="About" closeMenu={toggleMobileMenu} />
@@ -145,7 +145,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                                     <Popover.Button
                                         className={`
                                     ${open ? '' : 'text-opacity-90'}
-                                    text-slate-800 
+                                    text-[var(--icon-color-light)] 
                                     hover:text-white 
                                     dark:text-white 
                                     dark:hover:text-teal-200 
@@ -195,7 +195,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                             lg:hidden
                             fixed
                             right-4
-                            bg-white
+                            bg-[var(--icon-color-light)]
                             opacity-60
                             p-2
                             dark:bg-teal-800

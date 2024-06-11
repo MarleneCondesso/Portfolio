@@ -14,7 +14,7 @@ const Contact: FC<ContactProps> = ({
 
 
     return (
-        <section id="contact" className="lg:mt-44
+        <section id="contact" className="lg:pt-44
             flex 
             flex-col 
             items-center 
@@ -28,12 +28,12 @@ const Contact: FC<ContactProps> = ({
                 max-md:text-3xl 
                 xl:text-5xl
                 lg:text-4xl
-                text-white 
+                text-[var(--icon-color-light)] 
                 dark:text-teal-400"
                 >
                     SAY HI!
                 </h1>
-                <div className="py-16 dark:text-white text-slate-700 xl:text-lg lg:text-base text-xs lg:w-[50%] md:w-[70%] text-justify">
+                <div className="py-16 text-white xl:text-lg lg:text-base text-xs lg:w-[50%] md:w-[70%] text-justify">
                     <p>
                         I'm currently looking for any opportunities and challenges to merge into this area and improve my skills. My inbox is always open. I’ll try my best to get back to you!
                     </p>
@@ -51,8 +51,8 @@ const Contact: FC<ContactProps> = ({
                     xl:h-14 
                     rounded-xl 
                     text-white 
-                    bg-[#DDD0C8]   
-                    hover:bg-slate-800 
+                    bg-[var(--primary-color-light)]   
+                    hover:bg-[var(--selection-color-light)] 
                     hover:bg-opacity-25
                     dark:hover:bg-teal-400
                     dark:text-slate-500
@@ -70,14 +70,14 @@ const Contact: FC<ContactProps> = ({
                     flex-row
                     items-center
                     justify-center
-                    bg-[#DDD0C8]  
+                    bg-[var(--primary-color-light)]  
                     h-10 
                     w-20
                     xl:w-44
                     xl:h-14
                     rounded-xl 
                     text-white 
-                    hover:bg-slate-800 
+                    hover:bg-[var(--selection-color-light)] 
                     hover:bg-opacity-25
                     dark:hover:bg-teal-400
                     dark:bg-white
@@ -87,7 +87,7 @@ const Contact: FC<ContactProps> = ({
                         <FcGoogle size={20} />
                     </button>
                 </div>
-                <div className="p-20 flex flex-row gap-5 text-white dark:text-teal-400">
+                <div className="p-20 flex flex-row gap-5 text-slate-700 dark:text-teal-400">
                     <div onClick={() => window.open('https://codepen.io/MarleneCondesso', '_blank')}
                         className="
                     w-10

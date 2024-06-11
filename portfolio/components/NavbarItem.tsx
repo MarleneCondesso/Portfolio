@@ -38,7 +38,8 @@ const NavbarItem: FC<NavbarItemProps> = ({
                 font-semibold 
                 cursor-pointer 
                 transition-shadow
-                lg:z-[1]`}
+                lg:z-[1]
+                `}
             >
                 {label}
             </a>

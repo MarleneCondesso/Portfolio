@@ -16,8 +16,6 @@ export default function Home() {
 
   const [goToInitial, setGoToInitial] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
-  const [previewCV, setPreviewCV ] = useState(false);
-
   const [variantMenu, setVariantMenu] = useState(false);
   const { download } = useDownloader();
 
@@ -72,11 +70,15 @@ export default function Home() {
       let darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
       if (localStorage.theme === 'dark' || (!('theme' in localStorage) && darkQuery.matches)) {
         document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+        localStorage.setItem('theme', 'dark');
       } else {
+        localStorage.setItem('theme', 'light');
         document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        localStorage.setItem('theme', 'light');
       }
     }
-
   }
 
   useEffect(() => {
@@ -118,11 +120,11 @@ export default function Home() {
         <TechnicalSkills />
         <Projects />
       </div>
-      <footer className='m-0'>
+      <footer className='m-0 p-5'>
         <Contact getTheme={theme!} />
       </footer>
       <NavbarSocial getTheme={theme!} />
-      <a className={`dark:text-teal-500 text-white fixed bottom-8 right-2 cursor-pointer active:scroll-smooth hover:opacity-50  ${!goToInitial && 'hidden'}`} onClick={scrollToUp}>
+      <a className={`dark:text-teal-500 text-[var(--icon-color-light)] fixed bottom-8 right-2 cursor-pointer active:scroll-smooth hover:opacity-50  ${!goToInitial && 'hidden'}`} onClick={scrollToUp}>
         <MdKeyboardDoubleArrowUp size={80} className="animate-bounce duration-200 " />
       </a>
     </div>
