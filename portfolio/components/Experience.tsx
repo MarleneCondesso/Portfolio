@@ -482,7 +482,7 @@ const Experience = () => {
                             flex-col  
                             p-4
                             gap-6 
-                            text-white 
+                            text-white
                             text-sm 
                             ${showInfo === 'n4' ? 'flex' : 'hidden'}`}
                         >
