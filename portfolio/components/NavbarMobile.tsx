@@ -9,7 +9,9 @@ import NavbarTheme from "./NavbarTheme";
 import pages from "@/pages";
 import { Popover, Transition } from "@headlessui/react";
 import { Document, Page, pdfjs } from 'react-pdf'
-
+import iconUSA from '../public/icon/liberia.png';
+import iconPT from '../public/icon/portugal.png';
+import { useTranslation } from "react-i18next";
 
 interface NavbarMobileProps {
     showBackgroundNav: boolean;
@@ -17,7 +19,8 @@ interface NavbarMobileProps {
     theme: string;
     onDownloadCV: () => void;
     onTheme: (theme: string) => void;
-
+    setLanguage: (language: string) => void;
+    language: string;
 }
 
 
@@ -26,11 +29,13 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
     hiddenNav,
     theme,
     onDownloadCV,
-    onTheme
+    onTheme,
+    setLanguage,
+    language
 }) => {
 
     pdfjs.GlobalWorkerOptions.workerSrc =`//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-
+    const { t } = useTranslation(['translationNavbar']);
     const [variantMobileMenuContent, setVariantMobileMenuContent] = useState(false);
 
 
@@ -38,6 +43,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
 
 
     const toggleMobileMenu = useCallback(() => {
+        
         setVariantMobileMenuContent((current) => !current);
     }, []);
 
@@ -134,11 +140,11 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
 
                     <IoClose size={44} className="cursor-pointer text-[var(--icon-color-light)] dark:text-teal-400" onClick={toggleMobileMenu} />
                     <div className="flex flex-col items-center justify-center h-full w-full gap-10 text-base">
-                        <NavbarItem trigger="home" to="home" label="Home" closeMenu={toggleMobileMenu} />
-                        <NavbarItem trigger="about" to="about" label="About" closeMenu={toggleMobileMenu} />
-                        <NavbarItem trigger="experience" to="experience" label="Experience" closeMenu={toggleMobileMenu} />
-                        <NavbarItem trigger="projects" to="projects" label="Projects" closeMenu={toggleMobileMenu} />
-                        <NavbarItem trigger="contact" to="contact" label="Contact" closeMenu={toggleMobileMenu} />
+                        <NavbarItem trigger="home" to="home" label={t('home')} closeMenu={toggleMobileMenu} />
+                        <NavbarItem trigger="about" to="about" label={t('about')} closeMenu={toggleMobileMenu} />
+                        <NavbarItem trigger="experience" to="experience" label={t('experience')} closeMenu={toggleMobileMenu} />
+                        <NavbarItem trigger="projects" to="projects" label={t('projects')} closeMenu={toggleMobileMenu} />
+                        <NavbarItem trigger="contact" to="contact" label={t('contact')} closeMenu={toggleMobileMenu} />
 
                         <Popover>
                             {({ open }) => (
@@ -164,7 +170,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                                     flex-row
                                     font-semibold`}
                                     >
-                                        <span>Preview CV</span>
+                                        <span>{t('preview-cv')}</span>
 
                                     </Popover.Button>
                                     <Transition
@@ -205,9 +211,18 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                             rounded-xl
                             flex
                             duration-300
-                            gap-4"
+                            gap-5"
                     >
                         <NavbarTheme onTheme={(res) => onTheme(res)} theme={theme} />
+                        <div className='flex flex-row gap-2 bg-white dark:bg-slate-500 bg-opacity-60 rounded-md p-2'>
+                        <button onClick={() => setLanguage('pt')} className={`${language === 'pt' && 'brightness-100 cursor-default' } brightness-50 cursor-pointer  hover:brightness-100 `}>
+                            <img src={iconPT.src} alt='pt' className={`h-6 `} />
+                        </button>
+                        <button onClick={() => setLanguage('en')} className={`${language === 'en' && 'brightness-100 cursor-default' } brightness-50 cursor-pointer hover:brightness-100 `}  >
+                            <img src={iconUSA.src} alt='en' className={`h-6 `} />
+                        </button>
+
+                    </div>
                     </div>
                 </div>
             }

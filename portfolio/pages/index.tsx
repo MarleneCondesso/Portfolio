@@ -10,6 +10,46 @@ import NavbarSocial from '@/components/NavbarSocial';
 import { MdKeyboardDoubleArrowUp } from 'react-icons/md';
 import NavbarMobile from '@/components/NavbarMobile';
 import useDownloader from 'react-use-downloader';
+import axios from "axios";
+import { useTranslation } from "react-i18next";
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import translationPT from "../public/locales/pt/portuguese.json";
+import translationEN from "../public/locales/en/english.json";
+
+const resources = {
+   en: {
+    translationAboutMe: translationEN['about-me'],
+    translationExperience: translationEN['experience'],
+    translationTechnicalSkills: translationEN['technical-skills'],
+    translationProjects: translationEN['projects'],
+    translationContact: translationEN['contact'],
+    translationNavbar: translationEN['navbar']
+  },
+  pt: {
+    translationAboutMe: translationPT['about-me'],
+    translationExperience: translationPT['experience'],
+    translationProjects: translationPT['projects'],
+    translationContact: translationPT['contact'],
+    translationNavbar: translationPT['navbar']
+  }
+  /*fr: {
+    translation: translationFR,
+  },
+  es: {
+    translation: translationES, 
+  },*/
+};
+
+i18n.use(initReactI18next).init({
+  resources,
+  lng: "en",
+  fallbackLng: "en",
+  interpolation: {
+    escapeValue: false,
+  },
+});
+
 export default function Home() {
 
   const [theme, setTheme] = useState(typeof window !== 'undefined' && localStorage.getItem('theme') ? localStorage.getItem('theme') : 'system');
@@ -18,10 +58,9 @@ export default function Home() {
   const [showBackground, setShowBackground] = useState(false);
   const [variantMenu, setVariantMenu] = useState(false);
   const { download } = useDownloader();
-
-  const TOP_OFFSET = 860;
+  const [ language, setLanguage ] = useState(i18n.language);
+  const TOP_OFFSET = 600;
    useEffect(() => {
-
     const handleScrollY = () => {
       if (window.scrollY >= TOP_OFFSET) {
         setShowBackground(true);
@@ -31,9 +70,7 @@ export default function Home() {
         setGoToInitial(false);
       }
     }
-
     window.addEventListener('scroll', handleScrollY);
-
     return () => {
       window.removeEventListener('scroll', handleScrollY);
     }
@@ -82,6 +119,12 @@ export default function Home() {
   }
 
   useEffect(() => {
+    console.log(language)
+  }, [language])
+
+
+
+  useEffect(() => {
     switch (theme) {
       case 'dark':
         document.documentElement.classList.add('dark');
@@ -107,13 +150,14 @@ export default function Home() {
   }
 
 
+
   return (
     <div className='p-10 2xl:p-60 xl:p-28 lg:p-20'>
       <header>
-        <Navbar onTheme={(res) => { setTheme(res); }} showBackgroundNav={showBackground} hiddenNav={variantMenu} theme={theme!} onDownloadCV={downloadCV} />
-        <NavbarMobile showBackgroundNav={showBackground} onDownloadCV={downloadCV} theme={theme!} onTheme={(res) => setTheme(res)} hiddenNav={variantMenu} />
+        <Navbar onTheme={(res) => { setTheme(res); }} showBackgroundNav={showBackground} hiddenNav={variantMenu} theme={theme!} onDownloadCV={downloadCV} setLanguage={(res) => i18n.changeLanguage(res)} language={language}/>
+        <NavbarMobile showBackgroundNav={showBackground} onDownloadCV={downloadCV} theme={theme!} onTheme={(res) => setTheme(res)} hiddenNav={variantMenu} language={language} setLanguage={(res) => {i18n.changeLanguage(res); setLanguage(res)}} />
       </header>
-      <div className='gap-20 grid flex-col'>
+      <div className='flex flex-col' id='container'>
         <Billboard />
         <About />
         <Experience />
@@ -124,8 +168,8 @@ export default function Home() {
         <Contact getTheme={theme!} />
       </footer>
       <NavbarSocial getTheme={theme!} />
-      <a className={`dark:text-teal-500 text-[var(--icon-color-light)] fixed bottom-8 right-2 cursor-pointer active:scroll-smooth hover:opacity-50  ${!goToInitial && 'hidden'}`} onClick={scrollToUp}>
-        <MdKeyboardDoubleArrowUp size={80} className="animate-bounce duration-200 " />
+      <a className={`dark:text-teal-500 text-slate-700 fixed bottom-8 right-2 cursor-pointer active:scroll-smooth hover:opacity-50  ${!goToInitial && 'hidden'}`} onClick={scrollToUp}>
+        <MdKeyboardDoubleArrowUp size={80} className="animate-bounce duration-200" />
       </a>
     </div>
   );

@@ -2,9 +2,12 @@ import { IoIosArrowDown } from "react-icons/io";
 import Heading from "./Heading";
 import ProjectCard from "./ProjectCard";
 import { useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { changeLanguage } from "i18next";
 
 const Projects = () => {
-
+    
+    const { t } = useTranslation(['translationProjects']);
     const [showChallenges, setShowChallenges ] = useState(false);
 
     const toogleChanllenges = useCallback(() => {
@@ -13,20 +16,20 @@ const Projects = () => {
     },[]); 
 
     return (
-        <section id="projects" className="flex flex-col mb-72 lg:gap-20">
-            <Heading title="Projects"/>
+        <section id="projects" className={`flex flex-col mb-72 lg:gap-20`}>
+            <Heading title={t('projects-title')}/>
             <div className="flex items-center justify-center flex-col w-full self-center gap-32">
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 self-center items-center justify-center gap-20">
                     <ProjectCard 
-                        title="Netflix Website - Clone"
-                        text="A simple Netflix Website clone built with Next.js, Tailwind Css and MongoDB"
+                        title={t('projects-netflix-title')}
+                        text={t('projects-netflix-text')}
                         tools={["Next.js", "Tailwind CSS", "MongoDB"]} 
                         webSiteUrl="https://netflix-clone-alpha-bice.vercel.app"
                         gitHubUrl="https://github.com/MarleneCondesso/netflix-clone"
                     />
                     <ProjectCard 
-                        title="Sudoku Website"
-                        text="A simple sudoku game when i can play when boring. "
+                        title={t('projects-sudoku-title')}
+                        text={t('projects-sudoku-text')}
                         tools={["Typescript", "Tailwind CSS", "React"]} 
                         webSiteUrl="https://sudoku-lena.vercel.app/"
                         gitHubUrl="https://github.com/MarleneCondesso/sudoku.lena"
@@ -46,15 +49,15 @@ const Projects = () => {
                         gitHubUrl=""
                     /> */}
                     <ProjectCard 
-                        title="Todo List"
-                        text="Todo list app built with Next.js, Tailwind Css and MongoDB"
+                        title={t('projects-todo-title')}
+                        text={t('projects-todo-text')}
                         tools={["Next.js", "Tailwind CSS", "MongoDB"]} 
                         webSiteUrl="https://todolist-web-brown.vercel.app/"
                         gitHubUrl="https://github.com/MarleneCondesso/todolist-web"
                     />
                 </div>
                 <div className="flex items-center justify-center">
-                    <button className="flex flex-col items-center dark:text-teal-400 dark:hover:text-white hover:text-slate-700 text-white text-lg cursor-pointer font-semibold"  onClick={toogleChanllenges}>
+                    <button className={`flex flex-col items-center dark:text-teal-400 dark:hover:text-white hover:text-slate-700 text-lg cursor-pointer font-semibold ${showChallenges && 'dark:text-white text-slate-700'}`}  onClick={toogleChanllenges}>
                         Challenges  from  "codementor.io"
                         <IoIosArrowDown size={40}className={`${showChallenges && 'rotate-180'}`}/>
                     </button>

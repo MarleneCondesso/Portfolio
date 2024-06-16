@@ -5,22 +5,23 @@ import { TbPacman } from "react-icons/tb";
 import { BsGlobe2 } from "react-icons/bs";
 import { IoLocateOutline } from "react-icons/io5";
 import { useActiveMenu } from "react-active-menu";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
 const About = () => {
+    const { t } = useTranslation(['translationAboutMe']);
+    const subTitleAboutMe: string = t('about-me-subtitle');
 
-    const subTitleAboutMe: string = "I'm Marlene and Frontend Developer";
 
     const scrollTo = () => {
         window.scrollTo({
             top: 6500,
             behavior: 'smooth'
-          })
+        })
     }
-    
+
     return (
-        <section id="about" className="mb-44 flex flex-col lg:gap-20">
-            <Heading title="About me" />
+        <section id="about" className={`mb-44 flex flex-col lg:gap-20 `}>
+            <Heading title={t('about-me-title')}/>
             <div className="grid grid-cols-1 
                             xl:grid-cols-2 
                             gap-32 
@@ -83,19 +84,19 @@ const About = () => {
                             <div className="flex flex-col gap-6 ">
                                 <div className="flex gap-4 items-center">
                                     <AiOutlineGift className="text-[var(--icon-color-light)]  dark:text-teal-400" />
-                                    Birthday
+                                    {t('about-me-birthday')}
                                 </div>
                                 <div className="flex gap-4 items-center">
                                     <FiBookOpen className="text-[var(--icon-color-light)] dark:text-teal-400" />
-                                    Study
+                                    {t('about-me-study')}
                                 </div>
                                 <div className="flex gap-4 items-center ">
                                     <TbPacman className="text-[var(--icon-color-light)] dark:text-teal-400" />
-                                    Interest
+                                    {t('about-me-interest')}
                                 </div>
                                 <div className="flex gap-4 items-center">
                                     <IoLocateOutline className="text-[var(--icon-color-light)]  dark:text-teal-400" />
-                                    Location
+                                    {t('about-me-location')}
                                 </div>
                             </div>
                             <div className="flex flex-col gap-6">
@@ -108,48 +109,36 @@ const About = () => {
                         <div className="flex flex-col gap-6 lg:gap-6 ">
                             <p>07-12-1997</p>
                             <p>ISEP *</p>
-                            <p>Reading & Games</p>
+                            <p>{t("about-me-interest-text")}</p>
                             <p>Porto, Portugal</p>
                         </div>
                     </div>
                     <span className="text-white dark:text-teal-400 text-[10px] md:text-xs">* ISEP - Instituto Superior de Engenharia do Porto</span>
                     <div className="mt-8 gap-3 flex flex-col items-center">
                         <h2 className="font-semibold text-[var(--icon-color-light)] dark:text-white md:text-lg text-base text-center">{subTitleAboutMe}</h2>
-                        <p className="text-slate-700 dark:text-white items-center flex max-w-xl text-justify text-xs 2xl:leading-loose xl:leading-loose lg:leading-loose md:leading-loose sm:leading-loose leading-loose mb-4 p-5">
-                            Hi! My name is Marlene Condesso and i am a Web Developer. My first time coding was in 2020, when I took my Course based on 'Agile Software Development'.<br></br>
-                            After that, my passion on coding, my focus on creating new things, facing new challenges and my will to keep learning increased.<br></br>
-                            I can title myself as a baby on tech area, after all i only had one experience as a web developer.
-                            My main objective is to increase more and more professionally and personally,
-                            let me do it with you.
+                        <p className="text-slate-700 dark:text-white items-center flex max-w-xl text-justify text-xs 2xl:leading-loose xl:leading-loose lg:leading-loose md:leading-loose sm:leading-loose leading-loose mb-4 p-5 whitespace-break-spaces">
+                            {t('about-me-text')}
                         </p>
-                        <a onClick={scrollTo} id="hireMe" className="
+                        <a onClick={scrollTo} id="hireMe" className={` 
+                            
                             bg-[var(--icon-color-light)]
+                            hover:bg-slate-100
+                            hover:text-slate-900
                             dark:bg-slate-600
                             text-slate-700
                             dark:text-teal-500
-                            hover:text-white
-                            dark:hover:bg-teal-500
                             dark:hover:text-slate-100
                             font-bold
-                            lg:w-28 
-                            lg:h-12 
                             lg:rounded-xl
                             text-base
-                            md:w-32 
-                            md:h-12 
-                            sm:w-24 
-                            sm:h-10 
-                            w-20 
-                            h-10 
+                            p-2
                             rounded 
                             flex
                             justify-center
                             items-center
                             cursor-pointer
-                            animate-bounce-slow
-                            "
-                        >
-                            Hire Me
+                            animate-bounc`} >
+                            {t('about-me-button')}
                         </a>
                     </div>
                 </div>

@@ -16,7 +16,15 @@ module.exports = {
       animation: {
         "pulse-slow": "pulse 8s linear infinite",
         "bounce-slow": "bounce 6s linear infinite",
+        'fade-in-up': 'fadeIn .4s ease-in-out ', 
+        'fade-in-up-container': 'fadeIn .8s ease-in-out ' 
       },
+      keyframes: {
+				fadeIn: {
+					from: { opacity: 0 },
+					to: { opacity: 1 },
+				},
+			},
     },
   },
   plugins: [

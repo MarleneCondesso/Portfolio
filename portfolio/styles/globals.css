@@ -31,3 +31,10 @@ html{
     box-sizing: inherit;
     /* border: 1px solid red;  */
 }
+@keyframes fateIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+  }
+.animation-container{
+    animation: fadeIn .8s ease-in-out
+}

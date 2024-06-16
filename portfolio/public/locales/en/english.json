@@ -1,0 +1,125 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About me",
+    "experience": "Experience",
+    "skills": "Technical Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "preview-cv": "Preview CV"
+  },
+  "about-me": {
+    "about-me-title": "About me",
+    "about-me-birthday": "Birthday",
+    "about-me-study": "Study",
+    "about-me-interest": "Interest",
+    "about-me-interest-text": "Read & Gamming",
+    "about-me-location": "Location",
+    "about-me-subtitle": "I'm Marlene and Frontend Developer",
+    "about-me-text": "Hi! My name is Marlene Condesso and i am a Web Developer. My first time coding was in 2020, when I took my Course based on 'Agile Software Development'.\n After that, my passion on coding, my focus on creating new things, facing new challenges and my will to keep learning increased. \n I can title myself as a baby on tech area, after all i only had one experience as a web developer. \n My main objective is to increase more and more professionally and personally, let me do it with you.",
+    "about-me-button": "Hire Me"
+  },
+  "experience": {
+    "experience-title": "Experience",
+    "experience-programming-job": "Programming",
+    "experience-other-areas": "Other areas",
+
+    "experience-n4it-title": "N4IT Software",
+    "experience-n4it-start": "Mar",
+    "experience-n4it-end": "Jul",
+    "experience-n4it-description": " Internship carried out within the Technical Course of Professional Higher Education - Agile Software Development.",
+    "experience-n4it-subtitle-tasks": "Tasks:",
+    "experience-n4it-tasks": [
+      "Requirements gathering, analysis and design.",
+      "Sprint planning.", "Web frontend development (React).", "Backend development (.Net)"
+    ],
+    "experience-n4it-subtitle-technologies": "Technologies:",
+    "experience-n4it-technologies": [
+      "JavaScript",
+      "React.ts",
+      "C#",
+      "Microsoft SharePoint"
+    ],
+
+    "experience-ruga-title": "RUGA - Embalamento e Acabamento Têxtil, Unipessoal, LDA",
+    "experience-ruga-position": "Textile Operator ",
+    "experience-ruga-start": "Jan",
+    "experience-ruga-end": "Present",
+    "experience-ruga-description": "",
+    "experience-ruga-subtitle-tasks": "Textile operator in:",
+    "experience-ruga-tasks": [
+      "Placing pins and hangtags on parts.",
+      "Detection of possible anomalies in textile pieces.",
+      "Cleaning textile parts.",
+      "Folding of textile parts."
+    ],
+
+    "experience-dolores-title": "Dolores Hipólito, Unipessoal, LDA",
+    "experience-dolores-position": "Textile Operator",
+    "experience-dolores-start": "Out",
+    "experience-dolores-end": "Out",
+    "experience-dolores-description": "",
+    "experience-dolores-subtitle-tasks": "Textile Operator in:",
+    "experience-dolores-tasks": [
+      " Counting and packing finished work.",
+      "Detection of possible anomalies in textile pieces.",
+      "Textile machine operator."
+    ],
+
+    "experience-fm-title": "FM Têxteis S.A",
+    "experience-fm-position": "Textile Operator",
+    "experience-fm-start": "Jan",
+    "experience-fm-end": "Jan",
+    "experience-fm-description": "",
+    "experience-fm-subtitle-tasks": "Textile Operator in:",
+    "experience-fm-tasks": [
+      "Cutting Sector (Main charge).",
+      "Textile packaging and finishing",
+      "Confection Sector.",
+      "Packing and removing guides for finished textile work."
+    ],
+
+    "experience-esposende-title": "Esposende 2000",
+    "experience-esposende-position": "Assistant in the organization of \n sports and recreational activities",
+    "experience-esposende-start": "Apr",
+    "experience-esposende-end": "Jul",
+    "experience-esposende-description": "Professional Intership carried out by the scope of Technical Course of the Environmental Management.",
+    "experience-esposende-subtitle-tasks": " Exemples of sports activities:",
+    "experience-esposende-tasks": [
+      "Trails.",
+      "Walks.",
+      "BTT Racing."
+    ],
+
+    "experience-bombeiros-title": "Bombeiros Voluntários de Fão",
+    "experience-bombeiros-position": "Forest security assistent",
+    "experience-bombeiros-start": "May",
+    "experience-bombeiros-end": "Jul",
+    "experience-bombeiros-description": "Professional Intership carried out by the scope of Technical Course of the Environmental Management.",
+    "experience-bombeiros-subtitle-tasks": "Tasks:",
+    "experience-bombeiros-tasks": [
+      "Identification of fire hydrants and water points.",
+      "Marking georeferenced information related to fire hydrants and water points already identified.",
+      "Patrol of forest areas at risk of fire."
+    ]
+  },
+
+  "technical-skills": {
+    "technical-skills-title": "Technical Skills"
+  },
+
+  "projects" : {
+    "projects-title": "Projects",
+    "projects-netflix-title": "Netflix Website - Clone",
+    "projects-netflix-text": "A simple Netflix Website clone",
+    "projects-sudoku-title": "Sudoku Website",
+    "projects-sudoku-text": "A simple sudoku game when i can play when boring.",
+    "projects-todo-title": "Todo List",
+    "projects-todo-text": "Todo list app. We can CRUD all the tasks."
+  },
+
+  "contact": {
+    "contact-title": "SAY HI!",
+    "contact-text": "I'm currently looking for any opportunities and challenges to merge into this area and improve my skills. My inbox is always open. I’ll try my best to get back to you!"
+  }
+}

@@ -3,6 +3,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 import { SiCodepen, SiMicrosoftoutlook } from 'react-icons/si';
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 
 interface ContactProps {
@@ -11,14 +12,16 @@ interface ContactProps {
 const Contact: FC<ContactProps> = ({
     getTheme
 }) => {
-
+  
+    const { t } = useTranslation(['translationContact']);
 
     return (
         <section id="contact" className="lg:pt-44
             flex 
             flex-col 
             items-center 
-            justify-center"
+            justify-center 
+            animate-fade-in-up-container"
         >
             <div className='flex flex-col items-center h-full justify-center'>
                 <h1 className="
@@ -31,11 +34,11 @@ const Contact: FC<ContactProps> = ({
                 text-[var(--icon-color-light)] 
                 dark:text-teal-400"
                 >
-                    SAY HI!
+                    {t('contact-title')}
                 </h1>
-                <div className="py-16 text-white xl:text-lg lg:text-base text-xs lg:w-[50%] md:w-[70%] text-justify">
+                <div className="py-16 text-white xl:text-lg lg:text-base text-md lg:w-[50%] md:w-[70%] text-justify font-extrabold tracking-wider">
                     <p>
-                        I'm currently looking for any opportunities and challenges to merge into this area and improve my skills. My inbox is always open. I’ll try my best to get back to you!
+                    {t('contact-text')}
                     </p>
                 </div>
                 <div className='flex lg:flex-row gap-10 flex-col'>

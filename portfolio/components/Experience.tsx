@@ -1,14 +1,16 @@
 import { useCallback, useEffect, useState } from "react";
 import Heading from "./Heading";
-import { MdKeyboardArrowUp } from 'react-icons/md';
-import { MdArrowForwardIos } from 'react-icons/md';
+import { MdKeyboardArrowUp } from "react-icons/md";
+import { MdArrowForwardIos } from "react-icons/md";
+import { useTranslation } from "react-i18next";
+import ExperienceCard from "./ExperienceCard";
+import ExperienceButton from "./ExperienceButton";
 const Experience = () => {
-
-    const [showInfo, setShowInfo] = useState('n4');
-
+    const [showInfo, setShowInfo] = useState("n4it");
+    const { t } = useTranslation(['translationExperience']);
     const [openOtherJobs, setOpenOtherJobs] = useState(false);
     const [openProgramming, setOpenProgramming] = useState(false);
-    const [selectExperience, setSelectExperience ] = useState(false);
+    const [selectExperience, setSelectExperience] = useState(false);
 
     const handleOpenOtherJobs = useCallback(() => {
         setOpenOtherJobs((current) => !current);
@@ -17,24 +19,25 @@ const Experience = () => {
     useEffect(() => {
         if (openOtherJobs) {
             setOpenProgramming(false);
-        } 
-    }, [openOtherJobs, setOpenProgramming])
+        }
+    }, [openOtherJobs, setOpenProgramming]);
 
     useEffect(() => {
         if (openProgramming) {
             setOpenOtherJobs(false);
-        } 
-    }, [setOpenOtherJobs, openProgramming])
-  
+        }
+    }, [setOpenOtherJobs, openProgramming]);
+
     const handleOpenProgrammingJobs = useCallback(() => {
         setOpenProgramming((current) => !current);
     }, []);
 
 
     return (
-        <section id="experience" className="mb-44 flex flex-col lg:gap-20" >
-            <Heading title="Experience" />
-                <div className="
+        <section id="experience" className={`flex flex-col`}>
+            <Heading title={t('experience-title')} />
+            <div
+                className="
                     2xl:w-[100%]
                     xl:w-[90%]
                     w-full
@@ -73,10 +76,12 @@ const Experience = () => {
                     h-auto
                     p-4
                     2xl:p-10
+                    animate-fade-in-up 
+                    delay-1000
                     "
-                > 
-                        
-                    <div className="
+            >
+                <div
+                    className="
                         flex 
                         flex-col 
                         pt-5 
@@ -85,10 +90,16 @@ const Experience = () => {
                         justify-start
                         self-start
                         "
-                    >
-                        <div className="flex flex-col gap-4">
-                            <button id={"btn_programming_job"} onClick={handleOpenProgrammingJobs} className={`
-                            ${openProgramming ? "text-white dark:text-teal-200 bg-[var(--secondary-color-light)] bg-opacity-0 dark:bg-slate-700" : "text-[var(--icon-color-light)] dark:hover:text-teal-200 dark:text-white bg-white dark:bg-slate-500 dark:bg-opacity-25 bg-opacity-40"}
+                >
+                    <div className="flex flex-col gap-4">
+                        <button
+                            id={"btn_programming_job"}
+                            onClick={handleOpenProgrammingJobs}
+                            className={`
+                            ${openProgramming
+                                    ? "text-white dark:text-teal-200 bg-[var(--secondary-color-light)] bg-opacity-0 dark:bg-slate-700"
+                                    : "text-[var(--icon-color-light)] dark:hover:text-teal-200 dark:text-white bg-white dark:bg-slate-500 dark:bg-opacity-25 bg-opacity-40"
+                                }
                                 text-base
                                 h-4 
                                 xl:w-80
@@ -100,43 +111,25 @@ const Experience = () => {
                                 font-semibold
                                 p-6
                                 items-center`}
-                            >
-                                Programming jobs
-                                <div className={`${openProgramming ? 'rotate-0' : 'rotate-180'}`}>
-                                    <MdKeyboardArrowUp />
-                                </div>
-                            </button>
-                        </div>
-                        {openProgramming ? (
-
-                            <div className="
-                                w-full 
-                                lg:overflow-hidden 
-                                overflow-x-auto 
-                                border-white"
-                            >
-                                <ul className="flex flex-col lg:items-center lg:justify-center text-[var(--selection-color-light)] dark:text-slate-900">
-                                    <li onClick={() => {setShowInfo('n4');setSelectExperience(true);}} className="mb-2">
-                                        <button className={`
-                                        dark:text-teal-200
-                                        ${showInfo === 'n4' ? "text-slate-700 dark:text-white cursor-default" : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}
-                                        text-sm
-                                        font-semibold
-                                        h-12
-                                        w-48
-                                        rounded-md
-                                        flex 
-                                        flex-row
-                                        items-center
-                                        justify-center`}>
-                                            N4IT Software
-                                        </button>
-                                    </li>
-                                </ul>
+                        >
+                            {t('experience-programming-job')}
+                            <div className={`${openProgramming ? "rotate-0" : "rotate-180"}`}>
+                                <MdKeyboardArrowUp />
                             </div>
-                        ) : null}
-                        <button onClick={handleOpenOtherJobs} className={`
-                            ${openOtherJobs ? "text-white dark:text-teal-200 bg-[var(--secondary-color-light)] bg-opacity-0 dark:bg-slate-700" : "text-[var(--icon-color-light)] dark:hover:text-teal-200 dark:text-white bg-white bg-opacity-40 dark:bg-opacity-25"}
+                        </button>
+                    </div>
+                    {openProgramming && (
+                        <div className="flex flex-row lg:flex-col items-center lg:justify-center gap-4 bg-[var(--secondary-color-light)] dark:bg-white dark:bg-opacity-25 bg-opacity-25 rounded-3xl animate-fade-in-up text-sm overflow-x-auto overflow-scroll p-4 px-8 w-full max-w-fit">
+                            <ExperienceButton information={'n4it'} showInfo={showInfo}setInformation={(e) => setShowInfo(e)} text="N4IT Software"/>
+                        </div>
+                    )}
+                    <button
+                        onClick={handleOpenOtherJobs}
+                        className={`
+                            ${openOtherJobs
+                                ? "text-white dark:text-teal-200 bg-[var(--secondary-color-light)] bg-opacity-0 dark:bg-slate-700"
+                                : "text-[var(--icon-color-light)] dark:hover:text-teal-200 dark:text-white bg-white bg-opacity-40 dark:bg-opacity-25"
+                            }
                                 text-base 
                                 h-12 
                                 xl:w-80
@@ -148,452 +141,36 @@ const Experience = () => {
                                 font-semibold
                                 p-6
                                 items-center`}
-                        >
-                            Other jobs
-                            <div className={`${openOtherJobs ? 'rotate-0' : 'rotate-180'}`}>
-                                <MdKeyboardArrowUp />
-                            </div>
-                        </button>
-                        {openOtherJobs ? (
-                            <div className="
-                                w-full
-                                overflow-x-auto
-                                overflow-scroll
-                                text-sm
-                                p-4
-                                pl-8
-                                font-semibold
-                                flex "
-                            >
-                                <ul className="flex flex-row lg:flex-col items-center justify-center gap-4">
-                                    <li onClick={() => { setShowInfo('ruga'); setSelectExperience(true);}}>
-                                        <button className={`
-                                        ${showInfo === 'ruga' ? "text-slate-700 dark:text-white cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
-                                           w-52`}
-                                        >
-                                            RUGA - Embalamento e Acabamento Têxtil, Unipessoal, LDA
-                                        </button>
-                                    </li>
-                                    <li onClick={() => { setShowInfo('dh'); setSelectExperience(true);}}>
-                                        <button className={`
-                                        ${showInfo === 'dh' ? "text-slate-700 dark:text-white cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
-                                            w-52`}
-                                        >
-                                            Dolores Hipólito, Unipessoal, LDA
-                                        </button>
-                                    </li>
-                                    <li onClick={() => { setShowInfo('fm'); setSelectExperience(true);}}>
-                                        <button className={`
-                                        ${showInfo === 'fm' ? "text-slate-700 dark:text-white cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
-                                            w-28`}
-                                        >
-                                            FM Têxteis S.A
-                                        </button>
-                                    </li>
-                                    <li onClick={() => { setShowInfo('e2000'); setSelectExperience(true);}}>
-                                        <button className={`
-                                        ${showInfo === 'e2000' ? "text-slate-700 dark:text-white cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}`}
-                                        >
-                                            Esposende2000
-                                        </button>
-                                    </li>
-                                    <li onClick={() => { setShowInfo('bvf'); setSelectExperience(true);}}>
-                                        <button className={`
-                                        ${showInfo === 'bvf' ? "text-slate-700 dark:text-white cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
-                                            w-52`}
-                                        >
-                                            Bombeiros Voluntário de Fão
-                                        </button>
-                                    </li>
-                                    {/* <li onClick={() => { setShowInfo('upn'); setSelectExperience(true);}}>
-                                        <button className={`
-                                        ${showInfo === 'upn' ? "text-slate-700 dark:text-white underline underline-offset-[12px] cursor-default " : "text-[var(--icon-color-light)] hover:text-white dark:text-teal-200 dark:hover:text-white"}                                            
-                                            w-64`}>
-                                            UPN
-                                        </button>
-                                    </li> */}
-                                </ul>
-                            </div>
-                        ) : null}
-                    </div>
-                    <div className="
+                    >
+                        {t('experience-other-areas')}
+                        <div className={`${openOtherJobs ? "rotate-0" : "rotate-180"}`}>
+                            <MdKeyboardArrowUp />
+                        </div>
+                    </button>
+                    {openOtherJobs && (
+                        <div className="flex flex-row lg:flex-col items-center lg:justify-center gap-6 bg-[var(--secondary-color-light)] dark:bg-white dark:bg-opacity-25 bg-opacity-25 rounded-3xl animate-fade-in-up text-sm overflow-x-auto overflow-scroll p-5 w-full">
+                            <ExperienceButton setInformation={(e) => setShowInfo(e)} information={'ruga'} text="RUGA" showInfo={showInfo}/>
+                            <ExperienceButton setInformation={(e) => setShowInfo(e)} information={'dolores'} text="Dolores Hipólito, Unipessoal, LDA" showInfo={showInfo}/>
+                            <ExperienceButton setInformation={(e) => setShowInfo(e)} information={'fm'} text="FM TEXTILES, SA" showInfo={showInfo}/>
+                            <ExperienceButton setInformation={(e) => setShowInfo(e)} information={'esposende'} text="Esposende 2000" showInfo={showInfo}/>
+                            <ExperienceButton setInformation={(e) => setShowInfo(e)} information={'bombeiros'} text="Bombeiros Voluntários de Fão" showInfo={showInfo}/>
+                        </div>
+                    )}
+                </div>
+                <div
+                    className="
                         xl:h-[500px] w-full 
                         p-6 
                         flex
                         flex-col
                         items-center
                         justify-center"
-                    >
-
-                    {/*     <div className={`
-                            h-full 
-                            w-full 
-                            flex 
-                            flex-col 
-                            gap-8 
-                            items-start 
-                            justify-between 
-                            text-white
-                            text-base
-                            p-4
-                            ${showInfo === 'upn' ? 'flex' : 'hidden'}`}
-                        >
-                            <div className="grid grid-cols-1 gap-4 lg:text-lg md:text-base">
-                                <h2 className="font-semibold lg:text-lg md:text-base h-auto text-slate-700">UPN - União de Produtores Hortículas do Norte, LDA</h2>
-                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-semibold text-[var(--icon-color-light)] dark:text-teal-400">
-                                    <div className="flex flex-row gap-1">
-                                        <p>Agricultural producer</p>
-                                        <p>|</p>
-                                    </div>
-                                    <div className="flex flex-row gap-2 items-center">
-                                        <p>Jul 2013</p>
-                                        <p>-</p>
-                                        <p>Sep 2015</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <ul className="flex flex-col gap-2 items-start justify-center">
-                                <li>
-                                    <p className="flex flex-row items-center justify-center gap-2">
-                                        <MdArrowForwardIos />
-                                        Land treatment for future crops.
-                                    </p>
-                                </li>
-                                <li>
-                                    <p className="flex flex-row items-center justify-center gap-2">
-                                        <MdArrowForwardIos />
-                                        Production of vegetable crops.
-                                    </p>
-                                </li>
-                                <li>
-                                <div className="p-4 flex flex-col items-start justify-start">
-                                        <p className="flex flex-row items-center gap-2">
-                                            <MdArrowForwardIos size={12} />Seeding.</p>
-                                        <p className="flex flex-row items-center gap-2">
-                                            <MdArrowForwardIos size={12} />Fertilizing.</p>
-                                        <p className="flex flex-row items-center gap-2">
-                                            <MdArrowForwardIos size={12} />Cleaning.</p>
-                                        <p className="flex flex-row items-center gap-2">
-                                            <MdArrowForwardIos size={12} />Irrigation.</p>
-                                        <p className="flex flex-row items-center gap-2">
-                                            <MdArrowForwardIos size={12} />Pruning.</p>
-                                        <p className="flex flex-row items-center gap-2">
-                                            <MdArrowForwardIos size={12} />Harvests.</p>
-                                    </div>
-
-                                </li>
-                            </ul>
-
-                        </div> */}
-
-                        <div className={`flex h-full justify-between flex-col gap-8 p-4  text-white  dark:text-teal-400 self-start  text-sm 
-                        ${showInfo === 'bvf' ? 'flex' : 'hidden'}`}>
-                                <div className="grid grid-cols-1 gap-4  ">
-                                    <h2 className="font-semibold text-slate-700 dark:text-slate-800">Bombeiros Voluntários de Fão</h2>
-                                    <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-bold ">
-                                        <div className="flex flex-row gap-2">
-                                            <p>Forest security assistent</p>
-                                            <p className="lg:flex hidden">|</p>
-                                        </div>
-                                        <div className="flex flex-row gap-2 items-center">
-                                            <p>May 2015</p>
-                                            <p>-</p>
-                                            <p>Jul 2015</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <ul className="flex flex-col gap-10 items-center justify-center mb-5 dark:text-white text-slate-700" >
-                                    <li>
-                                        <p className="flex items-start pb-8">
-                                            Professional Intership carried out by the scope of Technical Course of the Environmental Management.
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className="flex flex-row items-center justify-start gap-2">
-                                            <MdArrowForwardIos size={18}/>
-                                            Identification of fire hydrants and water points.
-                                        </p>
-                                        <p className="flex flex-row items-center gap-2 justify-start">
-                                            <MdArrowForwardIos size={18} />
-                                            Marking georeferenced information relating.
-                                        </p>
-                                        <p className="flex flex-row items-center gap-2 justify-start">
-                                            <MdArrowForwardIos size={18}/>
-                                            Identified fire hydrants and water points.
-                                        </p>
-                                        <p className="flex flex-row items-center gap-2 justify-start">
-                                            <MdArrowForwardIos size={16} />
-                                            Patrolling forest areas at risk.
-                                        </p>
-                                    </li>
-                                </ul>
-                        </div>
-
-                        <div className={`
-                            h-full 
-                            w-full 
-                            items-start 
-                            justify-between
-                            flex 
-                            flex-col 
-                            gap-8 
-                            p-4 
-                            text-sm
-                            text-white
-                            ${showInfo === 'e2000' ? 'flex' : 'hidden'}`}
-                        >
-                            <div className="grid grid-cols-1 gap-4 text-white dark:text-teal-400">
-                                <h2 className="font-semibold text-slate-700 dark:text-slate-800">Esposende 2000</h2>
-                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-bold ">
-                                    <div className="flex flex-row gap-2">
-                                        <p>Assistant in the organization of <br></br>sports and recreational activities</p>
-                                        <p className="lg:flex hidden">|</p>
-                                    </div>
-                                    <div className="flex flex-row gap-2">
-                                        <p>April 2016</p>
-                                        <p>-</p>
-                                        <p>Jul 2016</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <ul className="flex flex-col gap-2 justify-center mb-5 dark:text-white text-slate-700">
-                                <li>
-                                    <p className="flex items-start pb-8">
-                                        Professional Intership carried out by the scope of Technical Course of the Environmental Management.
-                                    </p>
-                                </li>
-                                <li className="">
-                                    <p className="flex flex-row items-center  justify-start gap-2">
-                                        <MdArrowForwardIos />
-                                        Planning sports activities:
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Trails.
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Walks.
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        BTT Racing.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className={`
-                            h-full 
-                            w-full 
-                            justify-between
-                            items-start 
-                            flex 
-                            flex-col 
-                            gap-8 
-                            p-4  
-                            text-sm 
-                            text-white
-                            ${showInfo === 'fm' ? 'flex' : 'hidden'}`}
-                        >
-                            <div className="grid grid-cols-1 gap-4 text-white dark:text-teal-400">
-                                <h2 className="font-semibold text-slate-700 dark:text-slate-800">FM Têxteis S.A.</h2>
-                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-bold">
-                                    <div className="flex flex-row gap-2">
-                                        <p>Textile machine operator</p>
-                                        <p className="lg:flex hidden">|</p>
-                                    </div>
-                                    <div className="flex flex-row gap-2 items-center">
-                                        <p>Jan 2017</p>
-                                        <p>-</p>
-                                        <p>Jan 2019</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <ul className="flex flex-col gap-2 mb-14 dark:text-white text-slate-700">
-                                <li className="">
-                                    <p className="flex flex-row items-center justify-start gap-2 mb-10 font-semibold">
-                                        Textile operator in:
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Cutting sectior (Main charge).
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Packing sector.
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Confection sector.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className={`
-                            h-full 
-                            w-full 
-                            xl:justify-between
-                            items-start 
-                            flex 
-                            flex-col 
-                            gap-8 
-                            p-4 
-                            text-white
-                            text-slate
-                            text-sm 
-                            ${showInfo === 'dh' ? 'flex' : 'hidden'}`}
-                        >
-                            <div className="grid grid-cols-1 gap-4 text-white dark:text-teal-400">
-                                <h2 className="font-semibold text-slate-700 dark:text-slate-800">Dolores Hipólito, Unipessoal, LDA</h2>
-                                <div className="flex xl:flex-row lg:flex-col md:flex-row flex-col gap-2 font-bold">
-                                    <div className="flex flex-row gap-2">
-                                        <p>Textile machine operator</p>
-                                        <p className="lg:flex hidden">|</p>
-                                    </div>
-                                    <div className="flex flex-row gap-2 items-center">
-                                        <p>Out 2019</p>
-                                        <p>-</p>
-                                        <p>Out 2020</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <ul className="flex flex-col gap-2 items-center justify-center dark:text-white text-slate-700">
-                                <li className="mb-20">
-                                    <p className="flex flex-row items-center justify-start mb-10 font-semibold">
-                                        Textile operator in:
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Packing sector.
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Confection sector.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className={`
-                            h-full 
-                            w-full 
-                            xl:justify-between
-                            items-start 
-                            flex 
-                            flex-col 
-                            gap-8 
-                            p-4 
-                            text-white
-                            text-slate
-                            text-sm 
-                            ${showInfo === 'ruga' ? 'flex' : 'hidden'}`}
-                        >
-                            <div className="grid grid-cols-1 gap-4 text-white dark:text-teal-400">
-                                <h2 className="font-semibold  text-slate-700  dark:text-slate-800">RUGA - Embalament e Acabamento Têxtil, Unipessoal, LDA</h2>
-                                <div className="flex xl:flex-row lg:flex-col md:flex-row flex-col gap-2 font-bold">
-                                    <div className="flex flex-row gap-2">
-                                        <p>Textile machine operator</p>
-                                        <p className="lg:flex hidden">|</p>
-                                    </div>
-                                    <div className="flex flex-row gap-2 items-center">
-                                        <p>Jan 2024</p>
-                                        <p>-</p>
-                                        <p>Present</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <ul className="flex flex-col gap-2 items-center justify-center dark:text-white text-slate-700">
-                                <li className="mb-20">
-                                    <p className="flex flex-row items-center justify-start mb-10 font-semibold">
-                                        Textile operator in:
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Placing pins and hangtags on parts.
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Coating textile pieces.
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Cleaning textile parts.
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Folding of textile pieces.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className={`
-                            h-full 
-                            w-full 
-                            items-start 
-                            justify-between
-                            flex 
-                            flex-col  
-                            p-4
-                            gap-6 
-                            text-white
-                            text-sm 
-                            ${showInfo === 'n4' ? 'flex' : 'hidden'}`}
-                        >
-                            <div className="grid grid-cols-1 gap-4 dark:text-teal-400 text-white">
-                                <h2 className="font-semibold dark:text-slate-800 text-slate-700">N4IT Software</h2>
-                                <div className="flex xl:flex-row flex-col lg:flex-col md:flex-row gap-2 font-bold ">
-                                    <div className="flex flex-row gap-2">
-                                        <p>Web developer</p>
-                                        <p className="lg:flex hidden">|</p>
-                                    </div>
-                                    <div className="flex flex-row gap-2 items-center">
-                                        <p>March 2022</p>
-                                        <p>-</p>
-                                        <p>Jul 2022</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <ul className="flex flex-col gap-8 items-center justify-center dark:text-white text-slate-700">
-                                <li className="">
-                                    <p className="flex flex-row items-center justify-start gap-2 pb-20">
-                                        Internship carried out within the Technical Course of Professional Higher Education - Agile Software Development.
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Requirements gathering, analysis and design.
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Sprint planning.
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Web frontend development (React).
-                                    </p>
-                                    <p className="flex flex-row items-center gap-2 justify-start">
-                                        <MdArrowForwardIos />
-                                        Backend development (Dotnet).
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-            
-                    </div>
+                >
+                    <ExperienceCard showInfo={showInfo}/>
+                </div>
             </div>
-
         </section>
-
-
     );
-}
+};
 
 export default Experience;

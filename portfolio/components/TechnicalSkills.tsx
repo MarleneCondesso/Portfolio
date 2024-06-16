@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Heading from "./Heading";
+import { useTranslation } from "react-i18next";
 
 const TechnicalSkills = () => {
 
-
+    const { t } = useTranslation(['translationTechnicalSkills']);
     const [colorHtml, setColorHtml] = useState('#f8fafc');
     const [colorTailwind, setColorTailwind] = useState('#f8fafc');
     const [colorNextjs, setColorNextjs] = useState('#f8fafc');
@@ -19,8 +20,8 @@ const TechnicalSkills = () => {
     const [colorGit, setColorGit] = useState('#f8fafc');
 
     return (
-        <section className="flex lg:gap-20 flex-col mb-44" id="about">
-            <Heading title="Technical Skills"/>
+        <section className={`flex flex-col`} id="about">
+            <Heading title={t('technical-skills-title')}/>
             <div className="
                 grid 
                 grid-cols-2 

@@ -11,11 +11,15 @@ interface NavbarItemProps {
 const NavbarItem: FC<NavbarItemProps> = ({
     to,
     label,
-    closeMenu
+    closeMenu,
 }) => {
 
+    const handleScrollWithAnimation = () => {
+        var element = document.getElementById(to);
+        element?.classList.add('animate-container');
+    }
+
     return (
-        <div>
             <a href={`#${to}`} type="button" onClick={closeMenu}
                 className={`
                 text-white
@@ -39,11 +43,11 @@ const NavbarItem: FC<NavbarItemProps> = ({
                 cursor-pointer 
                 transition-shadow
                 lg:z-[1]
+                scroll-smooth
                 `}
             >
                 {label}
             </a>
-        </div>
     );
 }
 

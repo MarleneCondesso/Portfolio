@@ -1,0 +1,125 @@
+{
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre mim",
+    "experience": "Experiência",
+    "skills": "Conhecimentos",
+    "projects": "Projetos",
+    "contact": "Contacto",
+    "preview-cv": "CV Pre-visualização"
+  },
+  "about-me": {
+    "about-me-title": "Sobre mim",
+    "about-me-birthday": "Data de nascimento",
+    "about-me-study": "Estudos",
+    "about-me-interest": "Interesses",
+    "about-me-interest-text": "Ler & Jogar",
+    "about-me-location": "Localização",
+    "about-me-subtitle": "Eu sou a Marlene e sou Frontend Developer",
+    "about-me-text": "Olá! O meu nome é Marlene Condesso e sou Web Developer. A primeira vez que programei foi em 2022, quando iniciei o curso baseado em Desenvolvimento Ágil de Software.\n Posteriormente, o gosto em programar, a vontade de desenvolver novas coisas, ultrapassar desafios/problemas e o meu anseio de continuar a aprender aumentou.\n Na área, titulo-me várias vezes como um bebê a dar os seus primeiros passos, apesar de tudo eu só tive uma experiência como Web Developer. \n O meu principal objetivo é melhorar o máximo possível profissionalmente e pessoalmente, deixe-me fazê-lo consigo.",
+    "about-me-button": "Contrate-me"
+  },
+  "experience": {
+    "experience-title": "Experiência",
+    "experience-programming-job": "Programação",
+    "experience-other-areas": "Outras áreas",
+
+    "experience-n4it-title": "N4IT Software",
+    "experience-n4it-start": "Março",
+    "experience-n4it-end": "Julho",
+    "experience-n4it-description": "Estágio profissional realizado no âmbito do Curso Técnico de Ensino Superior Profissional - Desenvolvimento Ágil de Software.",
+    "experience-n4it-tasks": [
+      " Levantamento, análise e design de requisitos.",
+      "Sprint planning.", "Desenvolvimento Web frontend (React).",
+      "Desenvolvimento Backend (.Net)"
+    ],
+    "experience-n4it-subtitle-technologies": "Tecnologias utilizadas:",
+    "experience-n4it-technologies": [
+      "JavaScript",
+      "React.ts",
+      "C#",
+      "Microsoft SharePoint"
+    ],
+
+    "experience-ruga-title": "RUGA - Embalamento e Acabamento Têxtil, Unipessoal, LDA",
+    "experience-ruga-position": "Operadora Têxtil -",
+    "experience-ruga-start": "Janeiro",
+    "experience-ruga-end": "Atualmente",
+    "experience-ruga-description": "",
+    "experience-ruga-subtitle-tasks": "Operadora têxtil em:",
+    "experience-ruga-tasks": [
+      "Colocação de Pinos e Hantags em peças têxtil.",
+      "Limpeza de obra têxtil.",
+      "Detetagem de possíveis anomalias nas peças têxtil",
+      "Dobragem de peças têxtil."
+    ],
+
+    "experience-dolores-title": "Dolores Hipólito, Unipessoal, LDA",
+    "experience-dolores-position": "Operadora Têxtil -",
+    "experience-dolores-start": "Outubro",
+    "experience-dolores-end": "Outubro",
+    "experience-dolores-description": "",
+    "experience-dolores-subtitle-tasks": "Operadora têxtil em:",
+    "experience-dolores-tasks": [
+      " Contagem e encaixotamento de obra finalizada.",
+      "Limpeza de obra textil.",
+      "Operadora de máquinas têxtil"
+    ],
+
+    "experience-fm-title": "FM Têxteis S.A",
+    "experience-fm-position": "Operadora Têxtil -",
+    "experience-fm-start": "Janeiro",
+    "experience-fm-end": "Janeiro",
+    "experience-fm-description" : "",
+    "experience-fm-subtitle-tasks": "Operadora têxtil em:",
+    "experience-fm-tasks": [
+      " Corte têxtil.",
+      "Embalamento têxtil",
+      " Confeção.",
+      "Encaixotamento e retiragem de guias de obra têxtil finalizada."
+    ],
+
+    "experience-esposende-title": "Esposende 2000",
+    "experience-esposende-position": "Assistente na organização de \n eventos desportivos e atividades recreativas -",
+    "experience-esposende-start": "Abril",
+    "experience-esposende-end": "Julho",
+    "experience-esposende-description": "Estágio profissional realizado no âmbito do Curso Técnico de Gestão do Ambiente.",
+    "experience-esposende-subtitle-tasks": "Exemplos de atividades desportivas:",
+    "experience-esposende-tasks": [
+      "Trails.",
+      "Caminhadas.",
+      "Corridas de BTT."
+    ],
+    
+    "experience-bombeiros-title": "Bombeiros Voluntários de Fão",
+    "experience-bombeiros-position": "Assistente de Segurança Florestal",
+    "experience-bombeiros-start": "Maio",
+    "experience-bombeiros-end": "Julho",
+    "experience-bombeiros-description": "Estágio profissional realizado no âmbito do Curso Técnico de Gestão do Ambiente.",
+    "experience-bombeiros-subtitle-tasks": "Tarefas:",
+    "experience-bombeiros-tasks": [
+      "Identificação de bocas de incêndio e pontos de água.",
+      " Marcação de informação georeferênciada relacionada a bocas de incêndio e pontos de água já identificados.",
+      "Patrulha de áreas florestais em risco de incêndio."
+    ]
+  },
+
+  "technical-skills": {
+     "technical-skills-title": "Conhecimentos Técnicos"
+  },
+
+  "projects" : {
+    "projects-title": "Projetos",
+    "projects-netflix-title": "Clone WebSite Netflix",
+    "projects-netflix-text": "Um simples clone do site da Netflix.",
+    "projects-sudoku-title": "Sudoku Website",
+    "projects-sudoku-text": "Jogo Sudoku em formato WebSite, onde posso jogar sempre que estou entediada.",
+    "projects-todo-title": "Todo List",
+    "projects-todo-text": "Web site para criação de tarefas, edição e eliminação das mesmas."
+  },
+
+  "contact": {
+    "contact-title": "Olá!",
+    "contact-text": "Estou atualmente â procura de qualquer oportunidade e desafios para iniciar nesta área e melhorar as minhas aptidões e conhecimentos. A minha caixa de mail está sempre em aberto. Tentarei o meu melhor para responder de volta."
+  }
+}
