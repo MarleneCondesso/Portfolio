@@ -25,8 +25,9 @@
     "experience-other-areas": "Outras áreas",
 
     "experience-n4it-title": "N4IT Software",
-    "experience-n4it-start": "Março",
-    "experience-n4it-end": "Julho",
+    "experience-n4it-position": "Desenvolvedora de Web",
+    "experience-n4it-start": "Março 2022",
+    "experience-n4it-end": "Julho 2022",
     "experience-n4it-description": "Estágio profissional realizado no âmbito do Curso Técnico de Ensino Superior Profissional - Desenvolvimento Ágil de Software.",
     "experience-n4it-tasks": [
       " Levantamento, análise e design de requisitos.",
@@ -43,7 +44,7 @@
 
     "experience-ruga-title": "RUGA - Embalamento e Acabamento Têxtil, Unipessoal, LDA",
     "experience-ruga-position": "Operadora Têxtil -",
-    "experience-ruga-start": "Janeiro",
+    "experience-ruga-start": "Janeiro 2024",
     "experience-ruga-end": "Atualmente",
     "experience-ruga-description": "",
     "experience-ruga-subtitle-tasks": "Operadora têxtil em:",
@@ -56,8 +57,8 @@
 
     "experience-dolores-title": "Dolores Hipólito, Unipessoal, LDA",
     "experience-dolores-position": "Operadora Têxtil -",
-    "experience-dolores-start": "Outubro",
-    "experience-dolores-end": "Outubro",
+    "experience-dolores-start": "Outubro 2019",
+    "experience-dolores-end": "Outubro 2020",
     "experience-dolores-description": "",
     "experience-dolores-subtitle-tasks": "Operadora têxtil em:",
     "experience-dolores-tasks": [
@@ -68,8 +69,8 @@
 
     "experience-fm-title": "FM Têxteis S.A",
     "experience-fm-position": "Operadora Têxtil -",
-    "experience-fm-start": "Janeiro",
-    "experience-fm-end": "Janeiro",
+    "experience-fm-start": "Janeiro 2017",
+    "experience-fm-end": "Janeiro 2019",
     "experience-fm-description" : "",
     "experience-fm-subtitle-tasks": "Operadora têxtil em:",
     "experience-fm-tasks": [
@@ -81,8 +82,8 @@
 
     "experience-esposende-title": "Esposende 2000",
     "experience-esposende-position": "Assistente na organização de \n eventos desportivos e atividades recreativas -",
-    "experience-esposende-start": "Abril",
-    "experience-esposende-end": "Julho",
+    "experience-esposende-start": "Abril 2016",
+    "experience-esposende-end": "Julho 2016",
     "experience-esposende-description": "Estágio profissional realizado no âmbito do Curso Técnico de Gestão do Ambiente.",
     "experience-esposende-subtitle-tasks": "Exemplos de atividades desportivas:",
     "experience-esposende-tasks": [
@@ -93,8 +94,8 @@
     
     "experience-bombeiros-title": "Bombeiros Voluntários de Fão",
     "experience-bombeiros-position": "Assistente de Segurança Florestal",
-    "experience-bombeiros-start": "Maio",
-    "experience-bombeiros-end": "Julho",
+    "experience-bombeiros-start": "Maio 2015",
+    "experience-bombeiros-end": "Julho 2015",
     "experience-bombeiros-description": "Estágio profissional realizado no âmbito do Curso Técnico de Gestão do Ambiente.",
     "experience-bombeiros-subtitle-tasks": "Tarefas:",
     "experience-bombeiros-tasks": [
@@ -120,6 +121,6 @@
 
   "contact": {
     "contact-title": "Olá!",
-    "contact-text": "Estou atualmente â procura de qualquer oportunidade e desafios para iniciar nesta área e melhorar as minhas aptidões e conhecimentos. A minha caixa de mail está sempre em aberto. Tentarei o meu melhor para responder de volta."
+    "contact-text": "Estou atualmente à procura de qualquer oportunidade e desafios para iniciar nesta área e melhorar as minhas aptidões e conhecimentos. A minha caixa de mail está sempre em aberto. Tentarei o meu melhor para responder de volta."
   }
 }

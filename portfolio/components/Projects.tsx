@@ -67,14 +67,14 @@ const Projects = () => {
                 <div className="grid 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 items-center justify-center gap-20">
                     <ProjectCard 
                         title="News Home page  - Frontend Challenges"
-                        text=""
+                        text=" "
                         tools={["JavaScript", "HTML","CSS"]} 
                         webSiteUrl="https://news-homepage-two-chi.vercel.app/"
                         gitHubUrl="https://github.com/MarleneCondesso/news-homepage/tree/main/news-homepage-main"
                     /> 
                     <ProjectCard 
                         title="QR Code Compoenent - Frontend Challenges"
-                        text=""
+                        text=" "
                         tools={["JavaScript", "HTML","CSS"]} 
                         webSiteUrl="https://marlenecondesso.github.io/Frontend-CHALLENGE-HUB-QR-code-component/"
                         gitHubUrl="https://github.com/MarleneCondesso/Frontend-CHALLENGE-HUB-QR-code-component/tree/main/qr-code-component-main"

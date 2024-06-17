@@ -12,6 +12,7 @@ import { Document, Page, pdfjs } from 'react-pdf'
 import iconUSA from '../public/icon/liberia.png';
 import iconPT from '../public/icon/portugal.png';
 import { useTranslation } from "react-i18next";
+import PanelCV from "./PanelCV";
 
 interface NavbarMobileProps {
     showBackgroundNav: boolean;
@@ -146,58 +147,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                         <NavbarItem trigger="projects" to="projects" label={t('projects')} closeMenu={toggleMobileMenu} />
                         <NavbarItem trigger="contact" to="contact" label={t('contact')} closeMenu={toggleMobileMenu} />
 
-                        <Popover>
-                            {({ open }) => (
-                                <>
-                                    <Popover.Button
-                                        className={`
-                                    ${open ? '' : 'text-opacity-90'}
-                                    text-[var(--icon-color-light)] 
-                                    hover:text-white 
-                                    dark:text-white 
-                                    text-slate-800
-                                    dark:hover:text-teal-200 
-                                    border-white
-                                    justify-center
-                                    items-center
-                                    h-10
-                                    w-full
-                                    rounded-md
-                                    transition
-                                    duration-75
-                                    cursor-pointer
-                                    flex
-                                    flex-row
-                                    font-semibold`}
-                                    >
-                                        <span>{t('preview-cv')}</span>
-
-                                    </Popover.Button>
-                                    <Transition
-                                        as={Fragment}
-                                        enter="transition ease-out duration-200"
-                                        enterFrom="opacity-0 translate-y-1"
-                                        enterTo="opacity-100 translate-y-0"
-                                        leave="transition ease-in duration-150"
-                                        leaveFrom="opacity-100 translate-y-0"
-                                        leaveTo="opacity-0 translate-y-1"
-                                    >
-                                        <Popover.Panel className="absolute left-1/2 top-24 z-10 mt-3 w-auto h-[40rem] -translate-x-1/2 transform px-4 sm:px-0 flex items-center justify-center">
-                                            <div className='fixed top-0 mb-10'>
-                                                <button className='bg-white bg-opacity-25 w-44 h-16 text-slate-800 font-semibold text-lg rounded-xl flex flex-row items-center justify-center gap-2' onClick={onDownloadCV}>Download <AiOutlineDownload size={20} /></button>
-                                            </div>
-                                            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-scroll scroll-smooth max-h-[800px] dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-lg scrollbar-thin scrollbar-track-[#DDD0C8] scrollbar-thumb-gray-500 w-full h-full mt-40">
-                                                <Document file="/files/CVMarleneLima.pdf" onLoadSuccess={(e: any) => onDocumentLoadSuccess(e)}>
-                                                    {Array.from(new Array(pages), (el, index) => (
-                                                        <Page key={`page_${index + 1}`} pageNumber={index + 1} width={typeof window !== 'undefined' && window.innerWidth > 700 ? 900 : 400} />
-                                                    ))}
-                                                </Document>
-                                            </div>
-                                        </Popover.Panel>
-                                    </Transition>
-                                </>
-                            )}
-                        </Popover>
+                       <PanelCV t={(res) => t(res)}/> 
                     </div>
                     <div className="
                             lg:hidden

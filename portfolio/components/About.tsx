@@ -48,8 +48,7 @@ const About = () => {
                         <img src="/images/profile.jpg" alt="profile-hero"
                             className="
                             2xl:max-h-60 
-                            sm:max-h-52
-                            max-h-28
+                            max-h-52
                             z-10  
                             rounded-md 
                             relative 
@@ -67,8 +66,7 @@ const About = () => {
                             2xl:max-h-80
                             lg:max-h-72
                             md:max-h-64 
-                            sm:max-h-64
-                            max-h-36
+                            max-h-64
                             top-4
                             left-4
                             rounded-md

@@ -105,7 +105,7 @@ const Navbar: FC<NavbarProps> = ({
                     </div>
                 </div>
                 { /** CV ITEM */}
-               <PanelCV onDownloadCV={onDownloadCV} t={(res) => t(res)}/>
+               <PanelCV t={(res) => t(res)}/>
                 { /** THEME / LANGUAGE ITEMS */}
                 <div className="
                     hidden

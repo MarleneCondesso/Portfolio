@@ -4,7 +4,7 @@ import { RxExternalLink } from 'react-icons/rx';
 
 interface ProjectCardProps{
     title: string;
-    text: string;
+    text?: string;
     tools: string[];
     gitHubUrl?: string;
     webSiteUrl?: string;
@@ -23,8 +23,8 @@ const ProjectCard: FC<ProjectCardProps> = ({
         <div className={`h-72 w-72 2xl:w-80 2xl:h-80 dark:bg-slate-500 dark:bg-opacity-25 bg-white bg-opacity-25 shadow-2xl p-6 rounded-xl animate-fade-in-up-container delay-500`}>
             <div className="gap-8 flex flex-col h-full justify-between">
                 <h2 className="dark:text-teal-400 text-white font-semibold text-base 2xl:text-lg">{title}</h2>
-                <p className="dark:text-white text-slate-700 2xl:text-base">
-                    {text}clear
+                <p className="dark:text-white text-slate-700 text-md">
+                    {text}
 
                 </p>
                 <div className="flex flex-row gap-4 text-[13px] dark:text-slate-400 text-[var(--icon-color-light)] font-bold">
