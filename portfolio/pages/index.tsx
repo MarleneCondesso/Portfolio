@@ -119,6 +119,7 @@ export default function Home() {
   }
 
   useEffect(() => {
+   // i18n.changeLanguage(language);
     console.log(language)
   }, [language])
 
@@ -135,7 +136,7 @@ export default function Home() {
         localStorage.setItem('theme', 'light');
         break;
       default:
-        localStorage.removeItem('theme');
+        //localStorage.setItem('themeDefault', 'true');
         onWindowMatch();
         break;
     }
@@ -155,7 +156,7 @@ export default function Home() {
     <div className='p-10 2xl:p-60 xl:p-28 lg:p-20'>
       <header>
         <Navbar onTheme={(res) => { setTheme(res); }} showBackgroundNav={showBackground} hiddenNav={variantMenu} theme={theme!} onDownloadCV={downloadCV} setLanguage={(res) => i18n.changeLanguage(res)} language={language}/>
-        <NavbarMobile showBackgroundNav={showBackground} onDownloadCV={downloadCV} theme={theme!} onTheme={(res) => setTheme(res)} hiddenNav={variantMenu} language={language} setLanguage={(res) => {i18n.changeLanguage(res); setLanguage(res)}} />
+        <NavbarMobile showBackgroundNav={showBackground} onDownloadCV={downloadCV} theme={theme!} onTheme={(res) => setTheme(res)} hiddenNav={variantMenu} language={language} setLanguage={(res) => {setLanguage(res); console.log(res)  }} />
       </header>
       <div className='flex flex-col' id='container'>
         <Billboard />
@@ -169,7 +170,7 @@ export default function Home() {
       </footer>
       <NavbarSocial getTheme={theme!} />
       <a className={`dark:text-teal-500 text-slate-700 fixed bottom-8 right-2 cursor-pointer active:scroll-smooth hover:opacity-50  ${!goToInitial && 'hidden'}`} onClick={scrollToUp}>
-        <MdKeyboardDoubleArrowUp size={80} className="animate-bounce duration-200" />
+        <MdKeyboardDoubleArrowUp size={50} className="animate-bounce duration-200" />
       </a>
     </div>
   );

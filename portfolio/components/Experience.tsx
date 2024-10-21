@@ -9,7 +9,7 @@ const Experience = () => {
     const [showInfo, setShowInfo] = useState("n4it");
     const { t } = useTranslation(['translationExperience']);
     const [openOtherJobs, setOpenOtherJobs] = useState(false);
-    const [openProgramming, setOpenProgramming] = useState(false);
+    const [openIt, setOpenIt] = useState(false);
     const [selectExperience, setSelectExperience] = useState(false);
 
     const handleOpenOtherJobs = useCallback(() => {
@@ -18,18 +18,18 @@ const Experience = () => {
 
     useEffect(() => {
         if (openOtherJobs) {
-            setOpenProgramming(false);
+            setOpenIt(false);
         }
-    }, [openOtherJobs, setOpenProgramming]);
+    }, [openOtherJobs, setOpenIt]);
 
     useEffect(() => {
-        if (openProgramming) {
+        if (openIt) {
             setOpenOtherJobs(false);
         }
-    }, [setOpenOtherJobs, openProgramming]);
+    }, [setOpenOtherJobs, openIt]);
 
-    const handleOpenProgrammingJobs = useCallback(() => {
-        setOpenProgramming((current) => !current);
+    const handleOpenItJobs = useCallback(() => {
+        setOpenIt((current) => !current);
     }, []);
 
 
@@ -93,10 +93,10 @@ const Experience = () => {
                 >
                     <div className="flex flex-col gap-4">
                         <button
-                            id={"btn_programming_job"}
-                            onClick={handleOpenProgrammingJobs}
+                            id={"btn_it_job"}
+                            onClick={handleOpenItJobs}
                             className={`
-                            ${openProgramming
+                            ${openIt
                                     ? "text-white dark:text-teal-200 bg-[var(--secondary-color-light)] bg-opacity-0 dark:bg-slate-700"
                                     : "text-[var(--icon-color-light)] dark:hover:text-teal-200 dark:text-white bg-white dark:bg-slate-500 dark:bg-opacity-25 bg-opacity-40"
                                 }
@@ -112,13 +112,13 @@ const Experience = () => {
                                 p-6
                                 items-center`}
                         >
-                            {t('experience-programming-job')}
-                            <div className={`${openProgramming ? "rotate-0" : "rotate-180"}`}>
+                            {t('experience-it-job')}
+                            <div className={`${openIt ? "rotate-0" : "rotate-180"}`}>
                                 <MdKeyboardArrowUp />
                             </div>
                         </button>
                     </div>
-                    {openProgramming && (
+                    {openIt && (
                         <div className="flex flex-row lg:flex-col items-center lg:justify-center gap-4 bg-[var(--secondary-color-light)] dark:bg-white dark:bg-opacity-25 bg-opacity-25 rounded-3xl animate-fade-in-up text-sm overflow-x-auto overflow-scroll p-4 px-8 w-full max-w-fit">
                             <ExperienceButton information={'n4it'} showInfo={showInfo}setInformation={(e) => setShowInfo(e)} text="N4IT Software"/>
                         </div>

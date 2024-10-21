@@ -4,11 +4,10 @@ import NavbarTheme from "./NavbarTheme";
 import { Popover, Transition } from '@headlessui/react';
 import { Fragment, useState, FC, useEffect } from 'react';
 import { Document, Page, pdfjs } from "react-pdf";
-import iconUSA from '../public/icon/liberia.png';
-import iconPT from '../public/icon/portugal.png';
 import { useTranslation } from 'react-i18next';
 import { FaSpinner } from "react-icons/fa";
 import PanelCV from './PanelCV';
+import NavbarLanguage from './NavbarLanguage';
 interface NavbarProps {
 
     showBackgroundNav: boolean;
@@ -29,7 +28,7 @@ const Navbar: FC<NavbarProps> = ({
     setLanguage,
     language
 }) => {
-    const { t } = useTranslation(['translationNavbar']);
+    const { t } = useTranslation([ 'translationNavbar' ]);
 
     pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -74,7 +73,7 @@ const Navbar: FC<NavbarProps> = ({
                 >
 
                     {showBackgroundNav ?
-                        <img src={`${theme === 'dark' ? '/images/logoDarkTab.png' : '/images/logoWhite.png'} `} className="h-16 left-8 fixed top-1" />
+                        <img src={`${theme === 'dark' ? '/images/logoDarkTab.png' : '/images/logoWhite.png'} `} className="h-16 left-8 fixed top-1" title='logo' />
                         :
                         <p className="text-white fixed left-8 top-7 dark:text-teal-200 xl:text-lg lg:text-base"> Marlene Condesso</p>
                     }
@@ -105,7 +104,9 @@ const Navbar: FC<NavbarProps> = ({
                     </div>
                 </div>
                 { /** CV ITEM */}
-               <PanelCV t={(res) => t(res)}/>
+                <div className='hidden md:flex'>
+                    <PanelCV t={(res) => t(res)} />
+                </div>
                 { /** THEME / LANGUAGE ITEMS */}
                 <div className="
                     hidden
@@ -115,22 +116,14 @@ const Navbar: FC<NavbarProps> = ({
                     max-lg:top-5
                     max-lg:right-20
                     p-1
-                    dark:bg-teal-800
-                    dark:bg-opacity-60
+                    dark:bg-slate-500
                     rounded-xl
                     duration-300
-                    gap-4"
+                    gap-2"
                 >
                     <NavbarTheme onTheme={(res) => onTheme(res)} theme={theme} />
-                    <div className='flex flex-row gap-2 bg-white dark:bg-slate-500 bg-opacity-60 rounded-md p-2'>
-                        <button onClick={() => setLanguage('pt')} className={`${language === 'pt' && 'brightness-100 cursor-default' } brightness-50 cursor-pointer  hover:brightness-100 `}>
-                            <img src={iconPT.src} alt='pt' className={`h-6 `} />
-                        </button>
-                        <button onClick={() => setLanguage('en')} className={`${language === 'en' && 'brightness-100 cursor-default' } brightness-50 cursor-pointer hover:brightness-100 `}  >
-                            <img src={iconUSA.src} alt='en' className={`h-6 `} />
-                        </button>
+                    <NavbarLanguage />
 
-                    </div>
 
 
                 </div>

@@ -13,6 +13,7 @@ import iconUSA from '../public/icon/liberia.png';
 import iconPT from '../public/icon/portugal.png';
 import { useTranslation } from "react-i18next";
 import PanelCV from "./PanelCV";
+import NavbarLanguage from "./NavbarLanguage";
 
 interface NavbarMobileProps {
     showBackgroundNav: boolean;
@@ -153,26 +154,16 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                             lg:hidden
                             fixed
                             right-4
-                            bg-[var(--icon-color-light)]
-                            opacity-60
+                            bg-white
+                            bg-opacity-60
                             p-2
-                            dark:bg-teal-800
-                            dark:bg-opacity-60
+                            dark:bg-slate-500
                             rounded-xl
                             flex
-                            duration-300
-                            gap-5"
+                            duration-300"
                     >
                         <NavbarTheme onTheme={(res) => onTheme(res)} theme={theme} />
-                        <div className='flex flex-row gap-2 bg-white dark:bg-slate-500 bg-opacity-60 rounded-md p-2'>
-                        <button onClick={() => setLanguage('pt')} className={`${language === 'pt' && 'brightness-100 cursor-default' } brightness-50 cursor-pointer  hover:brightness-100 `}>
-                            <img src={iconPT.src} alt='pt' className={`h-6 `} />
-                        </button>
-                        <button onClick={() => setLanguage('en')} className={`${language === 'en' && 'brightness-100 cursor-default' } brightness-50 cursor-pointer hover:brightness-100 `}  >
-                            <img src={iconUSA.src} alt='en' className={`h-6 `} />
-                        </button>
-
-                    </div>
+                        <NavbarLanguage/>
                     </div>
                 </div>
             }
