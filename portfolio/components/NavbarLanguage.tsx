@@ -15,7 +15,7 @@ const NavbarLanguage: FC<NavbarLanguage> = ({
 
 
   return (
-    <div className='flex flex-row gap-2 bg-slate-500 dark:bg-teal-800 rounded-md p-2 bg-opacity-60'>
+    <div className='flex flex-row gap-2 bg-slate-500 dark:bg-slate-600 rounded-md p-2 bg-opacity-60'>
       <button onClick={() => i18next.changeLanguage('pt')} className={`${i18next.language === 'pt' ? 'brightness-100 cursor-default' : 'brightness-75 cursor-pointer hover:brightness-100 '}  `}>
         {theme === 'light' ?
           <img src={iconPTLight.src} alt='pt-light' className={`h-6`} />

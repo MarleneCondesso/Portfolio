@@ -105,7 +105,7 @@ const Navbar: FC<NavbarProps> = ({
                 </div>
                 { /** CV ITEM */}
                 <div className='hidden md:flex'>
-                    <PanelCV t={(res) => t(res)} />
+                    <PanelCV t={(res) => t(res)} theme={theme} />
                 </div>
                 { /** THEME / LANGUAGE ITEMS */}
                 <div className="

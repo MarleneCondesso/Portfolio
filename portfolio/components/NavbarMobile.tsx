@@ -148,7 +148,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                         <NavbarItem trigger="projects" to="projects" label={t('projects')} closeMenu={toggleMobileMenu} />
                         <NavbarItem trigger="contact" to="contact" label={t('contact')} closeMenu={toggleMobileMenu} />
 
-                       <PanelCV t={(res) => t(res)}/> 
+                       <PanelCV t={(res) => t(res)} theme={theme}/> 
                     </div>
                     <div className="
                             lg:hidden
