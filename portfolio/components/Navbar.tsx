@@ -122,7 +122,7 @@ const Navbar: FC<NavbarProps> = ({
                     gap-2"
                 >
                     <NavbarTheme onTheme={(res) => onTheme(res)} theme={theme} />
-                    <NavbarLanguage />
+                    <NavbarLanguage theme={theme} />
 
 
 

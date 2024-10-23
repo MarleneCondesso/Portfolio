@@ -163,7 +163,7 @@ const NavbarMobile: FC<NavbarMobileProps> = ({
                             duration-300"
                     >
                         <NavbarTheme onTheme={(res) => onTheme(res)} theme={theme} />
-                        <NavbarLanguage/>
+                        <NavbarLanguage theme={theme}/>
                     </div>
                 </div>
             }

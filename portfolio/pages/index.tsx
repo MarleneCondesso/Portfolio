@@ -50,6 +50,7 @@ i18n.use(initReactI18next).init({
   },
 });
 
+
 export default function Home() {
 
   const [theme, setTheme] = useState(typeof window !== 'undefined' && localStorage.getItem('theme') ? localStorage.getItem('theme') : 'system');
