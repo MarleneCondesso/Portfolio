@@ -38,16 +38,16 @@ const NavbarSocial: FC<NavbarSocialProps> = ({ getTheme, showNavbarSocial }
             <div className="flex flex-col h-full items-center justify-center">
                 <div className="  z-40 h-full flex items-center">
                     <div className="-rotate-90 flex z-40  ">
-                        <a href="mailto:marleneflima.official@gmail.com?" className="text-sm text-slate-700 dark:text-teal-400 hover:opacity-50">marleneflima.official@gmail.com</a>
+                        <a href="mailto:marleneflima.official@gmail.com?" className="text-md font-semibold text-slate-700 dark:text-teal-400 hover:opacity-50">marleneflima.official@gmail.com</a>
                     </div>
                 </div>
                 <div className="flex flex-col h-full items-center">
                     <div className="bg-slate-700 dark:bg-teal-400 h-full w-[0.1rem] mt-4 mb-4 z-0 "></div>
-                    <div className="flex flex-col text-[#DDD0C8] gap-4 bg-slate-700 p-2 rounded-lg z-40 dark:bg-slate-600">
+                    <div className="flex flex-col text-[#DDD0C8] gap-4 bg-slate-700 p-4 rounded-lg z-40 dark:bg-slate-600">
                         <div onClick={() => window.open('https://github.com/MarleneCondesso', '_blank')}
                             className="
-                            w-3
-                            h-3
+                            w-4
+                            h-4
                             rounded-full
                             flex
                             items-center
@@ -62,8 +62,8 @@ const NavbarSocial: FC<NavbarSocialProps> = ({ getTheme, showNavbarSocial }
                         </div>
                         <div onClick={() => window.open('https://www.linkedin.com/in/marlene-lima-418b0b22b/', '_blank')}
                             className="
-                            h-3
-                            w-3
+                            h-4
+                            w-4
                             rounded-full
                             flex
                             items-center

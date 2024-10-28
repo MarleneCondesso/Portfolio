@@ -77,6 +77,19 @@ export default function Home() {
     }
   }, []);
  
+  useEffect(() => {
+
+    const fetchVisitorsCount = async () => {
+
+      const response = await fetch('api/visitors/umami');
+      console.log(response);
+  
+    }
+
+    fetchVisitorsCount();
+  
+  }, []);
+
 /*   useEffect(() => {
     let lastSrollY = window.scrollY;
     
