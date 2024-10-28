@@ -16,7 +16,7 @@
   }
 
 body{
-    @apply dark:bg-slate-700  /* from-yellow-500 via-purple-500 to-blue-500 */ bg-[#FFB6B9] bg-no-repeat bg-fixed min-h-[100vh] scroll-smooth dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-3xl scrollbar-thin scrollbar-track-[#FFB6B9] scrollbar-thumb-[#8AC6D1];
+    @apply dark:bg-slate-700 bg-[#FFB6B9] bg-no-repeat bg-fixed min-h-[100vh] scroll-smooth dark:scrollbar-track-teal-500 dark:scrollbar-thumb-slate-600 scrollbar-thumb-rounded-3xl scrollbar-thin scrollbar-track-[#FFB6B9] scrollbar-thumb-[#8AC6D1];
 }
 
 #__next{

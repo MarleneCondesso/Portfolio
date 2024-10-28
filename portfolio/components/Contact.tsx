@@ -93,8 +93,8 @@ const Contact: FC<ContactProps> = ({
                 <div className="p-20 flex flex-row gap-5 text-slate-700 dark:text-teal-400">
                     <div onClick={() => window.open('https://codepen.io/MarleneCondesso', '_blank')}
                         className="
-                    w-10
-                    h-10
+                    w-6
+                    h-6
                     rounded-full
                     flex
                     items-center
@@ -107,8 +107,8 @@ const Contact: FC<ContactProps> = ({
                     </div>
                     <div onClick={() => window.open('https://github.com/MarleneCondesso', '_blank')}
                         className="
-                    w-10
-                    h-10
+                    w-6
+                    h-6
                     rounded-full
                     flex
                     items-center
@@ -121,8 +121,8 @@ const Contact: FC<ContactProps> = ({
                     </div>
                     <div onClick={() => window.open('https://www.linkedin.com/in/marlene-lima-418b0b22b/', '_blank')}
                         className="
-                    h-10
-                    w-10
+                    h-6
+                    w-6
                     rounded-full
                     flex
                     items-center
@@ -133,7 +133,7 @@ const Contact: FC<ContactProps> = ({
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-8 w-8"
+                            className="h-5 w-5"
                             fill="currentColor"
                             viewBox="0 0 24 24">
                             <path

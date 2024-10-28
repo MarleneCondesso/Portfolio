@@ -73,7 +73,7 @@ const Navbar: FC<NavbarProps> = ({
                 >
 
                     {showBackgroundNav ?
-                        <img src={`${theme === 'dark' ? '/images/logoDarkTab.png' : '/images/logoWhite.png'} `} className="h-16 left-8 fixed top-1" title='logo' />
+                        <img src={`${theme === 'dark' ? '/images/logoDarkTab.png' : '/images/logoWhite.png'} `} className="h-14 left-8 fixed top-4" title='logo' />
                         :
                         <p className="text-white fixed left-8 top-7 dark:text-teal-200 xl:text-lg lg:text-base"> Marlene Condesso</p>
                     }
@@ -104,7 +104,6 @@ const Navbar: FC<NavbarProps> = ({
                     </div>
                 </div>
                 { /** CV ITEM */}
-                
                 <div className='hidden md:flex'>
                     <PanelCV t={(res) => t(res)} theme={theme} />
                 </div>

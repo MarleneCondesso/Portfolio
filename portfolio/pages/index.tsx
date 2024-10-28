@@ -137,7 +137,7 @@ export default function Home() {
         localStorage.setItem('theme', 'light');
         break;
       default:
-        //localStorage.setItem('themeDefault', 'true');
+        localStorage.removeItem('theme');
         onWindowMatch();
         break;
     }
