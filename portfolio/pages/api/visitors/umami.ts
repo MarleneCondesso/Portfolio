@@ -15,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         const response = await fetch(umamiApiUrl, {
             headers: {
-                Authorization: `Bearer ${process.env.UMAMI_APPI_TOKEN}`,
+                Authorization: `Bearer ${process.env.UMAMI_API_TOKEN}`,
             },
         });
 
