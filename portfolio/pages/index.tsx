@@ -169,7 +169,7 @@ export default function Home() {
       <footer className='m-0 p-5'>
         <Contact getTheme={theme!} />
       </footer>
-      <NavbarSocial getTheme={theme!} />
+      <NavbarSocial getTheme={theme!} showNavbarSocial={!variantMenu}/>
       <a className={`dark:text-teal-500 text-slate-700 fixed bottom-8 right-2 cursor-pointer active:scroll-smooth hover:opacity-50  ${!goToInitial && 'hidden'}`} onClick={scrollToUp}>
         <MdKeyboardDoubleArrowUp size={50} className="animate-bounce duration-200" />
       </a>
